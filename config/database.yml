@@ -22,13 +22,13 @@ default: &default
 
 development:
   <<: *default
-  database: teacher_support_development
+  database: teacher_success_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: teacher_support
+  #username: teacher_success
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -56,7 +56,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: teacher_support_test
+  database: teacher_success_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,18 +81,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: teacher_support_production
-    username: teacher_support
-    password: <%= ENV["TEACHER_SUPPORT_DATABASE_PASSWORD"] %>
+    database: teacher_success_production
+    username: teacher_success
+    password: <%= ENV["teacher_success_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
-    database: teacher_support_production_cache
+    database: teacher_success_production_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: teacher_support_production_queue
+    database: teacher_success_production_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: teacher_support_production_cable
+    database: teacher_success_production_cable
     migrations_paths: db/cable_migrate

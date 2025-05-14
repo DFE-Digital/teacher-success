@@ -1,4 +1,4 @@
-# Teacher Support
+# Teacher Success
 
 ## Installation
 
