@@ -3,4 +3,3 @@ class PageNotFoundError < StandardError
     super("Page not found for slug: '#{slug}'")
   end
 end
-

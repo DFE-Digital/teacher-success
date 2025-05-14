@@ -14,7 +14,7 @@ class ContentLoader
     page = @pages[slug]
     raise PageNotFoundError.new(slug) unless page
 
-    [page[:front_matter], page[:content]]
+    [ page[:front_matter], page[:content] ]
   end
 
   def navigation_items
@@ -64,9 +64,9 @@ class ContentLoader
   def substitute_variables(front_matter, content)
     front_matter_variables  = front_matter[:variables] || {}
     config_variables        = YAML.load_file(CONFIG_VARIABLES_PATH)
-    
+
     variables = config_variables.merge(front_matter_variables)
-    
+
     content.gsub(/\$(\w+)\$/) do |match|
       variable_name = match[1..-2]
       variable_value = variables[variable_name]
