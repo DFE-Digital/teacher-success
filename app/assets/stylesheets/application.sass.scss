@@ -1,5 +1,6 @@
 @use "govuk-frontend/dist/govuk" as govuk;
 @use "dfe-frontend/packages/dfefrontend" as dfe;
+@use "utilities";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;
