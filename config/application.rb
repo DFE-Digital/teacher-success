@@ -36,7 +36,7 @@ module TeacherSupport
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.assets.paths << Rails.root.join('node_modules/govuk-frontend/dist/govuk/assets')
+    config.action_view.annotate_rendered_view_with_filenames = false
 
     config.exceptions_app = routes
   end
