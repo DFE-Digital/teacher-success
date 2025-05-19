@@ -70,6 +70,8 @@ jobs:
           bundler-cache: true
 
       - name: Setup database schema
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432
         run: bin/rails db:create db:migrate
 
       - name: Run tests
