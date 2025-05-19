@@ -5,7 +5,7 @@
     <% end %>
 
     <% m.with_action do %>
-      <%= govuk_button_link_to "Reject additional cookies", "#", data: { action: "click->cookies#reject" } %>
+      <%= govuk_button_link_to "Reject additional cookies", "#", data: { action: "click->cookies#reject:prevent" } %>
     <% end %>
 
     <% m.with_action do %>
