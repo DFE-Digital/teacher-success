@@ -1,0 +1,7 @@
+<h1>Sitemap</h1>
+
+<ul class="govuk-list">
+  <% @pages.each do |slug, page| %>
+    <li><%= link_to page.dig(:front_matter, :title), slug, class: "govuk-link" %></li>
+  <% end %>
+</ul>

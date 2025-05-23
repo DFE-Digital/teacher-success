@@ -1,6 +1,12 @@
-@use "govuk-frontend/dist/govuk" as govuk;
+@use "govuk-frontend/dist/govuk" with (
+  $govuk-font-url-function: "font-url",
+  $govuk-images-path: "images/",
+  $govuk-fonts-path: "fonts/"
+);
+
 @use "dfe-frontend/packages/dfefrontend" as dfe;
 @use "utilities";
+@use "header";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;

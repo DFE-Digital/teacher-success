@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" class="govuk-template--rebranded">
   <head>
     <title><%= [yield(:page_title).presence, t('service.name')].compact.join(' - ') %></title>
 
@@ -10,11 +10,7 @@
     <%= tag :meta, name: 'theme-color', content: '#0b0c0c' %>
     <meta name="robots" content="noindex">
 
-    <%# Opengraph %>
-    <%= tag :meta, property: 'og:title', content: [yield(:page_title).presence, t('service.name')].compact.join(' - ') %>
-    <%= tag :meta, property: 'og:type', content: "website" %>
-    <%= tag :meta, property: 'og:image', content: asset_path('images/govuk-opengraph-image.png') %>
-    <%= tag :meta, property: 'og:url', content: request.original_url %>
+    <%= render "shared/metatags" %>
 
     <%= favicon_link_tag asset_path('images/favicon.ico') %>
     <%= favicon_link_tag asset_path('images/govuk-icon-mask.svg'), rel: 'mask-icon', type: 'image/svg', color: "#0b1c0c" %>
@@ -23,6 +19,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= render "shared/analytics" %>
   </head>
 
   <body class="govuk-template__body">

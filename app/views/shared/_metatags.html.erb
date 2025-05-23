@@ -1,0 +1,4 @@
+<%= tag :meta, property: 'og:title', content: [yield(:page_title).presence, t('service.name')].compact.join(' - ') %>
+<%= tag :meta, property: 'og:type', content: "website" %>
+<%= tag :meta, property: 'og:image', content: asset_path('images/govuk-opengraph-image.png') %>
+<%= tag :meta, property: 'og:url', content: request.original_url %>

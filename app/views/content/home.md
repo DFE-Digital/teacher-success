@@ -16,3 +16,4 @@ navigation:
 <%= render "shared/card", { title: "Nested", href: "/nested/page" } %>
 <% end %>
 
+<%= image_url "govuk-crest.svg" %>

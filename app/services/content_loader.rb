@@ -18,7 +18,8 @@ class ContentLoader
   end
 
   def navigation_items
-    @pages.values.select { |page| page[:front_matter][:navigation].present? }
+    @pages.values
+      .select { it.dig(:front_matter, :navigation).present? }
       .sort_by { it.dig(:front_matter, :navigation, :order) }
       .map do |page|
       {
