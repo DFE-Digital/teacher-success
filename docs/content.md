@@ -4,9 +4,12 @@
 
  1. [How we do Content](#how-we-do-content)
  2. [Frontmatter](#frontmatter)
-    2.1. [Title](#title)
-    2.2. [Navigation](#navigation)
-    2.3. [Variables](#variables)
+    - [Title](#title)
+    - [Description](#description)
+    - [Layout](#layout)
+    - [Navigation](#navigation)
+    - [Page Header](#page-header)
+    - [Variables](#variables)
  3. [Creating a new page](#creating-a-new-page)
  4. [Variables](#variables)
  5. [Rails Partials](#rails-partials)
@@ -27,15 +30,14 @@ Front matter is the stuff at the start of the markdown file that looks like this
 ---
 title: "Home"
 description: "My home page"
-author: "Spencer Dixon"
-date: "2025-05-12"
+layout: "blank"
 navigation:
     title: "Home"
     path: "/"
     order: 1
-opengraph:
-    title: "Home"
-    image: path/to/image.png
+page_header:
+    title: "Home Page Header"
+    description: "Some description goes here"
 variables:
     hello: "World"
 ---
@@ -47,7 +49,19 @@ Here's some of the options you can set in the front matter:
 
 ### Title
 
-This sets the html `title` for the page.
+This sets the html `title` for the page. Also used for `og:title` via yielding `page_title`.
+
+### Description
+
+Used for the `og:description`. Optional
+
+### Layout
+
+Optional. By default, pages will use the `views/layouts/application.html.erb` layout. You can specify another layout in the front matter.
+
+```
+layout: "blank"
+```
 
 ### Navigation
 
@@ -58,6 +72,16 @@ navigation:
     title: "About"
     path: "/about"
     order: 2
+```
+
+### Page Header
+
+Optional. If present, this will render a light blue header at the top of the page using the title and description provided.
+
+```
+page_header:
+    title: "Teacher Training Hub"
+    description: "Whether you want information on training, resources during training, or a space to connect with other trainees, the Teacher Training Hub is the place for all trainees."
 ```
 
 ### Variables
