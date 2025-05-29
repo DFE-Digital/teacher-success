@@ -1,6 +1,6 @@
 class ContentController < ApplicationController
   before_action :set_page
-  
+
   layout :set_layout
 
   def show
