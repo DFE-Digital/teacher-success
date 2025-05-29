@@ -1,4 +1,4 @@
-# Teacher Success
+# 💪 Teacher Success
 
 ## Installation
 
@@ -12,8 +12,8 @@ yarn install
 
 ## Documentation
 
-For content guidance, see [docs/content.md](docs/content.md)
-For developer guidance, see [docs/development.md](docs/development.md)
+- [Content Guide](docs/content.md)
+- [Developer Guide](docs/development.md)
 
 ## Prerequisites
 
