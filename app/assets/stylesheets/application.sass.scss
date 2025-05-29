@@ -7,6 +7,8 @@
 @use "dfe-frontend/packages/dfefrontend" as dfe;
 @use "utilities";
 @use "header";
+@use "page_header";
+@use "feedback";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;
