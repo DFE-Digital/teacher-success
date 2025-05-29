@@ -25,6 +25,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   gem "rspec"
   gem "rspec-rails"
+  gem "bundler-audit"
 end
 
 group :development do

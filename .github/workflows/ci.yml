@@ -37,6 +37,24 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
+  bundler_audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby 
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install 
+
+      - name: Security audit bundler dependencies
+        run: bundle exec bundle-audit check --update
+
   test:
     runs-on: ubuntu-latest
 
