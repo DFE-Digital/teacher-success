@@ -18,6 +18,8 @@ gem "govuk-components"
 gem "govuk_design_system_formbuilder"
 gem "front_matter_parser"
 gem "govuk_markdown"
+gem "httparty"
+gem "dotenv"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
