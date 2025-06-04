@@ -9,7 +9,7 @@ class CandidatesCollection
     @candidates.each(&block)
   end
 
-  def with_application_status(statuses: ["recruited"])
+  def with_application_status(statuses: [ "recruited" ])
     candidates = @candidates.filter do |candidate|
       application_forms = candidate.dig("attributes", "application_forms") || []
       application_forms.any? { |form| statuses.include?(form["application_status"]) }
