@@ -4,7 +4,8 @@
 
  1. [Overview](#overview)
  2. [How pages work](#how-pages-work)
- 3. [Navigation](#navidation)
+ 3. [Navigation](#navigation)
+ 4. [Audience Generator](#audience-generator)
 
 ## Overview
 
@@ -54,4 +55,24 @@ Since `ContentLoader` loads and parses all the content pages, it also takes the 
 
 ```
 ContentLoader.instance.navigation_items
+```
+
+## Audience Generator
+
+We pull our audience from the [Candidate API](https://www.apply-for-teacher-training.service.gov.uk/candidate-api). There is a client wrapper for this in `app/services/candidate_api_client.rb`.
+
+Since we want to do additional filtering on the data returned from this api. The data gets returned as a `CandidatesCollection` object (`app/lib/candidates_collection.rb`) so you can chain filtering methods on this.
+
+For example, to fetch all candidates, then filter them down to recruited candidates:
+
+```
+candidates = CandidateApiClient.new.candidates.with_application_status(statuses: ["recruited"])
+```
+
+The second side of this is `app/services/audience_generator.rb` which is responsible for pulling the audience list and exporting it to a csv.
+
+For example, to generate a new csv:
+
+```
+AudienceGenerator.new.export
 ```
