@@ -4,15 +4,15 @@
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.13",
     "dfe-frontend": "^2.0.1",
-    "govuk-frontend": "5.10.1",
-    "sass": "^1.89.0"
+    "govuk-frontend": "5.10.2",
+    "sass": "^1.89.1"
   },
   "scripts": {
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "devDependencies": {
-    "esbuild": "^0.25.4"
+    "esbuild": "^0.25.5"
   },
   "packageManager": "yarn@1.22.22"
 }
