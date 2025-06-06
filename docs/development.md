@@ -18,31 +18,29 @@ Since we also parse the front matter, this provides a nice bridge to be able to 
 
 ## How pages work
 
-Since pages are written in markdown, we use `app/services/content_loader.rb` as a singleton to efficiently load and parse the markdown files, and `ContentController` to render them as views.
+Since pages are written in markdown, we use `app/services/content_loader.rb` to efficiently load and parse the markdown files, and `ContentController` to render them as views.
 
-In production, `ContentLoader.instance.pages` will provide a list of pages that we load once on application startup to ensure we're not parsing markdown on every request. 
-
-In development rails will refresh the singleton and parse markdown on every request so you don't have to keep restarting your server to see changes.
+When the app starts, we assign an instance of `ContentLoader` to the `CONTENT_LOADER` constant which you can use throughout the app to access anything content. Since we wrap this in a `to_prepare` block, `CONTENT_LOADER` will automatically reload in development but only load once in production and test environments to ensure we're not parsing files on every request.
 
 You can access a store of all content pages like this:
 
 ```
-ContentLoader.instance.pages
+CONTENT_LOADER.pages
 ```
 
 Parsed pages are stored in a hash where their key is the slug for the page (name without the markdown extension) and the value is a hash like this `{ front_matter: {}, content: "" }`
 
 ```
-ContentLoader.instance.pages["about"] # To get app/views/content/about.md
+CONTENT_LOADER.pages["about"] # To get app/views/content/about.md
 ```
 
-An alternative (and safer) way to get app/views/content/about.md is to use `.find_by_slug` which returns front_matter and content at the same time, and will raise an error if the page is not found
+An better way to get `app/views/content/about.md` is to use `.find_by_slug` which returns front_matter and content at the same time, and will raise an error if the page is not found
 
 ```
-front_matter, content = ContentLoader.instance.find_by_slug("about")
+front_matter, content = CONTENT_LOADER.find_by_slug("about")
 ```
 
-Each page will also set `@front_matter` in the controller so you can use this to access any config options for the page.
+The `ContentController` runs a before action to set `@front_matter` before rendering the page, so you can use this to access any config options for the page in the action or view
 
 ```
 @front_matter.dig("title") # To get the title of app/views/content/about.md
@@ -53,5 +51,5 @@ Each page will also set `@front_matter` in the controller so you can use this to
 Since `ContentLoader` loads and parses all the content pages, it also takes the opportunity to figure out which pages should be in the navigation by looking for ones with `navigation` in the front matter and returning them in the right order. See the content guidance docs for more on setting navigation properties of a page [docs/content.md](docs/content.md)
 
 ```
-ContentLoader.instance.navigation_items
+CONTENT_LOADER.navigation_items
 ```

@@ -7,7 +7,7 @@ RSpec.describe ContentController, type: :controller do
     let(:markdown_content) { "# Hello World" }
 
     before do
-      allow(ContentLoader.instance).to receive(:find_by_slug)
+      allow(CONTENT_LOADER).to receive(:find_by_slug)
         .with(slug)
         .and_return([ front_matter, markdown_content ])
     end
