@@ -17,7 +17,7 @@ RSpec.describe ContentLoader do
     it "returns front_matter and content for a valid slug" do
       result = loader.find_by_slug(slug)
 
-      expect(result).to eq([front_matter, content])
+      expect(result).to eq([ front_matter, content ])
     end
 
     it "raises PageNotFoundError for unknown slug" do
@@ -82,4 +82,3 @@ RSpec.describe ContentLoader do
     end
   end
 end
-
