@@ -25,7 +25,7 @@ RSpec.describe "Sitemap", type: :request do
       html = Nokogiri::HTML(response.body)
       links = html.css("#main-content").css("a").map(&:text)
 
-      expect(links).to eq(["A Page", "B Page"])
+      expect(links).to eq([ "A Page", "B Page" ])
     end
   end
 end

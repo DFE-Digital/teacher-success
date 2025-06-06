@@ -37,4 +37,3 @@ RSpec.describe "Errors", type: :request do
     end
   end
 end
-
