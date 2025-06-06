@@ -3,6 +3,6 @@
 <%= tag :meta, property: 'og:image', content: asset_path('govuk-opengraph-image.png') %>
 <%= tag :meta, property: 'og:url', content: request.original_url %>
 
-<% if @front_matter.has_key?(:description) %>
+<% if @front_matter && @front_matter.has_key?(:description) %>
   <%= tag :meta, property: 'og:description', content: @front_matter[:description] %>
 <% end %>
