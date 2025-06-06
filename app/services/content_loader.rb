@@ -1,6 +1,4 @@
 class ContentLoader
-  include Singleton
-
   CONTENT_DIR = Rails.root.join("app", "views", "content")
   CONFIG_VARIABLES_PATH = Rails.root.join("config/variables.yml")
 
@@ -38,7 +36,7 @@ class ContentLoader
       front_matter, content = parse_markdown_file(file_path)
 
       slug = Pathname.new(file_path)
-        .relative_path_from(CONTENT_DIR)
+        .relative_path_from(CONTENT_DIR) # Ensure slugs reflect any nested file paths
         .to_s
         .sub(/\.md$/, "")
 

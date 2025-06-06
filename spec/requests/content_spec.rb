@@ -8,7 +8,7 @@ RSpec.describe "Content Pages", type: :request do
     let(:markdown_content) { '# Hello <%= "World" %>' }
 
     before do
-      allow(ContentLoader.instance).to receive(:find_by_slug)
+      allow(CONTENT_LOADER).to receive(:find_by_slug)
         .with(slug)
         .and_return([ front_matter, markdown_content ])
     end
@@ -24,7 +24,7 @@ RSpec.describe "Content Pages", type: :request do
       let(:slug) { "missing-page" }
 
       before do
-        allow(ContentLoader.instance).to receive(:find_by_slug)
+        allow(CONTENT_LOADER).to receive(:find_by_slug)
           .with(slug)
           .and_raise(PageNotFoundError.new(slug))
       end
