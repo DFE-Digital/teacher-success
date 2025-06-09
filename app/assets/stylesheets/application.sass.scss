@@ -5,10 +5,15 @@
 );
 
 @use "dfe-frontend/packages/dfefrontend" as dfe;
+@use "base";
 @use "utilities";
 @use "header";
-@use "page_header";
+@use "page-header";
 @use "feedback";
+@use "layout";
+
+// Components
+@use "components/horizontal-card";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;

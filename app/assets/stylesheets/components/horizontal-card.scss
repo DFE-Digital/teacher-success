@@ -1,0 +1,7 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
+.horizontal-card { 
+  background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+
+  @include govuk.govuk-responsive-padding(6, "all");
+}

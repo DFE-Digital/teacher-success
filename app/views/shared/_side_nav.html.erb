@@ -1,0 +1,9 @@
+<aside class="side-navigation">
+  <h2 class="govuk-heading-m"><%= data[:title] %></h2>
+
+  <ul class="govuk-list">
+    <% data.dig(:steps).each do |step| %>
+      <li><%= link_to step[:title], step[:href], class: "govuk-link" %></li>
+    <% end %>
+  </ul>
+</aside>
