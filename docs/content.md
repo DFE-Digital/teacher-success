@@ -10,6 +10,7 @@
     - [Navigation](#navigation)
     - [Page Header](#page-header)
     - [Variables](#variables)
+    - [Side Navigation](#side-navigation)
  3. [Creating a new page](#creating-a-new-page)
  4. [Variables](#variables)
  5. [Rails Partials](#rails-partials)
@@ -87,6 +88,33 @@ page_header:
 ### Variables
 
 You can set variables that you want to reuse in the content in the front matter. See the Variables section for more about this.
+
+### Side Navigation
+
+Side navigation is common in articles to give the user a way to jump to certain content (like a table of contents).
+
+To use the side navigation, you'll need to set `layout: "article"`.
+
+```
+side_navigation:
+    title: Prepare for training
+    steps:
+        - title: Trainee starter checklist
+          href: "#trainee-starter-checklist"
+        - title: Get school experience 
+          href: "#get-school-experience"
+        - title: Advice from past trainees 
+          href: "#"
+        - title: Trainee starter checklist 
+          href: "#"
+        - title: Timeline of your training year 
+          href: "#"
+        - title: Prepare for your first school placement 
+          href: "#"
+        - title: Learn about PGCE expectation and best practice
+          href: "#"
+```
+
 
 ## Creating a new page
 

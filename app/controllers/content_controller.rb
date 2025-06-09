@@ -6,8 +6,6 @@ class ContentController < ApplicationController
   def show
     @content = view_context.render(inline: @content)
     @content = GovukMarkdown.render(@content)
-
-    render "content/show"
   end
 
   private
