@@ -10,6 +10,25 @@ yarn install
 ./bin/dev
 ```
 
+You'll need a copy of the credentials from another developer
+
+## Credentials
+
+We use `dotenv` to manage environment variables and credentials. Since `dotenv` loads things in precedence order (see:  https://github.com/bkeepers/dotenv?tab=readme-ov-file#customizing-rails), we can list everything in the `.env` file as a guide, and override things with environment specific files.
+
+Not ignored / Safe to commit:
+
+- `.env` - A full list of environment variables as a baseline (nothing sensitive)
+- `.env.development` - Development environment variables that are safe to be committed
+
+Ignored / Do not commit:
+
+- `.env.development.local` - use to override Development variables with sensitive information
+- `.env.test.local` - use to override Test variables with sensitive information
+- `.env.production.local` - use to override Production variables with sensitive information
+
+tl;dr - if you add a new env variable, document it in `.env`, add any safe config variables in the appropriate environment file. Use `.env.environment.local` files for sensitive information as these are ignored.
+
 ## Documentation
 
 - [Content Guide](docs/content.md)

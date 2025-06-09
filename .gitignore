@@ -1,12 +1,12 @@
 *.log
 .DS_Store
 .bundle
-.env
 .env.local
 .env.*.local
 .envrc
 .idea
 .vscode
+*.csv
 coverage
 
 .yarn/*
