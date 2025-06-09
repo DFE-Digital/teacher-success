@@ -1,4 +1,6 @@
-<%= govuk_service_navigation service_name: t("service.name"),
-  navigation_items: CONTENT_LOADER.navigation_items ,
+<%= govuk_service_navigation(
+  service_name: t("service.name"),
+  service_url: root_path,
+  navigation_items: CONTENT_LOADER.navigation_items,
   current_path: request.path 
-%>
+) %>
