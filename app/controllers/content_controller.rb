@@ -6,14 +6,12 @@ class ContentController < ApplicationController
   def show
     @content = view_context.render(inline: @content)
     @content = GovukMarkdown.render(@content)
-
-    render "content/show"
   end
 
   private
 
   def set_page
-    @front_matter, @content = ContentLoader.instance.find_by_slug(params[:slug])
+    @front_matter, @content = CONTENT_LOADER.find_by_slug(params[:slug])
   rescue PageNotFoundError
     redirect_to(controller: "errors", action: "not_found")
   end

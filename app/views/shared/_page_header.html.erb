@@ -1,9 +1,17 @@
-<% if @front_matter.has_key?(:page_header) %>
+<% if @front_matter && @front_matter.has_key?(:page_header) %>
   <div class="page-header">
     <div class="govuk-width-container">
-      <div class="content">
-        <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
-        <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
+      <div class="content-container">
+        <div class="content">
+          <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
+          <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
+        </div>
+
+        <% if @front_matter.dig(:page_header, :logo) %>
+          <div class="image">
+            <%= image_tag "teacherlogo.svg" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

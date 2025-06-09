@@ -3,7 +3,13 @@
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper" id="main-content" role="main">
-      <%= yield %>
+      <div class="responsive-flex-container">
+        <% if @front_matter&.dig(:side_navigation) %>
+          <%= render "shared/side_nav", data: @front_matter.dig(:side_navigation) %>
+        <% end %>
+
+        <%= yield %>
+      </div>
     </main>
   </div>
 <% end %>
