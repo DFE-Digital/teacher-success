@@ -3,6 +3,8 @@
     <div class="govuk-width-container">
       <div class="content-container">
         <div class="content">
+          <%= render "shared/breadcrumbs" %>
+
           <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
           <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
         </div>

@@ -115,6 +115,18 @@ side_navigation:
           href: "#"
 ```
 
+### Breadcrumbs
+
+Breadcrumbs are enabled by default. You can optionally disable or override them.
+
+```
+breadcrumbs:
+    enabled: false
+    crumbs:
+        - name: Home
+        - path: "/"
+```
+
 
 ## Creating a new page
 

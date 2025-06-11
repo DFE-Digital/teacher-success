@@ -149,6 +149,8 @@ GEM
     json (2.11.3)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
+    loaf (0.10.0)
+      railties (>= 3.2)
     logger (1.7.0)
     loofah (2.24.1)
       crass (~> 1.0.2)
@@ -389,6 +391,7 @@ DEPENDENCIES
   govuk_markdown
   httparty
   jsbundling-rails
+  loaf
   pg
   propshaft
   puma

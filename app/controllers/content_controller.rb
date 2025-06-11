@@ -1,5 +1,6 @@
 class ContentController < ApplicationController
   before_action :set_page
+  before_action :set_breadcrumbs
 
   layout :set_layout
 
@@ -18,5 +19,15 @@ class ContentController < ApplicationController
 
   def set_layout
     @front_matter[:layout].presence || "application"
+  end
+
+  def set_breadcrumbs
+    if @front_matter.dig(:breadcrumbs, :crumbs)
+      @front_matter.dig(:breadcrumbs, :crumbs).map do |crumb|
+        breadcrumb crumb[:name], crumb[:path]
+      end
+    else
+      breadcrumb @front_matter[:title], request.path
+    end
   end
 end

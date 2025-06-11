@@ -1,7 +1,16 @@
 @use "govuk-frontend/dist/govuk" as govuk;
 
 .horizontal-card { 
+  display: flex;
+  flex-direction: column-reverse;
   background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+  gap: 1rem;
 
-  @include govuk.govuk-responsive-padding(6, "all");
+  @include govuk.govuk-media-query($from: desktop) {
+    flex-direction: row;
+  }
+
+  .content {
+    @include govuk.govuk-responsive-padding(6, "all");
+  }
 }

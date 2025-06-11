@@ -25,6 +25,13 @@ side_navigation:
           href: "#"
         - title: Learn about PGCE expectation and best practice
           href: "#"
+breadcrumbs: 
+    enable: true
+    crumbs: 
+        - name: "Articles"
+          path: "/blog"
+        - name: "Get school experience"
+          path: "/articles/article"
 ---
 
 # Title
