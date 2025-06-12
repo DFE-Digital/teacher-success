@@ -1,7 +1,7 @@
 require "csv"
 
 class AudienceGenerator
-  def initialize(filepath: "audience_#{Rails.env}_#{Date.current.to_s}.csv", data: nil)
+  def initialize(filepath: "audience_#{Rails.env}_#{Date.current}.csv", data: nil)
     @filepath = filepath
     @data = data || fetch_data
   end

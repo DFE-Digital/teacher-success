@@ -7,7 +7,7 @@ class CandidatesApiClient
     @headers = { "Authorization" => "Bearer #{ENV["CANDIDATE_API_ACCESS_TOKEN"]}" }
   end
 
-  def candidates(query: { page: 1, per_page: 500, updated_since: Date.current - 1.year})
+  def candidates(query: { page: 1, per_page: 500, updated_since: Date.current - 1.year })
     response = self.class.get("/candidates", query: query, headers: @headers)
     response = handle_response(response)
 
