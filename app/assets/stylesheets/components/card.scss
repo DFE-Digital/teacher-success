@@ -1,0 +1,14 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
+.card { 
+  @include govuk.govuk-responsive-padding(6, "all");
+
+  background-color: govuk.govuk-colour("light-grey");
+  border-right: 4px solid govuk.$govuk-border-colour;
+  border-bottom: 4px solid govuk.$govuk-border-colour;
+
+  &:hover {
+    border-right: 4px solid govuk.govuk-colour("blue");
+    border-bottom: 4px solid govuk.govuk-colour("blue");
+  }
+}

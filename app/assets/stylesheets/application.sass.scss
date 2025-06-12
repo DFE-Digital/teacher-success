@@ -13,6 +13,7 @@
 
 // Components
 @use "components/horizontal-card";
+@use "components/card";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;
