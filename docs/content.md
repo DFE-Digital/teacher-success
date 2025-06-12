@@ -11,6 +11,7 @@
     - [Page Header](#page-header)
     - [Variables](#variables)
     - [Side Navigation](#side-navigation)
+    - [Breadcrumbs](#breadcrumbs)
  3. [Creating a new page](#creating-a-new-page)
  4. [Variables](#variables)
  5. [Rails Partials](#rails-partials)
