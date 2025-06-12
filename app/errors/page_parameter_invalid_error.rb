@@ -1,0 +1,1 @@
+class PageParameterInvalidError < StandardError; end
