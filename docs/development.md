@@ -74,3 +74,5 @@ For example, to generate a new csv:
 ```
 AudienceGenerator.new.export
 ```
+
+This will export an `audience.csv` to the root of the project. Run this locally from `rails c -e production` to use the production credentials.

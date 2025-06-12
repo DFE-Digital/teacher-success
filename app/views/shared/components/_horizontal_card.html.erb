@@ -1,5 +1,9 @@
 <div class="horizontal-card">
-  <h2 class="govuk-heading-lg"><%= title %></h2>
-  <p><%= description %></p>
-  <%= govuk_button_link_to(button_text, button_href) %>
+  <div class="content">
+    <h2 class="govuk-heading-lg"><%= title %></h2>
+    <p><%= description %></p>
+    <%= govuk_button_link_to(button_text, button_href) %>
+  </div>
+
+  <%= image_tag "https://placehold.co/500x300/png" %>
 </div>

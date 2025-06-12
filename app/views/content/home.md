@@ -10,6 +10,8 @@ page_header:
     title: "Get Ready to Teach"
     description: "Whether you want information on training, resources during training, or a space to connect with other trainees, the Teacher Training Hub is the place for all trainees."
     logo: true
+breadcrumbs:
+    enabled: false
 ---
 
 <%= render "shared/components/horizontal_card", 
