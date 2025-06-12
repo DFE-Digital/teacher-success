@@ -1,0 +1,1 @@
+class ParameterMissingError < StandardError; end
