@@ -27,7 +27,7 @@ class ContentController < ApplicationController
         breadcrumb crumb[:name], crumb[:path]
       end
     else
-      breadcrumb @front_matter[:title], request.path
+      breadcrumb(@front_matter[:title], request.path) if @front_matter[:title]
     end
   end
 end
