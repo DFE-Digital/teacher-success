@@ -7,7 +7,7 @@ RSpec.describe Cards::SimpleCardComponent, type: :component do
   let(:description) { "Description" }
   let(:path) { "/" }
 
-  let(:component) { 
+  let(:component) {
     described_class.new(
       title: title,
       description: description,
@@ -23,7 +23,7 @@ RSpec.describe Cards::SimpleCardComponent, type: :component do
   it { is_expected.to have_css("a.simple-card") }
   it { is_expected.to have_css("a.simple-card h2.simple-card__title", text: title) }
   it { is_expected.to have_css("a.simple-card p", text: description) }
-  
+
   context "when the heading_tag is overridden" do
     let(:custom_heading_tag) { "h4" }
 

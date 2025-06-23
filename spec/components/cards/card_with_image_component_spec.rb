@@ -9,7 +9,7 @@ RSpec.describe Cards::CardWithImageComponent, type: :component do
   let(:button_text) { "Click me" }
   let(:button_href) { "/" }
 
-  let(:component) { 
+  let(:component) {
     described_class.new(
       title: title,
       description: description,
@@ -26,7 +26,7 @@ RSpec.describe Cards::CardWithImageComponent, type: :component do
   it { is_expected.to have_css(".card-with-image") }
   it { is_expected.to have_css(".card-with-image .content h2", text: title) }
   it { is_expected.to have_css(".card-with-image .content p", text: description) }
-  
+
   context "when the heading_tag is overridden" do
     let(:custom_heading_tag) { "h4" }
 
@@ -46,7 +46,7 @@ RSpec.describe Cards::CardWithImageComponent, type: :component do
   context "with an image" do
     let(:image) { "fake-image.png" }
 
-    let(:component) { 
+    let(:component) {
       described_class.new(
         title: title,
         description: description,
