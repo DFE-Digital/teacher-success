@@ -8,7 +8,7 @@ navigation:
     order: 1
 page_header:
     title: "Get Ready to Teach"
-    description: "Whether you want information on training, resources during training, or a space to connect with other trainees, the Teacher Training Hub is the place for all trainees."
+    description: Hi 👋 find out what to expect on your teacher training and which resources you can use for support.
     logo: true
 breadcrumbs:
     enabled: false

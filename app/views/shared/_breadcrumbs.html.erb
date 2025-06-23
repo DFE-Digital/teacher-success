@@ -1,7 +1,7 @@
 <% unless @front_matter.dig(:breadcrumbs, :enabled) == false %>
   <section class="container breadcrumbs tab-after-nav-menu" tabindex="-1">
     <nav class="govuk-breadcrumbs" aria-label="breadcrumbs" role="navigation">
-      <ol class="govuk-breadcrumbs__list">
+      <ol class="govuk-breadcrumbs__list govuk-body-s">
         <% breadcrumb_trail do |crumb| %>
           <li class="govuk-breadcrumbs__list-item">
             <% if crumb.current? %>
