@@ -3,13 +3,59 @@
 require "rails_helper"
 
 RSpec.describe Cards::CardWithImageComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:title) { "Title" }
+  let(:description) { "Description" }
+  let(:image) { "image.png" }
+  let(:button_text) { "Click me" }
+  let(:button_href) { "/" }
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+  let(:component) { 
+    described_class.new(
+      title: title,
+      description: description,
+      button_text: button_text,
+      button_href: button_href,
+    )
+  }
+
+  subject do
+    render_inline(component)
+    page
+  end
+
+  it { is_expected.to have_css(".card-with-image") }
+  it { is_expected.to have_css(".card-with-image .content h2", text: title) }
+  it { is_expected.to have_css(".card-with-image .content p", text: description) }
+  
+  context "when the heading_tag is overridden" do
+    let(:custom_heading_tag) { "h4" }
+
+    let(:component) do
+      described_class.new(
+        title: title,
+        description: description,
+        button_text: button_text,
+        button_href: button_href,
+        heading_tag: custom_heading_tag
+      )
+    end
+
+    it { is_expected.to have_css(".card-with-image .content #{custom_heading_tag}", text: title) }
+  end
+
+  context "with an image" do
+    let(:image) { "fake-image.png" }
+
+    let(:component) { 
+      described_class.new(
+        title: title,
+        description: description,
+        button_text: button_text,
+        button_href: button_href,
+        image: image
+      )
+    }
+
+    it { is_expected.to have_css("img[src*='assets/fake-image']") }
+  end
 end

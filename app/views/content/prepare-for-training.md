@@ -17,7 +17,7 @@ page_header:
     ) %>
     <%= render Cards::SimpleCardComponent.new(
         title: "Prepare for your first school placement", 
-        description: "Find out how you can prepare for your first school placement, from accessing the school to your professional conduct.",
+        description: 'Find out how you can prepare for your <a href="#">first school placementi</a>, from accessing the school to your professional conduct.',
         path: root_path
     ) %>
     <%= render Cards::SimpleCardComponent.new(
