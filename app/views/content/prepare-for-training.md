@@ -10,7 +10,7 @@ page_header:
 ---
 
 <%= content_tag :div, class: "dfe-grid-container" do %>
-<%= render "shared/components/card", { title: "Home", text: "/" } %>
+<%= render Cards::SimpleCardComponent.new(title: "Home", text: "/") %>
 <%= render "shared/components/card", { title: "About", text: "/about" } %>
 <%= render "shared/components/card", { title: "Nested", text: "/nested/page" } %>
 <% end %>

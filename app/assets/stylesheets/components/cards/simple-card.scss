@@ -1,6 +1,6 @@
 @use "govuk-frontend/dist/govuk" as govuk;
 
-.card { 
+.simple-card, .card { 
   @include govuk.govuk-responsive-padding(6, "all");
 
   background-color: govuk.govuk-colour("light-grey");

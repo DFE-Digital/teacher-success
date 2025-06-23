@@ -4,8 +4,6 @@ class ContentController < ApplicationController
   layout :set_layout
 
   def show
-    @content = view_context.render(inline: @content)
-    @content = GovukMarkdown.render(@content)
   end
 
   private
