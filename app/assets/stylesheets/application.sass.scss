@@ -12,11 +12,9 @@
 @use "side-nav";
 @use "layout";
 
-// Components
-@use "components/horizontal-card";
-
 // View Components
 @use "components/cards/simple-card";
+@use "components/cards/card-with-image";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class Cards::SimpleCardComponent < ViewComponent::Base
-  def initialize(title:, text:)
+  def initialize(title:, description:, path:)
     @title = title
-    @text = text
+    @description = description
+    @path = path
   end
 end

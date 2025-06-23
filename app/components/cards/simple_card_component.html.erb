@@ -1,5 +1,4 @@
-<div class="simple-card">
-  <h2 class="govuk-header-s"><%= @title %></h2>
-
-  <p><%= @text %></p>
-</div>
+<%= link_to @path, class: "simple-card" do %>
+  <h2 class="simple-card__title"><%= @title %></h2>
+  <p><%= @description %></p>
+<% end %>
