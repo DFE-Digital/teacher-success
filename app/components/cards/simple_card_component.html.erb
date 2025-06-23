@@ -1,4 +1,6 @@
 <%= link_to @path, class: "simple-card" do %>
-  <h2 class="simple-card__title"><%= @title %></h2>
+  <%= content_tag(@heading_tag, class: "simple-card__title") do %>
+    <%= @title %>
+  <% end %>
   <p><%= @description %></p>
 <% end %>
