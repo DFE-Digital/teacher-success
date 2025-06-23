@@ -7,20 +7,20 @@ class CandidatesApiClient
     @headers = { "Authorization" => "Bearer #{ENV["CANDIDATE_API_ACCESS_TOKEN"]}" }
   end
 
-  def candidates(query: {updated_since: Date.current - 1.year})
+  def candidates(query: { page: 1, per_page: 500, updated_since: Date.current - 1.year })
     response = self.class.get("/candidates", query: query, headers: @headers)
-    # data = handle_response(response)
-    #
-    # CandidatesCollection.new(data)
+    response = handle_response(response)
+
+    CandidatesCollection.new(response.parsed_response["data"])
   end
 
   private
 
   def handle_response(response)
-    if response.success?
-      response.parsed_response["data"]
-    else
-      raise StandardError, response.parsed_response
-    end
+    return response if response.success?
+
+    raise(ParameterMissingError, response.parsed_response) if response.body.match?(/ParameterMissing/)
+    raise(PageParameterInvalidError, response.parsed_response) if response.body.match?(/PageParameterInvalid/)
+    raise(StandardError, response.parsed_response)
   end
 end

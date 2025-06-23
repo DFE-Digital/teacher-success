@@ -11,6 +11,7 @@
     - [Page Header](#page-header)
     - [Variables](#variables)
     - [Side Navigation](#side-navigation)
+    - [Breadcrumbs](#breadcrumbs)
  3. [Creating a new page](#creating-a-new-page)
  4. [Variables](#variables)
  5. [Rails Partials](#rails-partials)
@@ -113,6 +114,18 @@ side_navigation:
           href: "#"
         - title: Learn about PGCE expectation and best practice
           href: "#"
+```
+
+### Breadcrumbs
+
+Breadcrumbs are enabled by default. You can optionally disable or override them.
+
+```
+breadcrumbs:
+    enabled: false
+    crumbs:
+        - name: Home
+        - path: "/"
 ```
 
 
