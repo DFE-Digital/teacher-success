@@ -1,6 +1,6 @@
 @use "govuk-frontend/dist/govuk" as govuk;
 
-.horizontal-card { 
+.card-with-image { 
   display: flex;
   flex-direction: column-reverse;
   background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);

@@ -1,0 +1,13 @@
+<div class="card-with-image">
+  <div class="content">
+    <%= content_tag(@heading_tag, class: "govuk-heading-lg") do %>
+      <%= @title %>
+    <% end %>
+    <p><%= @description %></p>
+    <%= govuk_button_link_to(@button_text, @button_href) %>
+  </div>
+
+  <% if @image %>
+    <%= image_tag @image %>
+  <% end %>
+</div>

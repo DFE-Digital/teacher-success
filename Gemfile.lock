@@ -405,6 +405,7 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
+  view_component
   web-console
   webmock
 

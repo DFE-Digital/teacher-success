@@ -6,12 +6,13 @@
  2. [How pages work](#how-pages-work)
  3. [Navigation](#navigation)
  4. [Audience Generator](#audience-generator)
+ 5. [View Component](#view-component)
 
 ## Overview
 
 Teacher Success aims to be a hub to help people through their teacher training journey. We provide guidance with the aim of improving teacher retention.
 
-The site is fairly simple. We write content in markdown, and parse that into HTML to render as pages (see `ContentController`). This makes it easy for non-technical people to write and edit content for the site.
+The site is fairly simple. We write content in markdown, and parse that into HTML to render as pages (see `ContentController` and `markdown_helper.rb`). This makes it easy for non-technical people to write and edit content for the site.
 
 To facilitate extra options and features, designers can use front matter at the top of each markdown page to set important attributes like page titles, layouts and if the page should appear in the navigation.
 
@@ -76,3 +77,7 @@ AudienceGenerator.new.export
 ```
 
 This will export an `audience.csv` to the root of the project. Run this locally from `rails c -e production` to use the production credentials.
+
+## View Component
+
+We use View Component to create responsive and reusable components that content designers can drop into the page.

@@ -1,0 +1,28 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
+.simple-card { 
+  text-decoration: none;
+  color: govuk.govuk-colour("black");
+  background-color: govuk.govuk-colour("light-grey");
+  border-right: 4px solid govuk.$govuk-border-colour;
+  border-bottom: 4px solid govuk.$govuk-border-colour;
+
+  @include govuk.govuk-responsive-padding(6, "all");
+
+  &:hover {
+    border-right: 4px solid govuk.govuk-colour("blue");
+    border-bottom: 4px solid govuk.govuk-colour("blue");
+  }
+
+  &:active, &:focus {
+    background-color: govuk.govuk-colour("yellow");
+    border-right: 4px solid govuk.govuk-colour("black");
+    border-bottom: 4px solid govuk.govuk-colour("black");
+  }
+
+  .simple-card__title {
+    text-decoration: underline;
+
+    @include govuk.govuk-font-size($size: 24);
+  }
+}
