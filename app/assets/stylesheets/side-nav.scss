@@ -12,6 +12,10 @@
       border-left: 4px solid govuk.govuk-colour("mid-grey");
       @include govuk.govuk-responsive-margin(2, "bottom");
 
+      &:hover {
+        background-color: govuk.govuk-colour("light-grey");
+      }
+
       a {
         text-decoration: none;
         display: block;
