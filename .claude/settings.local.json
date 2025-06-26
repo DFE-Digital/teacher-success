@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(az keyvault list:*)",
+      "Bash(az storage account list:*)",
+      "Bash(az monitor log-analytics workspace list:*)",
+      "Bash(az group show:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": []
+  }
+}
