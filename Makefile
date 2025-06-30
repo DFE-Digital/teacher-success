@@ -144,6 +144,7 @@ maintenance-fail-over: get-cluster-credentials
 	$(eval export CONFIG)
 	./maintenance_page/scripts/failover.sh
 
+
 enable-maintenance: maintenance-image-push maintenance-fail-over
 
 disable-maintenance: get-cluster-credentials
