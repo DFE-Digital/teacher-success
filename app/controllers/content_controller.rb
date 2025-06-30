@@ -22,10 +22,10 @@ class ContentController < ApplicationController
   def set_breadcrumbs
     if @front_matter.dig(:breadcrumbs, :crumbs)
       @front_matter.dig(:breadcrumbs, :crumbs).map do |crumb|
-        breadcrumb crumb[:name], crumb[:path]
+        breadcrumb crumb[:name], crumb[:path], match: :exact
       end
     else
-      breadcrumb(@front_matter[:title], request.path) if @front_matter[:title]
+      breadcrumb(@front_matter[:title], request.path, match: :exact) if @front_matter[:title]
     end
   end
 end
