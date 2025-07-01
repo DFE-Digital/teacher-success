@@ -1,0 +1,30 @@
+documentation:
+- changed-files:
+  - any-glob-to-any-file: 
+      - docs/**
+
+dependencies:
+- changed-files:
+  - any-glob-to-any-file: 
+    - Gemfile.lock
+    - yarn.lock
+
+javascript:
+- changed-files:
+  - any-glob-to-any-file: 
+    - app/javascript/**
+
+github_actions:
+- changed-files:
+  - any-glob-to-any-file: 
+    - .github/**
+
+ruby:
+- changed-files:
+  - any-glob-to-any-file: 
+    - '**/*.rb'
+
+deploy:
+- changed-files:
+  - any-glob-to-any-file: 
+    - '**'
