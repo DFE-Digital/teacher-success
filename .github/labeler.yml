@@ -23,3 +23,8 @@ ruby:
 - changed-files:
   - any-glob-to-any-file: 
     - '**/*.rb'
+
+deploy:
+- changed-files:
+  - any-glob-to-any-file: 
+    - '**'

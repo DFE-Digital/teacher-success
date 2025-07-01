@@ -1,4 +1,4 @@
-name: Label PRs
+name: Labeler
 
 on:
   pull_request:
@@ -15,12 +15,3 @@ jobs:
       - uses: actions/labeler@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-
-  deploy-label:
-    if: github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/labeler@v5
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          labels: deploy
