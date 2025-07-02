@@ -4,6 +4,9 @@ page_header:
     title: "Get Ready to Teach"
     description: Hi 👋 find out what to expect on your teacher training and which resources you can use for support.
     logo: true
+breadcrumbs:
+    enabled: false
+
 ---
 
 <%= render Cards::CardWithImageComponent.new( 
