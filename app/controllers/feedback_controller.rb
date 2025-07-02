@@ -9,7 +9,7 @@ class FeedbackController < ApplicationController
 
   def index
     @feedback = Feedback.all
-    @front_matter = { page_header: { title: "Feedback" }}
+    @front_matter = { page_header: { title: "Feedback" } }
     breadcrumb "Feedback", feedback_path
   end
 
@@ -22,14 +22,14 @@ class FeedbackController < ApplicationController
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.save
-      flash = { 
+      flash = {
         title: "Success",
         heading: "Feedback submitted",
         description: "Your feedback will be used to improve this service."
       }
 
       redirect_to new_feedback_path, flash: { success: flash }
-    else 
+    else
       render :new, status: :unprocessable_entity
     end
   end
@@ -41,6 +41,6 @@ class FeedbackController < ApplicationController
   end
 
   def set_frontmatter
-    @front_matter = { page_header: { title: "Give feedback" }}
+    @front_matter = { page_header: { title: "Give feedback" } }
   end
 end

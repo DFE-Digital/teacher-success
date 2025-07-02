@@ -9,7 +9,7 @@ class Feedback < ApplicationRecord
 
   enum :topic, { site: 0, page: 1 }
 
-  validates :rating, presence: { message: "Select a rating from the list" } 
+  validates :rating, presence: { message: "Select a rating from the list" }
   validates :rating, inclusion: { in: self.ratings.keys, message: "Select a rating from the list" }
   validates :topic, presence: { message: "Select the area of the website relating to your feedback" }
 end
