@@ -21,8 +21,13 @@ default: &default
 
 
 development:
-  <<: *default
-  database: teacher_success_development
+  primary: &primary_development
+    <<: *default
+    database: teacher_success_development
+  queue:
+    <<: *primary_development
+    database: teacher_success_development_queue
+    migrations_paths: db/queue_migrate
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -55,8 +60,13 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: teacher_success_test
+  primary: &primary_test
+    <<: *default
+    database: teacher_success_test
+  queue:
+    <<: *primary_test
+    database: teacher_success_test_queue
+    migrations_paths: db/queue_migrate
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
