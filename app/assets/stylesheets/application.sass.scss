@@ -12,6 +12,10 @@
 @use "side-nav";
 @use "layout";
 
+// Datatables
+@use "datatables.net-dt/css/dataTables.dataTables.min.css";
+@use "datatables.net-select-dt/css/select.dataTables.min.css";
+
 // View Components
 @use "components/cards/simple-card";
 @use "components/cards/card-with-image";

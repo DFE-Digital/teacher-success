@@ -1,0 +1,27 @@
+<%= render "shared/flash" %>
+
+<%= form_with model: @feedback, url: feedback_path do |form| %>
+  <%= form.govuk_error_summary %>
+
+  <%= form.govuk_collection_radio_buttons :rating, formatted_enum(:ratings), :last, :first, legend: { 
+    text: "How satisfied are you with using Get ready to teach?" 
+  } %>
+
+  <%= form.govuk_collection_radio_buttons :topic, formatted_enum(:topics), :last, :first, legend: { 
+    text: "Which area of the website is your feedback for?"
+  } %>
+
+  <%= form.govuk_text_area :description, 
+    label: { text: "What feedback would you like to give?", class: "govuk-fieldset__legend govuk-fieldset__legend--m"}, 
+    hint: { text: "Do not include any information that could identify you personally (such as your name or the name of your provider)." }, 
+    rows: 9 
+  %>
+
+  <%= form.govuk_text_field :email, 
+    label: { text: 'Email', class: "govuk-fieldset__legend govuk-fieldset__legend--m" }, 
+    hint: { text: 'You can find it on your birth certificate' } 
+  %>
+
+  <%= form.govuk_submit "Submit feedback" %>
+<% end %>
+

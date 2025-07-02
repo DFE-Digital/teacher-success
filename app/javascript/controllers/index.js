@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import CookiesController from "./cookies_controller"
 application.register("cookies", CookiesController)
+
+import DatatablesController from "./datatables_controller"
+application.register("datatables", DatatablesController)

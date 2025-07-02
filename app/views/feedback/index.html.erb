@@ -1,0 +1,17 @@
+<table id="feedback" data-controller="datatables">
+  <thead>
+    <tr>
+      <th>Rating</th>
+      <th>Topic</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feedback.each do |feedback| %>
+      <tr>
+        <td><%= feedback.rating.humanize %></td>
+        <td><%= feedback.topic.humanize %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
