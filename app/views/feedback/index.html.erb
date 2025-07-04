@@ -1,0 +1,37 @@
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col"></th>
+      <th class="govuk-table__header" scope="col">Rating</th>
+      <th class="govuk-table__header" scope="col">Topic</th>
+      <th class="govuk-table__header" scope="col">Can contact?</th>
+      <th class="govuk-table__header" scope="col">Email</th>
+      <th class="govuk-table__header" scope="col">Created at</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <% @feedback.each do |feedback| %>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <% if feedback.description.present? %>
+            <a class="govuk-link" onclick="<%= dom_id(feedback) %>.showModal()">Description</a>
+          <% end %>
+        </td>
+        <td class="govuk-table__cell"><%= rating_tag(feedback) %></td>
+        <td class="govuk-table__cell"><%= feedback.topic.humanize %></td>
+        <td class="govuk-table__cell"><%= humanized_boolean(feedback.can_contact?) %></td>
+        <td class="govuk-table__cell"><%= feedback.email %></td>
+        <td class="govuk-table__cell"><%= feedback.created_at.to_formatted_s(:short) %></td>
+      </tr>
+
+      <%= render "shared/modal", object: feedback do %>
+        <h3><%= feedback.created_at.to_formatted_s(:short) %></h3>
+        <div class="govuk-!-margin-bottom-2"><%= rating_tag(feedback) %></div>
+        <p><%= feedback.description %></p>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= govuk_pagination(pagy: @pagy) %>

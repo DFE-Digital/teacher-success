@@ -1,0 +1,9 @@
+<dialog id="<%= dom_id(object) %>">
+  <%= yield %>
+
+  <form method="dialog">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Close
+    </button>
+  </form>
+</dialog>
