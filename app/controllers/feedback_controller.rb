@@ -8,7 +8,7 @@ class FeedbackController < ApplicationController
   )
 
   def index
-    @feedback = Feedback.all
+    @pagy, @feedback = pagy(Feedback.order(created_at: :desc))
     @front_matter = { page_header: { title: "Feedback" } }
     breadcrumb "Feedback", feedback_path
   end
@@ -36,11 +36,11 @@ class FeedbackController < ApplicationController
 
   private
 
-  def feedback_params
-    params.require(:feedback).permit(:rating, :topic, :description, :email)
-  end
-
   def set_frontmatter
     @front_matter = { page_header: { title: "Give feedback" } }
+  end
+
+  def feedback_params
+    params.require(:feedback).permit(:rating, :topic, :description, :email, :can_contact)
   end
 end

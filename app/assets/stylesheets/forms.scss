@@ -1,0 +1,16 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
+.govuk-radios__hint:has(> .hidden-subfield) {
+  padding-left: 1em;
+}
+
+.govuk-radios__input:checked ~ .govuk-hint .hidden-subfield {
+  display: block
+}
+
+.hidden-subfield {
+  display: none;
+  margin: 1em 0;
+  border-left: 6px solid govuk.govuk-colour("light-grey");
+  padding-left: 1.75em;
+}

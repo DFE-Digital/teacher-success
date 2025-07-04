@@ -7,9 +7,22 @@
     text: "How satisfied are you with using Get ready to teach?" 
   } %>
 
-  <%= form.govuk_collection_radio_buttons :topic, formatted_enum(:topics), :last, :first, legend: { 
-    text: "Which area of the website is your feedback for?"
-  } %>
+  <%= form.govuk_collection_radio_buttons :topic, 
+    formatted_enum(:topics),
+    :last,
+    :first,
+    ->(option) {
+      if option.first == "Page" 
+        content_tag(:div, class: "hidden-subfield") do
+          form.govuk_text_field(
+            :url,
+            label: { text: "Enter the URL or the name of the page" }
+          )
+        end
+      end
+    }, 
+    legend: { text: "Which area of the website is your feedback for?" }
+  %>
 
   <%= form.govuk_text_area :description, 
     label: { text: "What feedback would you like to give?", class: "govuk-fieldset__legend govuk-fieldset__legend--m"}, 
@@ -17,9 +30,22 @@
     rows: 9 
   %>
 
-  <%= form.govuk_text_field :email, 
-    label: { text: 'Email', class: "govuk-fieldset__legend govuk-fieldset__legend--m" }, 
-    hint: { text: 'You can find it on your birth certificate' } 
+  <%= form.govuk_collection_radio_buttons :can_contact, 
+    ["Yes", "No"], 
+    :first,
+    ->(option) { option },
+    ->(option) {
+      if option == "Yes"
+        content_tag(:div, class: "hidden-subfield") do
+          form.govuk_text_field(
+            :email,
+            label: { text: "What is your email address?" },
+            hint: { text: "We'll only use this to tell you about opportunities to take part in user research that helps us improve Department for Education services." }
+          )
+        end
+      end
+    }, 
+    legend: { text: "Would you be interested in participating in future user research?" } 
   %>
 
   <%= form.govuk_submit "Submit feedback" %>
