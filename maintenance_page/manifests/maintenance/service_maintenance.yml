@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: teach-maintenance
+spec:
+  selector:
+    app: teach-maintenance
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
