@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     http_basic_authenticate_with(
       name: ENV["BASIC_AUTH_USERNAME"],
       password: ENV["BASIC_AUTH_PASSWORD"],
-    ) unless (Rails.env.development? || Rails.env.test?)
+    ) unless Rails.env.development? || Rails.env.test?
 
   before_action :add_home_breadcrumb
 
