@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   default_form_builder(GOVUKDesignSystemFormBuilder::FormBuilder)
 
   before_action :add_home_breadcrumb
-  before_action :basic_auth, unless: -> { Rails.env.development? || Rails.env.test? } 
+  before_action :basic_auth, unless: -> { Rails.env.development? || Rails.env.test? }
 
   def add_home_breadcrumb
     return if request.path == root_path
