@@ -82,5 +82,17 @@ locals {
 
 variable "enable_logit" { default = true }
 
+variable "worker_memory_max" {
+  type        = string
+  default     = "1Gi"
+  description = "Maximum memory allocation for Solid Queue worker pods"
+}
+
+variable "worker_replicas" {
+  type        = number
+  default     = 1
+  description = "Number of Solid Queue worker replicas"
+}
+
 
 
