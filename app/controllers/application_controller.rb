@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   default_form_builder(GOVUKDesignSystemFormBuilder::FormBuilder)
 
-    http_basic_authenticate_with(
-      name: ENV["BASIC_AUTH_USERNAME"],
-      password: ENV["BASIC_AUTH_PASSWORD"],
-    ) unless Rails.env.development? || Rails.env.test?
+  http_basic_authenticate_with(
+    name: ENV["BASIC_AUTH_USERNAME"],
+    password: ENV["BASIC_AUTH_PASSWORD"],
+  ) unless Rails.env.development? || Rails.env.test?
 
   before_action :add_home_breadcrumb
 
