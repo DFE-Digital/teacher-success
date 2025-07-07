@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: teach-production.teacherservices.cloud
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: teach-production.teacherservices.cloud
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: teach-production
+                port:
+                  number: 80

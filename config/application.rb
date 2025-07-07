@@ -40,7 +40,7 @@ module TeacherSuccess
     config.solid_queue.connects_to = { database: { writing: :queue } }
     config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
     config.mission_control.jobs.http_basic_auth_enabled = false
-    config.mission_control.jobs.base_controller_class = "Admin::MissionControlController"
+    config.mission_control.jobs.base_controller_class = "MissionControlController"
 
     config.action_view.annotate_rendered_view_with_filenames = false
 
