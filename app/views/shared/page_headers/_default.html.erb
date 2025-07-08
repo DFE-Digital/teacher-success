@@ -1,0 +1,23 @@
+<div class="page-header">
+  <div class="govuk-width-container">
+    <%= govuk_phase_banner(tag: { text: "BETA" }) do %>This is a new service, your
+      <%= govuk_link_to("feedback", "#") %>
+      will help us improve it.
+    <% end %>
+
+    <%= render "shared/breadcrumbs" %>
+
+    <div class="content-container">
+      <div class="content">
+        <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
+        <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
+      </div>
+
+      <% if @front_matter.dig(:page_header, :logo) %>
+        <div class="image">
+          <%= image_tag "teacherlogo.svg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

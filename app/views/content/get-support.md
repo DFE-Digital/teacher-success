@@ -5,7 +5,9 @@ navigation:
     path: "/get-support"
     order: 3
 page_header:
+    partial: "shared/page_headers/image_header"
     title: "Get support"
+    image: ""
 ---
 
 <%= content_tag :div, class: "dfe-grid-container" do %>

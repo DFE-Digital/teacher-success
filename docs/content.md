@@ -38,6 +38,7 @@ navigation:
     path: "/"
     order: 1
 page_header:
+    partial "shared/page_headers/with_image"
     title: "Home Page Header"
     description: "Some description goes here"
 variables:
@@ -82,6 +83,15 @@ Optional. If present, this will render a light blue header at the top of the pag
 
 ```
 page_header:
+    title: "Teacher Training Hub"
+    description: "Whether you want information on training, resources during training, or a space to connect with other trainees, the Teacher Training Hub is the place for all trainees."
+```
+
+To render a specific header for the page, you can override this with the path of the partial to load. Keep page header partials in `shared/page_headers` to keep things tidy. This gives you a lot of flexibility to render Components or use extra information like image paths.
+
+```
+page_header:
+    partial: "shared/page_headers/with_image"
     title: "Teacher Training Hub"
     description: "Whether you want information on training, resources during training, or a space to connect with other trainees, the Teacher Training Hub is the place for all trainees."
 ```
