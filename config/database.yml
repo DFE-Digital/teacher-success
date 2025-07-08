@@ -90,6 +90,15 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+review:
+  primary: &primary_review
+    <<: *default
+    database: teacher_success_review
+  queue:
+    <<: *primary_review
+    database: teacher_success_review_queue
+    migrations_paths: db/queue_migrate
+
 production:
   primary: &primary_production
     <<: *default
