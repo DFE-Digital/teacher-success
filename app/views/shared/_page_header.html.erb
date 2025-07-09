@@ -1,0 +1,3 @@
+<% if @front_matter && @front_matter.has_key?(:page_header) %>
+  <%= render @front_matter.dig(:page_header, :partial).presence || "shared/page_headers/default" %>
+<% end %>

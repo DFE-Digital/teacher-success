@@ -94,7 +94,12 @@ page_header:
     partial: "shared/page_headers/with_image"
     title: "Teacher Training Hub"
     description: "Whether you want information on training, resources during training, or a space to connect with other trainees, the Teacher Training Hub is the place for all trainees."
+    image:
+        path: "content/teacher.png"
+        alt: "An image of a teacher teaching a classroom of children"
 ```
+
+For the `with_image` header, you can use `image` with `path` and `alt` to set the image within the header.
 
 ### Variables
 

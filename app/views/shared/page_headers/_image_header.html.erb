@@ -6,20 +6,14 @@
     <% end %>
 
     <%= render "shared/breadcrumbs" %>
-    
-    WITH AN IMAGE
+  </div>
+</div>
+<div class="image-header__container">
+  <div class="image-header">
+    <h1 class="govuk-heading-xl heading--yellow"><%= @front_matter.dig(:page_header, :title) %></h1>
 
-    <div class="content-container">
-      <div class="content">
-        <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
-        <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
-      </div>
-
-      <% if @front_matter.dig(:page_header, :logo) %>
-        <div class="image">
-          <%= image_tag "teacherlogo.svg" %>
-        </div>
-      <% end %>
-    </div>
+    <% if @front_matter.dig(:page_header, :image) %>
+      <%= image_tag @front_matter.dig(:page_header, :image, :path), alt: @front_matter.dig(:page_header, :image, :alt) %>
+    <% end %>
   </div>
 </div>
