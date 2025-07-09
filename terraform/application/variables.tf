@@ -86,6 +86,26 @@ variable "replicas" {
   description = "Number of replicas for the application deployment"
 }
 
+variable "postgres_flexible_server_sku" {
+  type        = string
+  default     = "B_Standard_B1ms"
+  description = "SKU for the PostgreSQL flexible server. Use 'GP_Standard_D2ds_v4' for production"
+}
+
+variable "azure_maintenance_window" {
+  type = object({
+    day_of_week  = number
+    start_hour   = number
+    start_minute = number
+  })
+  default = {
+    day_of_week  = 0
+    start_hour   = 1
+    start_minute = 0
+  }
+  description = "Maintenance window for PostgreSQL. Day 0 = Sunday, 1 = Monday, etc."
+}
+
 locals {
   postgres_ssl_mode = var.enable_postgres_ssl ? "require" : "disable"
 
