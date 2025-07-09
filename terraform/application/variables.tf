@@ -80,6 +80,12 @@ variable "send_traffic_to_maintenance_page" {
   description = "During a maintenance operation, keep sending traffic to the maintenance page instead of resetting the ingress"
 }
 
+variable "replicas" {
+  type        = number
+  default     = 1
+  description = "Number of replicas for the application deployment"
+}
+
 locals {
   postgres_ssl_mode = var.enable_postgres_ssl ? "require" : "disable"
 
