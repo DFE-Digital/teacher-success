@@ -25,6 +25,7 @@ provider "azurerm" {
   skip_provider_registration = true
 }
 
+
 provider "kubernetes" {
   host                   = module.cluster_data.kubernetes_host
   cluster_ca_certificate = module.cluster_data.kubernetes_cluster_ca_certificate
