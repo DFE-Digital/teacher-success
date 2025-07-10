@@ -5,12 +5,14 @@
 );
 
 @use "dfe-frontend/packages/dfefrontend" as dfe;
+@use "colours";
 @use "utilities";
 @use "header";
 @use "page-header";
 @use "feedback";
 @use "side-nav";
 @use "layout";
+@use "typography";
 
 // View Components
 @use "components/cards/simple-card";
