@@ -1,0 +1,15 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+@use "colours";
+
+@mixin box-heading($backgroundColor, $color) {
+  background-color: $backgroundColor;
+  color: $color;
+  display: inline-block;
+  padding: .6rem 1rem;
+  box-sizing: border-box;
+  max-width: calc(100% - 1.25rem);
+}
+
+.heading--yellow {
+  @include box-heading(colours.$git-yellow, govuk.govuk-colour("black"));
+}

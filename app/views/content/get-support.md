@@ -5,7 +5,11 @@ navigation:
     path: "/get-support"
     order: 3
 page_header:
+    partial: "shared/page_headers/image_header"
     title: "Get support"
+    image:
+        path: "content/teacher.png"
+        alt: "Image of a teacher teaching a classroom of children"
 ---
 
 <%= content_tag :div, class: "dfe-grid-container" do %>

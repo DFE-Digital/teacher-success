@@ -5,8 +5,12 @@ navigation:
     path: "/prepare-for-training"
     order: 1
 page_header:
+    partial: "shared/page_headers/image_header"
     title: "Prepare for training"
     description: "Find out what to expect as part of your teacher training, including preparing for placement, what to expect from your mentor and advice from former trainees."
+    image:
+        path: "content/teacher.png"
+        alt: "Image of a teacher teaching a classroom of children"
 ---
 
 <%= content_tag :div, class: "dfe-grid-container" do %>
