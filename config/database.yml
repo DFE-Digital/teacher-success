@@ -39,7 +39,7 @@ staging:
     <<: *default
     database: teacher_success_staging
   queue:
-    <<: *primary_review
+    <<: *primary_staging
     database: teacher_success_staging_queue
     migrations_paths: db/queue_migrate
 
