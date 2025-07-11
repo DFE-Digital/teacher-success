@@ -45,6 +45,11 @@ variable "enable_postgres_backup_storage" {
   default     = false
   description = "Create a storage account to store database dumps"
 }
+variable "enable_postgres_high_availability" {
+  type        = bool
+  default     = false
+  description = "Enable high availability for PostgreSQL (doubles cost)"
+}
 variable "docker_image" {
   type        = string
   description = "Docker image full name to identify it in the registry. Includes docker registry, repository and tag e.g.: ghcr.io/dfe-digital/teacher-pay-calculator:673f6309fd0c907014f44d6732496ecd92a2bcd0"
