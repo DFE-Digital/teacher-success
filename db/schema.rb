@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[8.0].define(version: 0) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_catalog.plpgsql"
-
+  unless Rails.env.production?
+    enable_extension "pg_catalog.plpgsql"
+  end
 end
