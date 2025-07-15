@@ -3,7 +3,6 @@
 .card-with-image { 
   display: flex;
   flex-direction: column-reverse;
-  background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
   gap: 1rem;
 
   @include govuk.govuk-media-query($from: desktop) {
@@ -12,5 +11,13 @@
 
   .content {
     @include govuk.govuk-responsive-padding(6, "all");
+  }
+
+  &--light-blue {
+    background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+  }
+
+  &--light-grey {
+    background-color: govuk.govuk-colour("light-grey");
   }
 }

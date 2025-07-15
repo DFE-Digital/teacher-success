@@ -1,0 +1,23 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <%= render Cards::CardWithImageComponent.new(
+      title: "Your first placement",
+      description: "Find out how you can prepare for your first school placement, from accessing the school to your professional conduct.",
+      button_text: "Prepare for your placement",
+      button_href: "/",
+      heading_tag: "h3",
+      background_color: "light-grey"
+    ) %>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <%= render Cards::CardWithImageComponent.new(
+      title: "Your school-based mentor",
+      description: "Find out what to expect from your teacher training mentor, how they’ll assess you and where else you can get support.",
+      button_text: "What to expect from your mentor",
+      button_href: "/",
+      heading_tag: "h3",
+      background_color: "light-grey"
+    ) %>
+  </div>
+</div>
+
