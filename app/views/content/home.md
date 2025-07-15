@@ -17,10 +17,6 @@ breadcrumbs:
     image: "content/teacher2.png"
 ) %>
 
-<div class="govuk-!-margin-top-7">
-    <h2>Your next steps to feeling placement ready</h2>
-</div>
-
-<%= render "content/home/cards" %>
+<%= render "content/home/next_steps" %>
 <%= render "content/home/quick_links" %>
 
