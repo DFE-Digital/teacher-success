@@ -98,11 +98,7 @@ variable "azure_maintenance_window" {
     start_hour   = number
     start_minute = number
   })
-  default = {
-    day_of_week  = 0
-    start_hour   = 1
-    start_minute = 0
-  }
+  default = null
   description = "Maintenance window for PostgreSQL. Day 0 = Sunday, 1 = Monday, etc."
 }
 
