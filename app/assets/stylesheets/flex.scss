@@ -1,5 +1,12 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
 .flex {
   display: flex;
+  flex-direction: column;
+
+  @include govuk.govuk-media-query($from: tablet) {
+    flex-direction: row;
+  }
 }
 
 .justify-between {
