@@ -33,8 +33,14 @@ module TeacherSuccess
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "London"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.active_job.queue_adapter = :solid_queue
+    config.solid_queue.connects_to = { database: { writing: :primary } }
+    config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
+    config.mission_control.jobs.http_basic_auth_enabled = false
+    config.mission_control.jobs.base_controller_class = "MissionControlController"
 
     config.action_view.annotate_rendered_view_with_filenames = false
 

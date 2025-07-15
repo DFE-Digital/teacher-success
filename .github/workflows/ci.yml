@@ -64,9 +64,13 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          POSTGRES_HOST: localhost
         ports:
           - 5432:5432
         options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    env:
+      RAILS_ENV: test
 
     steps:
       - name: Install packages
@@ -96,17 +100,10 @@ jobs:
         run: yarn run build
 
       - name: Setup database schema
-        env:
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432
-        run: bin/rails db:create db:migrate
+        run: bin/rails db:test:prepare
 
       - name: Run tests
-        env:
-          RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432
-        run: |
-          bin/rails db:test:prepare
-          bundle exec rspec
+        run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
