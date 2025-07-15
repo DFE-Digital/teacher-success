@@ -7,11 +7,11 @@ RSpec.describe FeedbackHelper, type: :helper do
         results = formatted_enum(:ratings)
 
         expect(results).to eq([
-          ["Very satisfied", "very_satisfied"],
-          ["Satisfied", "satisfied"], 
-          ["Neither satisfied or dissatisfied", "neither_satisfied_or_dissatisfied"], 
-          ["Dissatisfied", "dissatisfied"], 
-          ["Very dissatisfied", "very_dissatisfied"]
+          [ "Very satisfied", "very_satisfied" ],
+          [ "Satisfied", "satisfied" ],
+          [ "Neither satisfied or dissatisfied", "neither_satisfied_or_dissatisfied" ],
+          [ "Dissatisfied", "dissatisfied" ],
+          [ "Very dissatisfied", "very_dissatisfied" ]
         ])
       end
     end
@@ -21,8 +21,8 @@ RSpec.describe FeedbackHelper, type: :helper do
         results = formatted_enum(:topics)
 
         expect(results).to eq([
-          ["Site", "site"],
-          ["Page", "page"]
+          [ "Site", "site" ],
+          [ "Page", "page" ]
         ])
       end
     end
@@ -41,7 +41,7 @@ RSpec.describe FeedbackHelper, type: :helper do
       expect(humanized_boolean(false, "Yep", "Nope")).to eq("Nope")
     end
   end
-  
+
   describe "#rating_tag" do
     let(:feedback) do
       double("Feedback",
@@ -99,4 +99,3 @@ RSpec.describe FeedbackHelper, type: :helper do
     end
   end
 end
-

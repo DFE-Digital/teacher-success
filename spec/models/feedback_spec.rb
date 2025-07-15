@@ -62,7 +62,7 @@ RSpec.describe Feedback, type: :model do
         expect { feedback }.to raise_error(ArgumentError)
       end
     end
- 
+
     context "when topic is 'page'" do
       let(:topic)  { "page" }
       let(:url) { "https://example.com/page" }
@@ -92,7 +92,7 @@ RSpec.describe Feedback, type: :model do
         end
       end
     end
-    
+
     context "when topic is 'site'" do
       let(:feedback) { build(:feedback, topic: "site") }
 
