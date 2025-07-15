@@ -4,52 +4,30 @@ default: &default
   username: <%= ENV.fetch("POSTGRES_USERNAME") { "postgres" } %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD") { "postgres" } %>
   host: <%= ENV.fetch("POSTGRES_HOST") { "localhost" } %>
-  port: 5432
+  port: <%= ENV.fetch("POSTGRES_PORT") { 5432 } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  primary: &primary_development
+  primary:
     <<: *default
     database: teacher_success_development
-  queue:
-    <<: *primary_development
-    database: teacher_success_development_queue
-    migrations_paths: db/queue_migrate
 
 test:
-  primary: &primary_test
+  primary:
     <<: *default
     database: teacher_success_test
-  queue:
-    <<: *primary_test
-    database: teacher_success_test_queue
-    migrations_paths: db/queue_migrate
 
 review:
-  primary: &primary_review
+  primary:
     <<: *default
-    database: teacher_success_review
-  queue:
-    <<: *primary_review
-    database: teacher_success_review_queue
-    migrations_paths: db/queue_migrate
+    url: <%= ENV["DATABASE_URL"] %>
 
 staging:
-  primary: &primary_staging
+  primary:
     <<: *default
-    database: teacher_success_staging
-  queue:
-    <<: *primary_staging
-    database: teacher_success_staging_queue
-    migrations_paths: db/queue_migrate
+    url: <%= ENV["DATABASE_URL"] %>
 
 production:
-  primary: &primary_production
+  primary:
     <<: *default
-    database: teacher_success_production
-    username: teacher_success
-    password: <%= ENV["teacher_success_DATABASE_PASSWORD"] %>
-  queue:
-    <<: *primary_production
-    database: teacher_success_production_queue
-    migrations_paths: db/queue_migrate
+    url: <%= ENV["DATABASE_URL"] %>

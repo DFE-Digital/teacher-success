@@ -37,7 +37,7 @@ module TeacherSuccess
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.active_job.queue_adapter = :solid_queue
-    config.solid_queue.connects_to = { database: { writing: :queue } }
+    config.solid_queue.connects_to = { database: { writing: :primary } }
     config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
     config.mission_control.jobs.http_basic_auth_enabled = false
     config.mission_control.jobs.base_controller_class = "MissionControlController"
