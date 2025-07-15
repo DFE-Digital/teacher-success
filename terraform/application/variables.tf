@@ -45,6 +45,11 @@ variable "enable_postgres_backup_storage" {
   default     = false
   description = "Create a storage account to store database dumps"
 }
+variable "enable_postgres_high_availability" {
+  type        = bool
+  default     = false
+  description = "Enable high availability for PostgreSQL (doubles cost)"
+}
 variable "docker_image" {
   type        = string
   description = "Docker image full name to identify it in the registry. Includes docker registry, repository and tag e.g.: ghcr.io/dfe-digital/teacher-pay-calculator:673f6309fd0c907014f44d6732496ecd92a2bcd0"
@@ -73,6 +78,28 @@ variable "send_traffic_to_maintenance_page" {
   type        = bool
   default     = false
   description = "During a maintenance operation, keep sending traffic to the maintenance page instead of resetting the ingress"
+}
+
+variable "replicas" {
+  type        = number
+  default     = 1
+  description = "Number of replicas for the application deployment"
+}
+
+variable "postgres_flexible_server_sku" {
+  type        = string
+  default     = "B_Standard_B1ms"
+  description = "SKU for the PostgreSQL flexible server. Use 'GP_Standard_D2ds_v4' for production"
+}
+
+variable "azure_maintenance_window" {
+  type = object({
+    day_of_week  = number
+    start_hour   = number
+    start_minute = number
+  })
+  default = null
+  description = "Maintenance window for PostgreSQL. Day 0 = Sunday, 1 = Monday, etc."
 }
 
 locals {
