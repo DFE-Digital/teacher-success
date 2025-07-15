@@ -5,7 +5,7 @@ class SlackNotifier
     @webhook_url = ENV["SLACK_WEBHOOK_URL"]
   end
 
-  def ping(text: nil, blocks: nil, username: "Notifier (#{Rails.env})", icon_emoji: ":bell:"
+  def ping(text: nil, blocks: nil, username: "Notifier (#{Rails.env})", icon_emoji: ":bell:")
     body = {
       username: username,
       icon_emoji: icon_emoji
