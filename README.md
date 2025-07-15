@@ -25,9 +25,10 @@ Ignored / Do not commit:
 
 - `.env.development.local` - use to override Development variables with sensitive information
 - `.env.test.local` - use to override Test variables with sensitive information
-- `.env.production.local` - use to override Production variables with sensitive information
 
 tl;dr - if you add a new env variable, document it in `.env`, add any safe config variables in the appropriate environment file. Use `.env.environment.local` files for sensitive information as these are ignored.
+
+In review/staging/production we use keyvault to store credentials which are automatically pulled through and set in the deployment process.
 
 ## Documentation
 

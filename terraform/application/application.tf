@@ -57,7 +57,7 @@ module "worker_application" {
 
   docker_image = var.docker_image
 
-  command       = ["bundle", "exec", "rake", "solid_queue:start"]
+  command       = ["bundle", "exec", "bin/jobs"]
   probe_command = ["pgrep", "-f", "solid-queue-worker"]
 
   replicas   = var.worker_replicas
