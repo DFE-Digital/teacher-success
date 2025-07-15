@@ -419,8 +419,8 @@ DEPENDENCIES
   httparty
   jsbundling-rails
   loaf
-  pagy
   mission_control-jobs
+  pagy
   pg
   propshaft
   puma

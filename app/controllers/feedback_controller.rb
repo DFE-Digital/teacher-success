@@ -2,8 +2,8 @@ class FeedbackController < ApplicationController
   before_action :set_frontmatter
 
   http_basic_authenticate_with(
-    name: ENV["FEEDBACK_USERNAME"],
-    password: ENV["FEEDBACK_PASSWORD"],
+    name: ENV["BASIC_AUTH_USERNAME"],
+    password: ENV["BASIC_AUTH_PASSWORD"],
     only: :index
   )
 
