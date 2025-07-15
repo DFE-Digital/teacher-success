@@ -13,3 +13,11 @@
 .heading--yellow {
   @include box-heading(colours.$git-yellow, govuk.govuk-colour("black"));
 }
+
+.heading--pink {
+  @include box-heading(govuk.govuk-colour("light-pink"), govuk.govuk-colour("black"));
+}
+
+.heading--turquoise {
+  @include box-heading(govuk.govuk-colour("turquoise"), govuk.govuk-colour("black"));
+}

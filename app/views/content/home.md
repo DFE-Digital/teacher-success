@@ -10,9 +10,13 @@ breadcrumbs:
 ---
 
 <%= render Cards::CardWithImageComponent.new( 
-    title: "Tips to prepare for your training year",
-    description: "Find out what happens and when during your training year whether you’re on a university or school led teacher training programme.",
-    button_text: "Find out more",
+    title: "How to prepare for teacher training",
+    description: "Find out how you can prepare for your teacher training, from talking to your training provider to preparing for your first placement.",
+    button_text: "Prepare for your training",
     button_href: "/",
-    image: "https://placehold.co/500x300"
+    image: "content/teacher2.png"
 ) %>
+
+<%= render "content/home/next_steps" %>
+<%= render "content/home/quick_links" %>
+
