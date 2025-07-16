@@ -4,19 +4,20 @@ export default class extends Controller {
   static targets = ["banner"]
 
   connect() {
-    // Show cookies banner if there is no accept/reject cookie
-    if (!this.getCookie("cookie_consent")) {
+    // Show cookies banner if there is no preference set for non-essential cookies
+    if (this.getCookie("teach_preferences").nonEssential === undefined) {
       this.show()
     }
   }
 
   accept() {
-    this.setCookie("cookie_consent", "accepted", 365)
+    this.setCookie("teach_preferences", JSON.stringify({ nonEssential: true }), 365)
+    this.copyAnalyticsTemplateToPage()
     this.dismiss()
   }
 
   reject() {
-    this.setCookie("cookie_consent", "rejected", 365)
+    this.setCookie("teach_preferences", JSON.stringify({ nonEssential: false }), 365)
     this.dismiss()
   }
 
@@ -34,9 +35,37 @@ export default class extends Controller {
   }
 
   getCookie(name) {
-    return document.cookie
+    const cookie = document.cookie
       .split("; ")
-      .find(row => row.startsWith(`${name}=`))
-      ?.split("=")[1]
+      .find(row => row.startsWith(name + "="))
+
+    if (!cookie) return {}; // Cookie doesn't exist
+
+    try {
+      return JSON.parse(decodeURIComponent(cookie.split("=")[1]));
+    } catch (e) {
+      return {};
+    }
+  }
+
+  copyAnalyticsTemplateToPage() {
+    // Copy the template contents to a new <script> tag in the head so that analytics are executed 
+    const template = document.getElementById("ga-template")
+
+    template.content.childNodes.forEach(node => {
+      if (node.nodeName === "SCRIPT") {
+        const script = document.createElement("script");
+
+        Array.from(node.attributes).forEach(attr => {
+          script.setAttribute(attr.name, attr.value);
+        });
+
+        script.textContent = node.textContent;
+
+        document.head.appendChild(script);
+      } else {
+        document.head.appendChild(node.cloneNode(true));
+      }
+    });
   }
 }

@@ -1,0 +1,89 @@
+require "rails_helper"
+
+RSpec.describe "Cookie Consent Banner", type: :system do
+  let(:cookie_name) { "teach_preferences" }
+
+  before do
+    driven_by(:selenium_chrome_headless)
+  end
+
+  def set_cookie(name:, value:)
+    Capybara.current_session.driver.browser.manage.add_cookie(
+      name: name,
+      value: CGI.escape(value.to_json)
+    )
+  end
+
+  def get_cookie(name:)
+    cookie = Capybara.current_session.driver.browser.manage.all_cookies.find { |c| c[:name] == name }
+
+    JSON.parse(cookie[:value])
+  rescue
+    nil
+  end
+
+  describe "visiting the homepage" do
+    context "when no cookie is set" do
+      it "shows the cookie banner" do
+        visit root_path
+        expect(page).to have_selector(".govuk-cookie-banner")
+      end
+    end
+
+    context "when cookie is set with nonEssential: true" do
+      before do
+        visit root_path
+        set_cookie(name: cookie_name, value: { nonEssential: true })
+      end
+
+      it "does not show the cookie banner" do
+        visit root_path
+        expect(page).not_to have_selector(".govuk-cookie-banner")
+      end
+    end
+  end
+
+  describe "accepting cookies" do
+    before { visit root_path }
+
+    it "sets the nonEssential value to true" do
+      click_link "Accept additional cookies"
+      non_essential_preference = get_cookie(name: cookie_name).dig("nonEssential")
+
+      expect(non_essential_preference).to be true
+    end
+
+    it "hides the cookie banner" do
+      click_link "Accept additional cookies"
+      expect(page).not_to have_selector(".govuk-cookie-banner")
+    end
+
+    it "hides the banner on subsequent page loads" do
+      click_link "Accept additional cookies"
+      visit root_path
+      expect(page).not_to have_selector(".govuk-cookie-banner")
+    end
+  end
+
+  describe "rejecting cookies" do
+    before { visit root_path }
+
+    it "sets the nonEssential value to false" do
+      click_link "Reject additional cookies"
+      non_essential_preference = get_cookie(name: cookie_name).dig("nonEssential")
+
+      expect(non_essential_preference).to be false
+    end
+
+    it "hides the cookie banner" do
+      click_link "Reject additional cookies"
+      expect(page).not_to have_selector(".govuk-cookie-banner")
+    end
+
+    it "hides the banner on subsequent page loads" do
+      click_link "Reject additional cookies"
+      visit root_path
+      expect(page).not_to have_selector(".govuk-cookie-banner")
+    end
+  end
+end
