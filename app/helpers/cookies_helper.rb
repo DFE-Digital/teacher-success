@@ -4,7 +4,7 @@ module CookiesHelper
   end
 
   def teach_preferences_cookie
-    JSON.parse(cookies["teach_preferences"] || "{}")
+    JSON.parse(cookies[CookiePreferencesController::PREFERENCES_COOKIE_NAME] || "{}")
   end
 
   alias_method :non_essential_cookies_accepted?, :non_essential_cookies_preference
