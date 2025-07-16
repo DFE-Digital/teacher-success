@@ -1,1 +1,9 @@
-<%= @preferences.inspect %>
+<p>Cookies are files saved on your phone, tablet or computer when you visit a website. We use Cookies to store information about how you use the website, such as the pages you visit.</p>
+
+<%= form_with url: cookie_preferences_path, method: :patch do |form| %>
+  <%= form.govuk_collection_radio_buttons :non_essential, [["Yes", "true"], ["No", "false"]], :last, :first, legend: { 
+    text: "Non essential" 
+  } %>
+
+  <%= form.govuk_submit "Update cookie preferences" %>
+<% end %>
