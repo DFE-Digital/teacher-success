@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
 
     breadcrumb "Home", :root_path
   end
+
+  def teach_preferences_cookie
+    JSON.parse(cookies["teach_preferences"] || "{}")
+  end
 end
