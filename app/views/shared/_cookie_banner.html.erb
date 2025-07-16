@@ -1,4 +1,4 @@
-<% unless non_essential_cookies_preference.present? %>
+<% if non_essential_cookies_preference.nil? %>
   <%= govuk_cookie_banner html_attributes: { data: { controller: "ookies", cookies_target: "banner" }, class: "idden" } do |cb| %>
     <% cb.with_message(heading_text: "Cookies on this service") do |m| %>
       <% m.with_action do %>

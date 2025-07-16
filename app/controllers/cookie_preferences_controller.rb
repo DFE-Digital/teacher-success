@@ -6,8 +6,8 @@ class CookiePreferencesController < ApplicationController
   end
 
   def update
-    set_preferences({ 
-      non_essential: ActiveRecord::Type::Boolean.new.deserialize(params[:non_essential]) 
+    set_preferences({
+      non_essential: ActiveRecord::Type::Boolean.new.deserialize(params[:non_essential])
     })
 
     flash = {
