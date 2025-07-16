@@ -42,6 +42,7 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
 
+  config.include FactoryBot::Syntax::Methods
   config.include ViewComponent::TestHelpers, type: :component
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

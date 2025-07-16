@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  # Feedback
+  get  "feedback",      to: "feedback#index",  as: "feedback"
+  get  "feedback/new",  to: "feedback#new",    as: "new_feedback"
+  post "feedback",      to: "feedback#create"
+
+  # Sitemap
   get "/sitemap", to: "sitemap#index"
 
   mount MissionControl::Jobs::Engine, at: "/jobs"
 
+  # Errors
   scope via: :all do
     get "/404", to: "errors#not_found"
     get "/422", to: "errors#unprocessable_entity"
@@ -21,5 +28,6 @@ Rails.application.routes.draw do
   # Keep this last to route any other paths to the show controller and render 404s if not found
   get "/*slug", to: "content#show"
 
+  # Root to home page
   root to: "content#show", defaults: { slug: "home" }
 end

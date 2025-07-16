@@ -19,8 +19,10 @@ gem "httparty"
 gem "dotenv"
 gem "view_component"
 gem "loaf"
+gem "pagy"
 gem "solid_queue"
 gem "mission_control-jobs"
+gem "validate_url"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -29,6 +31,7 @@ group :development, :test do
   gem "rspec"
   gem "rspec-rails"
   gem "bundler-audit"
+  gem "factory_bot_rails"
 end
 
 group :development do
