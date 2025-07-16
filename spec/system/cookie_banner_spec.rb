@@ -33,7 +33,7 @@ RSpec.describe "Cookie Consent Banner", type: :system do
     context "when cookie is set with nonEssential: true" do
       before do
         visit root_path
-        set_cookie(name: cookie_name, value: { nonEssential: true })
+        set_cookie(name: cookie_name, value: { non_essential: true })
       end
 
       it "does not show the cookie banner" do
@@ -47,19 +47,19 @@ RSpec.describe "Cookie Consent Banner", type: :system do
     before { visit root_path }
 
     it "sets the nonEssential value to true" do
-      click_link "Accept additional cookies"
-      non_essential_preference = get_cookie(name: cookie_name).dig("nonEssential")
+      click_button "Accept additional cookies"
+      non_essential_preference = get_cookie(name: cookie_name).dig("non_essential")
 
       expect(non_essential_preference).to be true
     end
 
     it "hides the cookie banner" do
-      click_link "Accept additional cookies"
+      click_button "Accept additional cookies"
       expect(page).not_to have_selector(".govuk-cookie-banner")
     end
 
     it "hides the banner on subsequent page loads" do
-      click_link "Accept additional cookies"
+      click_button "Accept additional cookies"
       visit root_path
       expect(page).not_to have_selector(".govuk-cookie-banner")
     end
@@ -69,19 +69,19 @@ RSpec.describe "Cookie Consent Banner", type: :system do
     before { visit root_path }
 
     it "sets the nonEssential value to false" do
-      click_link "Reject additional cookies"
-      non_essential_preference = get_cookie(name: cookie_name).dig("nonEssential")
+      click_button "Reject additional cookies"
+      non_essential_preference = get_cookie(name: cookie_name).dig("non_essential")
 
       expect(non_essential_preference).to be false
     end
 
     it "hides the cookie banner" do
-      click_link "Reject additional cookies"
+      click_button "Reject additional cookies"
       expect(page).not_to have_selector(".govuk-cookie-banner")
     end
 
     it "hides the banner on subsequent page loads" do
-      click_link "Reject additional cookies"
+      click_button "Reject additional cookies"
       visit root_path
       expect(page).not_to have_selector(".govuk-cookie-banner")
     end

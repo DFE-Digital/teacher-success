@@ -1,23 +1,14 @@
 class CookiePreferencesController < ApplicationController
-  COOKIE_NAME = "teach_preferences".freeze
+  PREFERENCES_COOKIE_NAME = "teach_preferences".freeze
 
   def edit
-    @preferences = teach_preferences_cookie
-
-
+    @preferences = JSON.parse(cookies[PREFERENCES_COOKIE_NAME])
   end
 
   def update
-    preferences = {
-      nonEssential: params[:non_essential] == "1"
-    }
-
-    cookies[COOKIE_NAME] = {
-      value: preferences.to_json,
-      path: "/",
-      expires: 90.days.from_now,
-      httponly: false
-    }
+    set_preferences({ 
+      non_essential: ActiveRecord::Type::Boolean.new.deserialize(params[:non_essential]) 
+    })
 
     flash = {
       title: "Success",
@@ -25,7 +16,17 @@ class CookiePreferencesController < ApplicationController
       description: "Your cookie preferences have been saved."
     }
 
-    redirect_to cookie_preferences_path, flash: { success: flash }
+    redirect_to root_path, flash: { success: flash }
+  end
+
+  private
+
+  def set_preferences(preferences)
+    cookies[PREFERENCES_COOKIE_NAME] = {
+      value: preferences.to_json,
+      path: "/",
+      expires: 90.days.from_now,
+      httponly: false
+    }
   end
 end
-
