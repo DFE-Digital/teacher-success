@@ -3,13 +3,15 @@ class CookiePreferencesController < ApplicationController
 
   def edit
     @front_matter = { page_header: { title: "Cookie preferences" } }
-    @preferences = JSON.parse(cookies[PREFERENCES_COOKIE_NAME])
+    @preferences = CookiePreferences.new(cookie: cookies[PREFERENCES_COOKIE_NAME])
     breadcrumb "Cookies preferences", edit_cookie_preferences_path
   end
 
   def update
+    non_essential_preference = params.dig("cookie_preferences", "non_essential")
+
     set_preferences({
-      non_essential: ActiveRecord::Type::Boolean.new.deserialize(params[:non_essential])
+      non_essential: ActiveRecord::Type::Boolean.new.deserialize(non_essential_preference)
     })
 
     flash = {
@@ -18,7 +20,7 @@ class CookiePreferencesController < ApplicationController
       description: "Your cookie preferences have been saved."
     }
 
-    redirect_to root_path, flash: { success: flash }
+    redirect_to edit_cookie_preferences_path, flash: { success: flash }
   end
 
   private

@@ -2,11 +2,11 @@
   <%= govuk_cookie_banner html_attributes: { data: { controller: "ookies", cookies_target: "banner" }, class: "idden" } do |cb| %>
     <% cb.with_message(heading_text: "Cookies on this service") do |m| %>
       <% m.with_action do %>
-        <%= govuk_button_to "Accept additional cookies", cookie_preferences_path(non_essential: true), method: :patch %>
+        <%= govuk_button_to "Accept additional cookies", cookie_preferences_path(cookie_preferences: { non_essential: true }), method: :patch %>
       <% end %>
 
       <% m.with_action do %>
-        <%= govuk_button_to "Reject additional cookies", cookie_preferences_path(non_essential: false), method: :patch %>
+        <%= govuk_button_to "Reject additional cookies", cookie_preferences_path(cookie_preferences: { non_essential: false }), method: :patch %>
       <% end %>
 
       <% m.with_action do %>

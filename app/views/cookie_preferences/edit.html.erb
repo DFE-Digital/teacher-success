@@ -1,9 +1,40 @@
+<%= render "shared/flash" %>
+
 <p>Cookies are files saved on your phone, tablet or computer when you visit a website. We use Cookies to store information about how you use the website, such as the pages you visit.</p>
 
-<%= form_with url: cookie_preferences_path, method: :patch do |form| %>
-  <%= form.govuk_collection_radio_buttons :non_essential, [["Yes", "true"], ["No", "false"]], :last, :first, legend: { 
-    text: "Non essential" 
+ We use 3 types of Cookie. You can choose which Cookies you're happy for us to use.
+Cookies that measure website use - Tracking and Performance
+
+We use Cookies to measure how you use the website so we can improve it based on user needs. These Cookies store anonymised information about:
+
+    how you got to the service
+    the pages you visit on GOV.UK and government digital services, and how long you spend on each page
+    what you click on while you're visiting the service
+
+We may also use hashed data about you to deliver tailored messages on third party platforms. Cookies may be set by other third party services to do things like measure how you view YouTube videos that are on the service.
+
+If you have an account with other services provided by the Department for Education, the information collected using analytics Cookies will be linked to your account. This will help us make the service work better for you.
+
+<h2>Essential Cookies</h2>
+
+<p>These essential Cookies do things like:</p>
+
+<ul>
+  <li>remember your progress through a form (for example, if you sign up to receive our personalised emails)</li>
+  <li>remember the notifications you've seen so we do not show them to you again</li>
+</ul>
+
+<p>They always need to be on.</p>
+
+<%= form_with model: @preferences, url: cookie_preferences_path, method: :patch do |form| %>
+  <%= form.govuk_collection_radio_buttons :non_essential, 
+    [["Yes", "true"], ["No", "false"]], 
+    :last, 
+    :first, 
+    legend: { 
+      text: "Tracking and Performance Cookies" 
   } %>
 
   <%= form.govuk_submit "Update cookie preferences" %>
 <% end %>
+
