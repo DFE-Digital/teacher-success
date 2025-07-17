@@ -2,18 +2,7 @@
 
 <p>Cookies are files saved on your phone, tablet or computer when you visit a website. We use Cookies to store information about how you use the website, such as the pages you visit.</p>
 
- We use 3 types of Cookie. You can choose which Cookies you're happy for us to use.
-Cookies that measure website use - Tracking and Performance
-
-We use Cookies to measure how you use the website so we can improve it based on user needs. These Cookies store anonymised information about:
-
-    how you got to the service
-    the pages you visit on GOV.UK and government digital services, and how long you spend on each page
-    what you click on while you're visiting the service
-
-We may also use hashed data about you to deliver tailored messages on third party platforms. Cookies may be set by other third party services to do things like measure how you view YouTube videos that are on the service.
-
-If you have an account with other services provided by the Department for Education, the information collected using analytics Cookies will be linked to your account. This will help us make the service work better for you.
+<p>You can choose which Cookies you're happy for us to use.</p>
 
 <h2>Essential Cookies</h2>
 
@@ -26,13 +15,27 @@ If you have an account with other services provided by the Department for Educat
 
 <p>They always need to be on.</p>
 
+<h2>Tracking and performance cookies</h2>
+
+<p>We use Cookies to measure how you use the website so we can improve it based on user needs. These Cookies store anonymised information about:</p>
+
+<ul>
+  <li>how you got to the service</li>
+  <li>the pages you visit on GOV.UK and government digital services, and how long you spend on each page</li>
+  <li>what you click on while you're visiting the service</li>
+</ul>
+
+<p>We may also use hashed data about you to deliver tailored messages on third party platforms. Cookies may be set by other third party services to do things like measure how you view YouTube videos that are on the service.</p>
+
+<p>If you have an account with other services provided by the Department for Education, the information collected using analytics Cookies will be linked to your account. This will help us make the service work better for you.</p>
+
 <%= form_with model: @preferences, url: cookie_preferences_path, method: :patch do |form| %>
   <%= form.govuk_collection_radio_buttons :non_essential, 
     [["Yes", "true"], ["No", "false"]], 
     :last, 
     :first, 
     legend: { 
-      text: "Tracking and Performance Cookies" 
+      text: "Allow tracking and performance cookies?" 
   } %>
 
   <%= form.govuk_submit "Update cookie preferences" %>
