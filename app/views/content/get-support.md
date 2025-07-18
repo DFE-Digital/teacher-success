@@ -8,8 +8,8 @@ page_header:
     partial: "shared/page_headers/image_header"
     title: "Get support"
     image:
-        path: "content/teacher.png"
-        alt: "Image of a teacher teaching a classroom of children"
+        path: "content/supportbanner.png"
+        alt: "A group of people seated indoors, attentively facing a presenter standing in front of a whiteboard."
 ---
 
 <%= content_tag :div, class: "dfe-grid-container" do %>
