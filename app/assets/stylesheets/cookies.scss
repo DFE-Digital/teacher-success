@@ -1,0 +1,7 @@
+// Fixes misalignment when using buttons and links in the govuk-cookies-banner
+
+.govuk-cookie-banner {
+  .govuk-button-group {
+    align-items: center;
+  }
+}

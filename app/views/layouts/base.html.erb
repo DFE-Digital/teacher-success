@@ -18,10 +18,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-    <%= render "shared/analytics" %>
+    <%= render "shared/analytics/ga_head" %>
   </head>
 
   <body class="govuk-template__body">
+    <%= render "shared/analytics/ga_body" %>
     <script>
       document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
     </script>

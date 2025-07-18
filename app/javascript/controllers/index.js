@@ -3,6 +3,3 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
-
-import CookiesController from "./cookies_controller"
-application.register("cookies", CookiesController)
