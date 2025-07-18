@@ -14,7 +14,7 @@ class CookiePreferencesController < ApplicationController
       non_essential: ActiveRecord::Type::Boolean.new.deserialize(non_essential_preference)
     })
 
-    if URI(request.referer || "").path == edit_cookie_preferences_path 
+    if URI(request.referer || "").path == edit_cookie_preferences_path
       # Only set a flash if we're updating from the cookie_preferences/edit page
       # If we're coming from the home page, dismissing the banner is enough
       flash[:success] = {
