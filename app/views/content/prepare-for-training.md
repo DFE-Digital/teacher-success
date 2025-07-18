@@ -10,7 +10,7 @@ page_header:
     description: "Find out what to expect as part of your teacher training, including preparing for placement, what to expect from your mentor and advice from former trainees."
     image:
         path: "content/teacher.png"
-        alt: "Image of a teacher teaching a classroom of children"
+        alt: "Teacher engaging with enthusiastic secondary school students raising their hands in a classroom decorated with reading materials."
 ---
 
 <%= content_tag :div, class: "dfe-grid-container" do %>
