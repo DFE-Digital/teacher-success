@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # Feedback
-  get  "feedback",      to: "feedback#index",  as: "feedback"
-  get  "feedback/new",  to: "feedback#new",    as: "new_feedback"
+  get  "feedback",      to: "feedback#index", as: "feedback"
+  get  "feedback/new",  to: "feedback#new",   as: "new_feedback"
   post "feedback",      to: "feedback#create"
+  get  "page_feedback", to: "page_feedback#index"
+  post "page_feedback", to: "page_feedback#create"
 
   # Sitemap
   get "/sitemap", to: "sitemap#index"

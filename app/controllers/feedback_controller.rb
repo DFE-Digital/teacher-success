@@ -15,11 +15,19 @@ class FeedbackController < ApplicationController
 
   def new
     @feedback = Feedback.new
+
+    if params[:url].present?
+      # Pre-fill form if we're referring with a url
+      @feedback.topic = "page"
+      @feedback.url = params[:url].to_s
+    end
+
     breadcrumb "Feedback", new_feedback_path
   end
 
   def create
     @feedback = Feedback.new(feedback_params)
+    @feedback.url = request.full_path
 
     if @feedback.save
       flash = {
