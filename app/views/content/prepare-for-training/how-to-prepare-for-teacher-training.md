@@ -29,7 +29,9 @@ breadcrumbs:
 ## Get classroom experience
 Getting classroom experience can be a good way to help you feel more familiar with the school environment before you start your placement. Many providers recommend it.
 
-You could arrange a few days in person with a school near you or explore life in the classroom virtually on TeachQuest.
+You could arrange a few days in person with a school near you or <%= govuk_link_to "explore life in the classroom virtually on TeachQuest", "https://playcanv.as/b/ca743be9", target: "_blank" %>.
+
+You can also try the <%= govuk_link_to "realistic job preview tool", "https://platform.teachersuccess.co.uk/p/XK4rV0xN16/41xZQ10Z2l?id=c74fef2451c5af60c516075028d313d55321e06d2d53232082e329e292611d5b", target: "_blank" %> where you can respond to realistic video scenarios to understand what life in the classroom is like.
 
 You do not have to have classroom experience before you start training, but it could help you feel better prepared.
 
@@ -48,7 +50,14 @@ You may also be entitled to extra support if you:
 
 <%= govuk_button_link_to "Find out how to fund your training", "https://getintoteaching.education.gov.uk/funding-and-support", target: "_blank" %>
 
-## Talk to your provider about any reasonable adjustments
+## Talk to your training provider
+Your training provider may have already been in touch and started your induction. Do not worry if not – many providers will wait until September.
+
+You might want to think about any questions you have about your training to ask during your induction. For example, key milestones and assessments throughout the year and what support might be available.
+
+<%= govuk_button_link_to "What to expect from your teacher training provider", "#" %>
+
+## Discuss any reasonable adjustments
 Teacher training providers can make adjustments if you need support to become a teacher. This includes support for:
 
 - neurodiversity
@@ -60,11 +69,8 @@ It’s best to talk to your provider about this as soon as possible to make sure
 
 <%= govuk_button_link_to "Explore adjustments to help you train to teach", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/accessibility-adjustments", target: "_blank" %>
 
-## Talk to your training provider
-Your training provider may have already been in touch and started your induction. Do not worry if not – many providers will wait until September.
-
-You might want to think about any questions you have about your training to ask during your induction. For example, key milestones and assessments throughout the year and what support might be available.
-
-<%= govuk_button_link_to "What to expect from your teacher training provider", "#" %>
-
 ## Read advice from former trainees
+
+Prepare for your training by reading the advice of former trainee teachers from the 2024/25 academic year.
+
+<%= govuk_button_link_to "Read advice from former trainees", "https://teacher-success-0ac1045ca3fd.herokuapp.com/prepare/prepare_advice", target: "_blank" %>
