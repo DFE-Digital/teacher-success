@@ -23,7 +23,7 @@ breadcrumbs:
         - name: "Prepare for training"
           path: "/prepare-for-training"
         - name: "What to expect from your teacher training provider"
-          path: "/prepare-for-training/what-to-ask-your-teacher-training-provider"
+          path: "/prepare-for-training/what-to-expect-from-your-teacher-training-provider"
 ---
 
 Your training provider will help you develop your teaching theory ready for you to put into practice in your placements.
