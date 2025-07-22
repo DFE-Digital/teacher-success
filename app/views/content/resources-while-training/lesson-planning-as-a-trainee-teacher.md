@@ -10,9 +10,9 @@ side_navigation:
         - title: Lesson planning as a trainee teacher 
           href: "#"
         - title: Behaviour management 
-          href: "#"
+          href: "/resources-while-training/behaviour-management"
         - title: Meeting the teachers' standards 
-          href: "#"
+          href: "/resources-while-training/meeting-the-teachers-standards"
 breadcrumbs: 
     enable: true
     crumbs: 

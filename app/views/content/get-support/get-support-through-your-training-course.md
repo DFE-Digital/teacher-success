@@ -10,7 +10,7 @@ side_navigation:
         - title: Get support through your training course 
           href: "#"
         - title: Get support outside your training
-          href: "#"
+          href: "/get-support/get-support-outside-your-training"
 breadcrumbs: 
     enable: true
     crumbs: 

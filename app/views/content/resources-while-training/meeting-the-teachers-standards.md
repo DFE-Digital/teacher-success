@@ -7,12 +7,12 @@ page_header:
 side_navigation:
     title: Resources while training
     steps:
-        - title: Lesson planning as a trainee teacher 
-          href: "#"
-        - title: Behaviour management 
-          href: "#"
         - title: Meeting the teachers' standards 
           href: "#"
+        - title: Lesson planning as a trainee teacher 
+          href: "/resources-while-training/lesson-planning-as-a-trainee-teacher"
+        - title: Behaviour management 
+          href: "/resources-while-training/behaviour-management"
 breadcrumbs: 
     enable: true
     crumbs: 
