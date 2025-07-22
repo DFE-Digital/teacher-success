@@ -20,7 +20,7 @@ page_header:
         path: "/prepare-for-training/how-to-prepare-for-teacher-training"
     ) %>
     <%= render Cards::SimpleCardComponent.new(
-        title: "Prepare for your first school placement", 
+        title: "How to prepare for your first school placement", 
         description: 'Find out how you can prepare for your first school placement, from accessing the school to your professional conduct.',
         path: "/prepare-for-training/prepare-for-your-first-school-placement"
     ) %>
@@ -36,12 +36,12 @@ page_header:
     ) %>
     <%= render Cards::SimpleCardComponent.new(
         title: "Timeline of your training", 
-        description: "Find out what happens and when on initial teacher training (ITT) whether you’re training with a university or doing school centred initial teacher training (SCITT).",
+        description: "Find out what happens and when on initial teacher training (ITT), whether you’re training with a university or doing school centred initial teacher training (SCITT).",
         path: "/prepare-for-training/timeline-of-your-training"
     ) %>
     <%= render Cards::SimpleCardComponent.new(
-        title: "Advice from past trainees", 
-        description: "Hear from past trainees and their advice for teacher training",
+        title: "Advice from former trainees", 
+        description: "Hear from former trainees and their advice for teacher training.",
         path: root_path
     ) %>
 <% end %>
