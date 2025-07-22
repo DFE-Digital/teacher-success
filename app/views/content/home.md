@@ -11,7 +11,7 @@ breadcrumbs:
 
 <%= render Cards::CardWithImageComponent.new( 
     title: "How to prepare for teacher training",
-    description: "Find out how you can prepare for your teacher training, from talking to your training provider to preparing for your first placement.",
+    description: "Find out how you can prepare for your teacher training, from what to expect from your training provider to preparing for your first placement.",
     button_text: "Prepare for your training",
     button_href: "/",
     image: "content/teacher2.png"
