@@ -20,7 +20,7 @@ page_header:
     ) %>
     <%= render Cards::SimpleCardComponent.new(
         title: "Get support outside your training", 
-        description: "Find out what support you'll get as part of your teacher training course.",
+        description: "Find out what extra support you can get beyond your teacher training course.",
         path: "get-support/get-support-outside-your-training"
     ) %>
     <%= render Cards::SimpleCardComponent.new(

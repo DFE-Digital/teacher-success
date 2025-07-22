@@ -3,7 +3,7 @@ title: "Get support through your training course"
 layout: "article"
 page_header:
     title: "Get support through your training course"
-    description: "Find out what the teachers’ standards are that you’ll need to meet to achieve qualified teacher status and how you might be asked to evidence them."
+    description: "Find out what support you'll get as part of your teacher training course."
 side_navigation:
     title: Get support
     steps:
