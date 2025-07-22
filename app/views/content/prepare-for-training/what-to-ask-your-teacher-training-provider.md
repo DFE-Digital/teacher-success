@@ -3,7 +3,7 @@ title: "What to expect from your teacher training provider"
 layout: "article"
 page_header:
     title: "What to expect from your teacher training provider"
-    description: "Find out what you might want to ask your training provider to help you prepare for your teacher training, from assessment dates to access to technology."
+    description: "Find out what information you can expect to get from your training provider when you start your training, from assessment dates to available support."
 side_navigation:
     title: Prepare for training
     steps:
