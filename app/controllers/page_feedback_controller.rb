@@ -34,4 +34,3 @@ class PageFeedbackController < ApplicationController
     params.require(:page_feedback).permit(:useful, :feedback)
   end
 end
-
