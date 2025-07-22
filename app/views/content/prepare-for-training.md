@@ -16,7 +16,7 @@ page_header:
 <%= content_tag :div, class: "dfe-grid-container" do %>
     <%= render Cards::SimpleCardComponent.new(
         title: "How to prepare for teacher training", 
-        description: "Find out how you can prepare for your teacher training, from considering any reasonable adjustments you might need to finding out about funding.",
+        description: "Find out how you can prepare for your teacher training, from finding out about funding to reading advice from former trainees.",
         path: "/prepare-for-training/how-to-prepare-for-teacher-training"
     ) %>
     <%= render Cards::SimpleCardComponent.new(

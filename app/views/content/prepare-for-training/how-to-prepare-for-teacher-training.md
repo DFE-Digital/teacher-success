@@ -3,7 +3,7 @@ title: "How to prepare for teacher training"
 layout: "article"
 page_header:
     title: "How to prepare for teacher training"
-    description: "Find out how you can prepare for your teacher training, from considering any reasonable adjustments you might need to finding out about funding."
+    description: "Find out how you can prepare for your teacher training, from finding out about funding to reading advice from former trainees."
 side_navigation:
     title: Prepare for training
     steps:
