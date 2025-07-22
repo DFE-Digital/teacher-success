@@ -23,7 +23,7 @@ breadcrumbs:
         - name: "Prepare for training"
           path: "/prepare-for-training"
         - name: "What to expect from your school-based mentor"
-          path: "/prepare-for-training/what-to-expect-from-your-teacher-training-mentor"
+          path: "/prepare-for-training/what-to-expect-from-your-school-based-mentor"
 ---
 
 You’ll have a mentor in each of your placement schools. They should be an experienced teacher in your school.
