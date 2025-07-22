@@ -27,7 +27,7 @@ class FeedbackController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.url = request.full_path
+    @feedback.url = request.fullpath
 
     if @feedback.save
       flash = {
