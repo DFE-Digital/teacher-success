@@ -31,7 +31,7 @@ page_header:
     ) %>
     <%= render Cards::SimpleCardComponent.new(
         title: "What to expect from your teacher training mentor", 
-        description: "Find out what to expect from your teacher training mentor, how they’ll assess you and where else you can get support.",
+        description: "Find out what to expect from your school-based mentor, how they’ll assess you and where else you can get support.",
         path: "/prepare-for-training/what-to-expect-from-your-teacher-training-mentor"
     ) %>
     <%= render Cards::SimpleCardComponent.new(

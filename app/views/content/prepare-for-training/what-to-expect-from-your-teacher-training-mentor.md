@@ -3,7 +3,7 @@ title: "What to expect from your teacher training mentor"
 layout: "article"
 page_header:
     title: "What to expect from your teacher training mentor"
-    description: "Find out what to expect from your teacher training mentor, how they’ll assess you and where else you can get support."
+    description: "Find out what to expect from your school-based mentor, how they’ll assess you and where else you can get support."
 side_navigation:
     title: Prepare for training
     steps:
