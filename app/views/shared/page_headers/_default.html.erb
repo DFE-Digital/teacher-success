@@ -9,8 +9,8 @@
 
     <div class="content-container">
       <div class="content">
-        <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
-        <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><%= @front_matter.dig(:page_header, :title) %></h1>
+        <p class="govuk-body-l govuk-!-margin-bottom-2"><%= @front_matter.dig(:page_header, :description) %></p>
       </div>
 
       <% if @front_matter.dig(:page_header, :logo) %>
