@@ -81,5 +81,5 @@ Before you start your training, you could <%= govuk_link_to "read some lesson pl
 ### Oak National Academy
 If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
 
-- <%= govuk_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects", target: "_blank" %>
-- <%= govuk_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects", target: "_blank" %>
+- <%= govuk_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects" %>
+- <%= govuk_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects" %>

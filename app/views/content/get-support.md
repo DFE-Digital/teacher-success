@@ -26,8 +26,7 @@ page_header:
     <%= render Cards::SimpleCardComponent.new(
         title: "Funding information from Get Into Teaching", 
         description: "Find out what financial support you can get beyond your teacher training course.",
-        path: "https://getintoteaching.education.gov.uk/funding-and-support",
-        target: "_blank"
+        path: "https://getintoteaching.education.gov.uk/funding-and-support"
     ) %>
 <% end %>
 
