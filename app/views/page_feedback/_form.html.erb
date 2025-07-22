@@ -11,7 +11,7 @@
       </div>
 
       <div class="govuk-button-group">
-        <%= govuk_button_link_to('Give more feedback about this page', new_feedback_path(url: request.url), inverse: true) %>
+        <%= govuk_button_link_to('Give more feedback about this page', new_feedback_path(url: request.url), inverse: true, data: { turbo: false }) %>
       </div>
     </div>
   <% end %>
