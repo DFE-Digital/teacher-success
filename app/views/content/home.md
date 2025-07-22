@@ -1,7 +1,7 @@
 ---
-title: "Get Ready to Teach"
+title: "Get ready to teach"
 page_header:
-    title: "Get Ready to Teach"
+    title: "Get ready to teach"
     description: Hi 👋 find out what to expect on your teacher training and which resources you can use for support.
     logo: true
 breadcrumbs:
