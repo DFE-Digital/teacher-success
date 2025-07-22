@@ -25,7 +25,7 @@ page_header:
         path: "/prepare-for-training/prepare-for-your-first-school-placement"
     ) %>
     <%= render Cards::SimpleCardComponent.new(
-        title: "What to ask your teacher training provider", 
+        title: "What to expect from your teacher training provider", 
         description: "Find out what you might want to ask your training provider to help you prepare for your teacher training, from assessment dates to access to technology.",
         path: "/prepare-for-training/what-to-ask-your-teacher-training-provider"
     ) %>

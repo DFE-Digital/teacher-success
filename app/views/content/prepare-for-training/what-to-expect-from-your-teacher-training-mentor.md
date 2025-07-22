@@ -11,7 +11,7 @@ side_navigation:
           href: "#"
         - title: How to prepare for teacher training
           href: "#"
-        - title: What to ask your teacher training provider
+        - title: What to expect from your teacher training provider
           href: "#"
         - title: What to expect from your teacher training mentor
           href: "#"

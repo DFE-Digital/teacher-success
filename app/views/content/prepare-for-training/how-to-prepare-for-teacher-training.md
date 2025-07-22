@@ -11,7 +11,7 @@ side_navigation:
           href: "#"
         - title: How to prepare for teacher training
           href: "#"
-        - title: What to ask your teacher training provider
+        - title: What to expect from your teacher training provider
           href: "#"
         - title: What to expect from your teacher training mentor
           href: "#"
@@ -65,6 +65,6 @@ Your training provider may have already been in touch and started your induction
 
 You might want to think about any questions you have about your training to ask during your induction. For example, key milestones and assessments throughout the year and what support might be available.
 
-<%= govuk_button_link_to "What to ask your teacher training provider", "#" %>
+<%= govuk_button_link_to "What to expect from your teacher training provider", "#" %>
 
 ## Read advice from former trainees

@@ -1,8 +1,8 @@
 ---
-title: "What to ask your teacher training provider"
+title: "What to expect from your teacher training provider"
 layout: "article"
 page_header:
-    title: "What to ask your teacher training provider"
+    title: "What to expect from your teacher training provider"
     description: "Find out what you might want to ask your training provider to help you prepare for your teacher training, from assessment dates to access to technology."
 side_navigation:
     title: Prepare for training
@@ -11,7 +11,7 @@ side_navigation:
           href: "#"
         - title: How to prepare for teacher training
           href: "#"
-        - title: What to ask your teacher training provider
+        - title: What to expect from your teacher training provider
           href: "#"
         - title: What to expect from your teacher training mentor
           href: "#"
@@ -22,7 +22,7 @@ breadcrumbs:
     crumbs: 
         - name: "Prepare for training"
           path: "/prepare-for-training"
-        - name: "What to ask your teacher training provider"
+        - name: "What to expect from your teacher training provider"
           path: "/prepare-for-training/what-to-ask-your-teacher-training-provider"
 ---
 

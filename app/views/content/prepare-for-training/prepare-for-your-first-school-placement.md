@@ -11,7 +11,7 @@ side_navigation:
           href: "#"
         - title: How to prepare for teacher training
           href: "#"
-        - title: What to ask your teacher training provider
+        - title: What to expect from your teacher training provider
           href: "#"
         - title: What to expect from your teacher training mentor
           href: "#"
@@ -100,4 +100,4 @@ Your placement school might use specific lesson planning resources that you’ll
 
 You can also <%= govuk_link_to "find alternative lesson planning resources and tips.", "#" %>
 
-As well as preparing for your first placement, you can also think about <%= govuk_link_to "what to ask your teacher training provider.", "#" %>
+As well as preparing for your first placement, you can also think about <%= govuk_link_to "what to expect from your teacher training provider.", "#" %>
