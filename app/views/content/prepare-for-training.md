@@ -30,7 +30,7 @@ page_header:
         path: "/prepare-for-training/what-to-ask-your-teacher-training-provider"
     ) %>
     <%= render Cards::SimpleCardComponent.new(
-        title: "What to expect from your teacher training mentor", 
+        title: "What to expect from your school-based mentor", 
         description: "Find out what to expect from your school-based mentor, how they’ll assess you and where else you can get support.",
         path: "/prepare-for-training/what-to-expect-from-your-teacher-training-mentor"
     ) %>

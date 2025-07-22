@@ -1,8 +1,8 @@
 ---
-title: "What to expect from your teacher training mentor"
+title: "What to expect from your school-based mentor"
 layout: "article"
 page_header:
-    title: "What to expect from your teacher training mentor"
+    title: "What to expect from your school-based mentor"
     description: "Find out what to expect from your school-based mentor, how they’ll assess you and where else you can get support."
 side_navigation:
     title: Prepare for training
@@ -13,7 +13,7 @@ side_navigation:
           href: "#"
         - title: What to expect from your teacher training provider
           href: "#"
-        - title: What to expect from your teacher training mentor
+        - title: What to expect from your school-based mentor
           href: "#"
         - title: Timeline of your training
           href: "#"
@@ -22,7 +22,7 @@ breadcrumbs:
     crumbs: 
         - name: "Prepare for training"
           path: "/prepare-for-training"
-        - name: "What to expect from your teacher training mentor"
+        - name: "What to expect from your school-based mentor"
           path: "/prepare-for-training/what-to-expect-from-your-teacher-training-mentor"
 ---
 
