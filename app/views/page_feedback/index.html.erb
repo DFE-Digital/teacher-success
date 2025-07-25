@@ -1,0 +1,32 @@
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col"></th>
+      <th class="govuk-table__header" scope="col">Useful</th>
+      <th class="govuk-table__header" scope="col">URL</th>
+      <th class="govuk-table__header" scope="col">Created at</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <% @page_feedback.each do |feedback| %>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <% if feedback.feedback.present? %>
+            <a class="govuk-link" onclick="<%= dom_id(feedback) %>.showModal()">Description</a>
+          <% end %>
+        </td>
+        <td class="govuk-table__cell"><%= humanized_boolean(feedback.useful?) %></td>
+        <td class="govuk-table__cell"><%= feedback.url %></td>
+        <td class="govuk-table__cell"><%= feedback.created_at.to_formatted_s(:short) %></td>
+      </tr>
+
+      <%= render "shared/modal", object: feedback do %>
+        <h3><%= feedback.created_at.to_formatted_s(:short) %></h3>
+        <p><%= feedback.feedback %></p>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= govuk_pagination(pagy: @pagy) %>
