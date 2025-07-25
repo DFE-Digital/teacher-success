@@ -26,7 +26,7 @@ breadcrumbs:
           path: "/prepare-for-training/what-to-ask-your-teacher-training-provider"
 ---
 
-Your training provider will help you develop your teaching knowledge and theory ready for you to put into practise in your placements.
+Your training provider will help you develop your teaching knowledge and theory ready for you to put into practice in your placements.
 
 They’ll help you gather your evidence to show you meet their initial teacher training curriculum so you can achieve qualified teacher status (QTS).
 
