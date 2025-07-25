@@ -60,7 +60,7 @@ If your mentor is not linked with your subject or phase, you might be observed b
 ### Summative assessments
 Your summative assessments are the formal way that you’ll be assessed against your provider’s initial teacher training curriculum.
 
-This will be different depending on your training provider but will include classroom observations.
+This will be different depending on your training provider, but will include classroom observations.
 
 You may also be asked to gather a portfolio of evidence. If you are, your training provider will let you know how to document this.
 
