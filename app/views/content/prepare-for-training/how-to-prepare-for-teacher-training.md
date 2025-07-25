@@ -31,7 +31,7 @@ Getting classroom experience can be a good way to help you feel more familiar wi
 
 You could arrange a few days in person with a school near you or explore life in the classroom virtually on TeachQuest.
 
-You do not have to have classroom experience before you start training, but it could help you feel better prepared.
+You don't have to have classroom experience before you start training, but it could help you feel better prepared.
 
 <%= govuk_button_link_to "Get school experience", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/get-school-experience", target: "_blank" %>
 
@@ -61,7 +61,7 @@ It’s best to talk to your provider about this as soon as possible to make sure
 <%= govuk_button_link_to "Explore adjustments to help you train to teach", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/accessibility-adjustments", target: "_blank" %>
 
 ## Talk to your training provider
-Your training provider may have already been in touch and started your induction. Do not worry if not – many providers will wait until September.
+Your training provider may have already been in touch and started your induction. Don't worry if not – many providers will wait until September.
 
 You might want to think about any questions you have about your training to ask during your induction. For example, key milestones and assessments throughout the year and what support might be available.
 

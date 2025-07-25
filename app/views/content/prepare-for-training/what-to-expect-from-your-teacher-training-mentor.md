@@ -75,7 +75,7 @@ They’ll explain how your provider requires you to gather evidence for qualifie
 ### Subject mentors and leads
 Your mentor may not always be linked with your specific subject or phase. In which case, you’ll usually have a subject mentor at your placement school who you’ll observe and work with to develop your teaching practice in your subject.
 
-They will work closely with your mentor to provide feedback on your progress.
+They'll work closely with your mentor to provide feedback on your progress.
 
 ### School staff
 Many trainees experience support from the wider school team, not just their mentors.
