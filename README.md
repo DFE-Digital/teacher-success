@@ -32,6 +32,7 @@ In review/staging/production we use keyvault to store credentials which are auto
 
 ## Documentation
 
+- [Review Guide](docs/review.md)
 - [Content Guide](docs/content.md)
 - [Developer Guide](docs/development.md)
 

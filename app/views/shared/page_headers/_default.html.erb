@@ -1,16 +1,15 @@
 <div class="page-header">
   <div class="govuk-width-container">
-    <%= govuk_phase_banner(tag: { text: "Beta" }) do %>This is a new service, your
-      <%= govuk_link_to("feedback", new_feedback_path) %>
-      will help us improve it.
+    <%= govuk_phase_banner(tag: { text: "Beta" }) do %>This is a new service. Help us improve it and 
+      <%= govuk_link_to("give your feedback by email", new_feedback_path) %>.
     <% end %>
 
     <%= render "shared/breadcrumbs" %>
 
     <div class="content-container">
       <div class="content">
-        <h1 class="govuk-heading-xl"><%= @front_matter.dig(:page_header, :title) %></h1>
-        <span class="govuk-caption-xl"><%= @front_matter.dig(:page_header, :description) %></span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><%= @front_matter.dig(:page_header, :title) %></h1>
+        <p class="govuk-body-l govuk-!-margin-bottom-2"><%= @front_matter.dig(:page_header, :description) %></p>
       </div>
 
       <% if @front_matter.dig(:page_header, :logo) %>

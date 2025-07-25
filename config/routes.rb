@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Cookie Preferences
+  resource :cookie_preferences, only: [ :edit, :update ]
+
   # Feedback
   get  "feedback",      to: "feedback#index",  as: "feedback"
   get  "feedback/new",  to: "feedback#new",    as: "new_feedback"
