@@ -7,12 +7,12 @@ page_header:
 side_navigation:
     title: Resources while training
     steps:
-        - title: Lesson planning as a trainee teacher 
-          href: "#"
-        - title: Behaviour management 
-          href: "#"
         - title: Meeting the teachers' standards 
           href: "#"
+        - title: Lesson planning as a trainee teacher 
+          href: "/resources-while-training/lesson-planning-as-a-trainee-teacher"
+        - title: Behaviour management 
+          href: "/resources-while-training/behaviour-management"
 breadcrumbs: 
     enable: true
     crumbs: 
@@ -22,7 +22,7 @@ breadcrumbs:
           path: "/resources-while-training/meeting-the-teachers-standards"
 ---
 
-At the end of your training, your provider will recommend you for qualified teacher status (QTS) if they think that you've met the <%= govuk_link_to "teachers' standards", "https://www.gov.uk/government/publications/teachers-standards", target: "_blank" %>.
+At the end of your training, you'll gain qualified teacher status (QTS) once you've met the <%= govuk_link_to "teachers' standards", "https://www.gov.uk/government/publications/teachers-standards" %>.
 
 QTS is what you need to teach in maintained primary, secondary and special schools in England (and soon, academies, too).
 
@@ -63,8 +63,9 @@ Different training providers will ask you to evidence this in different ways. Yo
 You should do this at the start of your course so you know what evidence to gather as you go.
 
 This could include:
-- lesson plans
-- observing other teachers at your school and reflecting on their practice
-- conversations with your mentor
-- classroom observations conducted by your mentor or other experienced teachers
-- reflective learning journals
+
+* lesson plans
+* observing other teachers at your school and reflecting on their practice
+* conversations with your mentor
+* classroom observations conducted by your mentor or other experienced teachers
+* reflective learning journals

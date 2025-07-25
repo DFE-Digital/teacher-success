@@ -20,14 +20,13 @@ page_header:
     ) %>
     <%= render Cards::SimpleCardComponent.new(
         title: "Get support outside your training", 
-        description: "Find out what support you'll get as part of your teacher training course.",
+        description: "Find out what extra support you can get beyond your teacher training course.",
         path: "get-support/get-support-outside-your-training"
     ) %>
     <%= render Cards::SimpleCardComponent.new(
         title: "Funding information from Get Into Teaching", 
         description: "Find out what financial support you can get beyond your teacher training course.",
-        path: "https://getintoteaching.education.gov.uk/funding-and-support",
-        target: "_blank"
+        path: "https://getintoteaching.education.gov.uk/funding-and-support"
     ) %>
 <% end %>
 
