@@ -25,6 +25,12 @@
           font-weight: bold;
         }
       }
+
+      &.active{
+        font-weight: 700;
+        background: #f3f2f1;
+      }
+
     }
   }
 }

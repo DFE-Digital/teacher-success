@@ -3,7 +3,10 @@
 
   <ul>
     <% data.dig(:steps).each do |step| %>
-      <li><%= link_to step[:title], step[:href], class: "govuk-link govuk-link--no-visited-state govuk-link--no-underline" %></li>
+      <% is_active = step[:href] == "#" %>
+      <li class="<%= 'active' if is_active %>">
+        <%= link_to step[:title], step[:href], class: "govuk-link govuk-link--no-visited-state govuk-link--no-underline" %>
+      </li>
     <% end %>
   </ul>
 </aside>
