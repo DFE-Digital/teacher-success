@@ -1,40 +1,42 @@
 ---
-title: "What to expect from your teacher training mentor"
+title: "What to expect from your school-based mentor"
 layout: "article"
 page_header:
-    title: "What to expect from your teacher training mentor"
-    description: "Find out what to expect from your teacher training mentor, how they’ll assess you and where else you can get support."
+    title: "What to expect from your school-based mentor"
+    description: "Find out what to expect from your school-based mentor, how they’ll assess you and where else you can get support."
 side_navigation:
     title: Prepare for training
     steps:
+        - title: What to expect from your school-based mentor
+          href: "#"
         - title: Prepare for your first school placement
-          href: "#"
+          href: "/prepare-for-training/prepare-for-your-first-school-placement"
         - title: How to prepare for teacher training
-          href: "#"
-        - title: What to ask your teacher training provider
-          href: "#"
-        - title: What to expect from your teacher training mentor
-          href: "#"
-        - title: Timeline of your training
+          href: "/prepare-for-training/how-to-prepare-for-teacher-training"
+        - title: What to expect from your teacher training provider
+          href: "/prepare-for-training/what-to-expect-from-your-teacher-training-provider"
+        - title: Advice from former trainees
           href: "#"
 breadcrumbs: 
     enable: true
     crumbs: 
         - name: "Prepare for training"
           path: "/prepare-for-training"
-        - name: "What to expect from your teacher training mentor"
-          path: "/prepare-for-training/what-to-expect-from-your-teacher-training-mentor"
+        - name: "What to expect from your school-based mentor"
+          path: "/prepare-for-training/what-to-expect-from-your-school-based-mentor"
 ---
 
 You’ll have a mentor in each of your placement schools. They should be an experienced teacher in your school.
 
-You should have 1.5 hours a week being mentored and they’ll be your first point of contact for anything you need during your time at the school.
+You should have 1.5 hours a week of mentoring support. Where appropriate, providers can be flexible with this, as long as all trainees receive their full mentoring entitlement across a 2 week period.
+
+They’ll be your first point of contact for anything you need during your time at the school.
 
 Your mentor should:
 
-- provide feedback to help you develop your teaching practice
-- give you opportunities to observe them or other colleagues teaching
-- support you with any issues or questions you have
+* provide feedback to help you develop your teaching practice
+* give you opportunities to observe them or other colleagues teaching
+* support you with any issues or questions you have
 
 ## Provide you with feedback
 Your mentor is responsible for making sure your teaching is observed and you're given feedback so you understand what you’re doing well along with things to work on.
@@ -42,7 +44,7 @@ Your mentor is responsible for making sure your teaching is observed and you're 
 They’ll help you set targets and understand how to improve, making sure you understand the curriculum and how to effectively put your teaching skills into practice.
 
 ## Assess your progress
-You’ll have formal and informal assessment points throughout your training – these are called formative and summative assessments.
+You’ll have informal and formal assessment points throughout your training – these are called formative and summative assessments.
 
 Your mentor will work with your training provider to make sure you’re assessed throughout your training against your provider’s initial teacher training curriculum.
 
@@ -58,13 +60,13 @@ If your mentor is not linked with your subject or phase, you might be observed b
 ### Summative assessments
 Your summative assessments are the formal way that you’ll be assessed against your provider’s initial teacher training curriculum.
 
-This will be different depending on your training provider but will include classroom observations.
+This will be different depending on your training provider, but will include classroom observations.
 
 You may also be asked to gather a portfolio of evidence. If you are, your training provider will let you know how to document this.
 
 Talk to your provider at the start of your training so you know how you’ll be expected to gather evidence and you can do this as you go.
 
-At the end of your training, you’ll then be assessed against <%= govuk_link_to "the teachers’ standards.", "#" %>
+At the end of your training, you’ll then be  <%= govuk_link_to "assessed against the teachers’ standards.", "/resources-while-training/meeting-the-teachers-standards" %>
 
 ## Other support
 ### Provider-based mentor or tutor

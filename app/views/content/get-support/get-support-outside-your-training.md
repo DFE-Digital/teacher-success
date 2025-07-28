@@ -7,10 +7,10 @@ page_header:
 side_navigation:
     title: Get support
     steps:
-        - title: Get support through your training course 
-          href: "#"
         - title: Get support outside your training
           href: "#"
+        - title: Get support through your training course 
+          href: "/get-support/get-support-through-your-training-course"
 breadcrumbs: 
     enable: true
     crumbs: 
@@ -29,7 +29,7 @@ The Education Support charity provides a helpline for teacher trainees, offering
 ### Need to talk?
 Call <%= govuk_link_to "08000 562 561", "tel:08000562561" %>
 
-You can also use <%= govuk_link_to "Education Support's wellbeing resources", "https://www.educationsupport.org.uk/resources/for-individuals/", target: "_blank" %>.
+You can also use <%= govuk_link_to "Education Support's wellbeing resources", "https://www.educationsupport.org.uk/resources/for-individuals/" %>.
 
 ## Paid for support services
 ### Edapt
@@ -41,7 +41,7 @@ They offer an alternative to trade unions and can provide:
 - professional support from experts in education
 - support through disciplinary, grievance or allegations made against you
 
-<%= govuk_link_to "Explore Edapt", "https://www.edapt.org.uk/", target: "_blank" %>.
+<%= govuk_link_to "Explore Edapt", "https://www.edapt.org.uk/" %>.
 
 ### Unions
 You are eligible as a trainee teacher to join a teaching union.
@@ -56,6 +56,6 @@ A union can offer:
 
 Some examples include the following:
 
-- <%= govuk_link_to "National Education Union", "https://neu.org.uk/advice/member-groups/new-teachers", target: "_blank" %>
-- <%= govuk_link_to "National Association of Schoolmasters Union of Women Teachers (NASWUT)", "https://www.nasuwt.org.uk/advice/student-hub.html", target: "_blank" %>
-- <%= govuk_link_to "Community Trade Union", "https://community-tu.org/who-we-are/our-sectors/education-and-early-years/teachers-tutors-and-lecturers/", target: "_blank" %>
+- <%= govuk_link_to "National Education Union", "https://neu.org.uk/advice/member-groups/new-teachers" %>
+- <%= govuk_link_to "National Association of Schoolmasters Union of Women Teachers (NASUWT)", "https://www.nasuwt.org.uk/advice/student-hub.html" %>
+- <%= govuk_link_to "Community Trade Union", "https://community-tu.org/who-we-are/our-sectors/education-and-early-years/teachers-tutors-and-lecturers/" %>
