@@ -16,7 +16,7 @@ breadcrumbs:
     crumbs: 
         - name: "Get support"
           path: "/get-support"
-        - name: "Support through your training course"
+        - name: "Get support through your training course"
           path: "/get-support/get-support-through-your-training-course"
 ---
 
