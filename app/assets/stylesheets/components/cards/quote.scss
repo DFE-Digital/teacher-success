@@ -1,0 +1,29 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
+.quote {
+  color: govuk.govuk-colour("black");
+  background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+
+  @include govuk.govuk-responsive-padding(6, "all");
+  @include govuk.govuk-font-size(19);
+
+  blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+  blockquote:before {
+    content: open-quote;
+  }
+
+  blockquote:after {
+    content: close-quote;
+  }
+
+  .quote__attribution {
+    font-weight: bold;
+    margin: 0;
+
+    @include govuk.govuk-responsive-margin(4, "top");
+  }
+}
