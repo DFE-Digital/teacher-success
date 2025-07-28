@@ -2,9 +2,9 @@ class CookiePreferencesController < ApplicationController
   PREFERENCES_COOKIE_NAME = "teach_preferences".freeze
 
   def edit
-    @front_matter = { page_header: { title: "Cookie preferences" } }
+    @front_matter = { page_header: { title: "Cookies policy" } }
     @preferences = CookiePreferences.new(cookie: cookies[PREFERENCES_COOKIE_NAME])
-    breadcrumb "Cookies preferences", edit_cookie_preferences_path
+    breadcrumb "Cookies policy", edit_cookie_preferences_path
   end
 
   def update
