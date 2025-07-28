@@ -21,4 +21,3 @@ RSpec.describe Cards::QuoteComponent, type: :component do
   it { is_expected.to have_css("div.quote blockquote", text: text) }
   it { is_expected.to have_css("div.quote p.quote__attribution", text: attribution) }
 end
-
