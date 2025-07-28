@@ -42,6 +42,6 @@ page_header:
     <%= render Cards::SimpleCardComponent.new(
         title: "Advice from former trainees", 
         description: "Hear from former trainees and their advice for teacher training.",
-        path: root_path
+        path: "/prepare-for-training/advice-from-former-trainees"
     ) %>
 <% end %>
