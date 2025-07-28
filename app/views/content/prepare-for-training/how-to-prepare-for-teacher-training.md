@@ -73,4 +73,4 @@ It’s best to talk to your provider about this as soon as possible to make sure
 
 Prepare for your training by reading the advice of former trainee teachers from the 2024/25 academic year.
 
-<%= govuk_button_link_to "Read advice from former trainees", "https://teacher-success-0ac1045ca3fd.herokuapp.com/prepare/prepare_advice" %>
+<%= govuk_button_link_to "Read advice from former trainees", "/prepare-for-training/advice-from-former-trainees" %>
