@@ -41,6 +41,7 @@
 
     .govuk-button {
       @include govuk.govuk-responsive-margin(0, "bottom");
+      @include govuk.govuk-responsive-margin(4, "right");
     }
   }
 }
