@@ -3,13 +3,19 @@
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper" id="main-content" role="main">
-      <div class="responsive-flex-container">
-        <% if @front_matter&.dig(:side_navigation) %>
-          <%= render "shared/side_nav", data: @front_matter.dig(:side_navigation) %>
-        <% end %>
 
-        <%= yield %>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <% if @front_matter&.dig(:side_navigation) %>
+            <%= render "shared/side_nav", data: @front_matter.dig(:side_navigation) %>
+          <% end %>
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+          <%= yield %>
+        </div>
       </div>
+
     </main>
   </div>
 <% end %>
