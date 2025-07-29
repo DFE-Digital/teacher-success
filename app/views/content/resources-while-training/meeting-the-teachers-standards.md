@@ -49,7 +49,7 @@ The following statements define the behaviour and attitudes which set the requir
     - having regard for the need to safeguard pupils’ well-being, in accordance with statutory provisions
     - showing tolerance of and respect for the rights of others
     - not undermining fundamental British values, including democracy, the rule of law, individual liberty and mutual respect, and tolerance of those with different faiths and beliefs
-    - ensuring that personal beliefs are not expressed in ways which exploit pupils’ vulnerability or might lead them to break the law.
+    - ensuring that personal beliefs are not expressed in ways which exploit pupils’ vulnerability or might lead them to break the law
 2. Teachers must have proper and professional regard for the ethos, policies and practices of the school in which they teach and maintain high standards in their own attendance and punctuality.
 3. Teachers must have an understanding of, and always act within, the statutory frameworks which set out their professional duties and responsibilities.
 
