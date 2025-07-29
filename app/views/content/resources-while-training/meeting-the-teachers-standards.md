@@ -18,7 +18,7 @@ breadcrumbs:
     crumbs: 
         - name: "Resources while training"
           path: "/resources-while-training"
-        - name: "Behaviour management"
+        - name: "Meeting the teachers standards"
           path: "/resources-while-training/meeting-the-teachers-standards"
 ---
 
