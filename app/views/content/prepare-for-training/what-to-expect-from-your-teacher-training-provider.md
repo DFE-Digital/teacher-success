@@ -42,6 +42,8 @@ These can sometimes come at the same time so it would be useful to know when the
 ## Available support
 Your training provider might offer services like careers advisers or mental health support. It's useful to be aware of what these are and how you can access them.
 
+It could be useful to know what these are before you start so that if you need support, you know how to get it.
+
 You can also <%= govuk_link_to "find alternative ways to get support on your training", "/get-support" %> or read <%= govuk_link_to "Get Into Teaching's information about funding for trainee teachers.", "https://getintoteaching.education.gov.uk/funding-and-support" %>
 
 ## Absence procedures
