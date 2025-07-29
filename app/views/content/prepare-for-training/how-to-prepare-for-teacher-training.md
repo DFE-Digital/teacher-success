@@ -33,7 +33,7 @@ You could arrange a few days in person with a school near you or <%= govuk_link_
 
 You can also try the <%= govuk_link_to "realistic job preview tool", "https://platform.teachersuccess.co.uk/p/XK4rV0xN16/41xZQ10Z2l?id=c74fef2451c5af60c516075028d313d55321e06d2d53232082e329e292611d5b" %> where you can respond to realistic video scenarios to understand what life in the classroom is like.
 
-You do not have to have classroom experience before you start training, but it could help you feel better prepared.
+You don't have to have classroom experience before you start training, but it could help you feel better prepared.
 
 <%= govuk_button_link_to "Get school experience", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/get-school-experience" %>
 
