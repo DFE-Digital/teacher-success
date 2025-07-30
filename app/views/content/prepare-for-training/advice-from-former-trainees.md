@@ -53,7 +53,7 @@ breadcrumbs:
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Stay ahead – you have 3 babies that you’ll need to constantly take care of: your teaching, your assignments and your portfolio. Pay each an appropriate amount of attention and they will never need to cry.",
-        attribution: "Religious education (RE) trainee"
+        attribution: "Maths trainee"
     ) %>
   </div>
 </div>

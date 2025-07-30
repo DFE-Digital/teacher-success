@@ -66,7 +66,7 @@ You may also be asked to gather a portfolio of evidence. If you are, your traini
 
 Talk to your provider at the start of your training so you know how you’ll be expected to gather evidence and you can do this as you go.
 
-At the end of your training, you’ll then be  <%= govuk_link_to "assessed against the teachers’ standards.", "/resources-while-training/meeting-the-teachers-standards" %>
+At the end of your training, you’ll then be  <%= govuk_link_to "assessed against the teachers’ standards", "/resources-while-training/meeting-the-teachers-standards" %>.
 
 ## Other support
 ### Provider-based mentor or tutor

@@ -64,7 +64,7 @@ You’ll likely receive safeguarding training from your provider or your school.
 
 It’s likely you’ll need to bring ID with you on your first day – this might include your DBS.
 
-You may also want to familiarise yourself with <%= govuk_link_to "Department for Education’s keeping children safe in education guidance.", "https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" %>
+You may also want to familiarise yourself with <%= govuk_link_to "Department for Education’s keeping children safe in education guidance", "https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" %>.
 
 ## Professional conduct
 
@@ -88,7 +88,7 @@ Adjustments could include:
 
 You may be eligible for financial support to help cover the costs of any specialist equipment or study-related costs due to a health condition or disability.
 
-<%= govuk_link_to "Find out more about financial support if you're disabled.", "https://getintoteaching.education.gov.uk/funding-and-support/if-youre-disabled" %>
+<%= govuk_link_to "Find out more about financial support if you're disabled", "https://getintoteaching.education.gov.uk/funding-and-support/if-youre-disabled" %>.
 
 ## Behaviour management policies
 
@@ -100,8 +100,8 @@ You can also <%= govuk_link_to "find other behaviour management resources", "/re
 
 ## Lesson planning
 
-You will not have to worry about planning any lessons straight away but it's useful to know what you’ll have access to as your teaching responsibilities grow.
+You'll not have to worry about planning any lessons straight away but it's useful to know what you’ll have access to as your teaching responsibilities grow.
 
 Your placement school might use specific lesson planning resources that you’ll be able to access.
 
-You can also <%= govuk_link_to "find alternative lesson planning resources and tips.", "/resources-while-training/lesson-planning-as-a-trainee-teacher" %>
+You can also <%= govuk_link_to "find alternative lesson planning resources and tips", "/resources-while-training/lesson-planning-as-a-trainee-teacher" %>.
