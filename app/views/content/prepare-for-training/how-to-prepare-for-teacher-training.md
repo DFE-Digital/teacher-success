@@ -16,7 +16,7 @@ side_navigation:
         - title: What to expect from your school-based mentor
           href: "/prepare-for-training/what-to-expect-from-your-school-based-mentor"
         - title: Advice from former trainees
-          href: "#"
+          href: "/prepare-for-training/advice-from-former-trainees"
 breadcrumbs: 
     enable: true
     crumbs: 

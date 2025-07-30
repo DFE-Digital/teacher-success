@@ -7,16 +7,16 @@ page_header:
 side_navigation:
     title: Prepare for training
     steps:
+        - title: Advice from former trainees
+          href: "/prepare-for-training/advice-from-former-trainees"
         - title: Prepare for your first school placement
-          href: "#"
+          href: "/prepare-for-training/prepare-for-your-first-school-placement"
         - title: How to prepare for teacher training
           href: "/prepare-for-training/how-to-prepare-for-teacher-training"
         - title: What to expect from your teacher training provider
           href: "/prepare-for-training/what-to-expect-from-your-teacher-training-provider"
         - title: What to expect from your school-based mentor
           href: "/prepare-for-training/what-to-expect-from-your-school-based-mentor"
-        - title: Advice from former trainees
-          href: "/prepare-for-training/advice-from-former-trainees"
 breadcrumbs: 
     enable: true
     crumbs: 
