@@ -5,8 +5,8 @@
         <h4 class="page-feedback__title">Is this page useful?</h4>
 
         <div class="govuk-button-group">
-          <%= form.govuk_submit("Yes", name: "page_feedback[useful]", value: true, inverse: true) %>
-          <%= form.govuk_submit("No", name: "page_feedback[useful]", value: false, inverse: true) %>
+          <%= form.govuk_submit("Yes", name: "page_feedback[useful]", value: true, inverse: true, data: { turbo: false }) %>
+          <%= form.govuk_submit("No", name: "page_feedback[useful]", value: false, inverse: true, data: { turbo: false }) %>
         </div>
       </div>
 

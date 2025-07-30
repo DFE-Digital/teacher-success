@@ -16,11 +16,16 @@ class PageFeedbackController < ApplicationController
     @page_feedback = PageFeedback.new(page_feedback_params)
     @page_feedback.url = request.referer
 
-    partial = @page_feedback.save ? "page_feedback/thanks" : "page_feedback/form"
+    if @page_feedback.save
+      flash = {
+        title: "Success",
+        heading: "Feedback submitted",
+        description: "Your feedback will be used to improve this service."
+      }
 
-    respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.replace("page_feedback", partial: partial) }
-      format.html { render :new }
+      redirect_to request.referer, flash: { success: flash }
+    else
+      redirect_to root_path
     end
   end
 
