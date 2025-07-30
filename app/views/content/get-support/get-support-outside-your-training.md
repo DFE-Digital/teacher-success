@@ -7,10 +7,10 @@ page_header:
 side_navigation:
     title: Get support
     steps:
-        - title: Get support outside your training
-          href: "#"
         - title: Get support through your training course 
           href: "/get-support/get-support-through-your-training-course"
+        - title: Get support outside your training
+          href: "/get-support/get-support-outside-your-training"
 breadcrumbs: 
     enable: true
     crumbs: 
