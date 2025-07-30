@@ -23,6 +23,8 @@ gem "pagy"
 gem "solid_queue"
 gem "mission_control-jobs"
 gem "validate_url"
+gem "sentry-ruby"
+gem "sentry-rails"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
