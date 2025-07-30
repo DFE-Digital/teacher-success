@@ -1,15 +1,5 @@
 @use "govuk-frontend/dist/govuk" as govuk;
 
-.feedback { 
-  background-color: govuk.govuk-colour("light-blue");
-  color: govuk.govuk-colour("white");
-
-  .govuk-width-container {
-    @include govuk.govuk-responsive-padding(6, "top");
-    @include govuk.govuk-responsive-padding(6, "bottom");
-  }
-}
-
 .page-feedback {
   display: flex;
   justify-content: space-between;

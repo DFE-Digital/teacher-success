@@ -19,6 +19,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= render "shared/analytics/ga_head" %>
+    <%= render "shared/analytics/clarity" %> 
   </head>
 
   <body class="govuk-template__body">
@@ -38,7 +39,6 @@
       <%= render "page_feedback/form" %>
     </div>
 
-    <%= render "shared/feedback" %>
     <%= render "shared/footer" %>
   </body>
 </html>
