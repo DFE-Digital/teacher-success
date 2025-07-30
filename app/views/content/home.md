@@ -14,7 +14,8 @@ breadcrumbs:
     description: "Find out how you can prepare for your teacher training, from what to expect from your training provider to preparing for your first placement.",
     button_text: "Prepare for your training",
     button_href: "/prepare-for-training/how-to-prepare-for-teacher-training",
-    image: "content/teacher2.png"
+    image: "content/teacher2.png",
+    image_alt: "A teacher smiling with a group of students"
 ) %>
 
 <%= render "content/home/next_steps" %>
