@@ -8,7 +8,7 @@ side_navigation:
     title: Prepare for training
     steps:
         - title: How to prepare for teacher training
-          href: "#"
+          href: "/prepare-for-training/how-to-prepare-for-teacher-training"
         - title: Prepare for your first school placement
           href: "/prepare-for-training/prepare-for-your-first-school-placement"
         - title: What to expect from your teacher training provider
