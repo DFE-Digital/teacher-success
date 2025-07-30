@@ -30,8 +30,11 @@
     @include govuk.govuk-responsive-margin(0, "all");
 
     .govuk-button {
-      @include govuk.govuk-responsive-margin(0, "bottom");
-      @include govuk.govuk-responsive-margin(4, "right");
+      @include govuk.govuk-responsive-margin(0, "all");
+    }
+
+    .govuk-button:first-child {
+      @include govuk.govuk-responsive-margin(3, "right");
     }
   }
 }
