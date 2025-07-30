@@ -100,7 +100,7 @@ You can also <%= govuk_link_to "find other behaviour management resources", "/re
 
 ## Lesson planning
 
-You will not have to worry about planning any lessons straight away but it's useful to know what you’ll have access to as your teaching responsibilities grow.
+You'll not have to worry about planning any lessons straight away but it's useful to know what you’ll have access to as your teaching responsibilities grow.
 
 Your placement school might use specific lesson planning resources that you’ll be able to access.
 
