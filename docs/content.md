@@ -12,6 +12,7 @@
     - [Variables](#variables)
     - [Side Navigation](#side-navigation)
     - [Breadcrumbs](#breadcrumbs)
+    - [Drafts](#drafts)
  3. [Creating a new page](#creating-a-new-page)
  4. [Variables](#variables)
  5. [Rails Partials](#rails-partials)
@@ -143,6 +144,9 @@ breadcrumbs:
         - path: "/"
 ```
 
+### Drafts
+
+If you want to prevent a page from being publicly accessible via its URL, you can add `draft: true` to the front matter.
 
 ## Creating a new page
 

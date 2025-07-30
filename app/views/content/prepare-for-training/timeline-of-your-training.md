@@ -1,6 +1,7 @@
 ---
 title: "Timeline of your training"
 layout: "article"
+draft: true
 page_header:
     title: "Timeline of your training"
     description: "Find out what happens and when on initial teacher training (ITT) whether you’re training with a university or doing school centred initial teacher training (SCITT)."
