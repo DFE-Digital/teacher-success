@@ -68,19 +68,20 @@ At the end of your training, you’ll then be  <%= govuk_link_to "assessed again
 
 ## Other support from your school
 
+### Subject mentors and leads
+
+Your mentor may not always be linked with your specific subject or phase. In which case, you’ll usually have a subject mentor at your placement school who you’ll observe and work with to develop your teaching practice in your subject.
+
+They'll work closely with your mentor to provide feedback on your progress.
+
+### School staff
+
 Many trainees experience support from the wider school team, not just their mentors.
 
 You’ll likely observe a few different teachers throughout the school and may have a few of them observing you.
 
 ## Support from your provider
 
-### School staff
-
 As well as your school-based mentor, you'll also have a mentor or tutor from your course provider who will not be specific to your placement schools.
 
 They’ll explain how your provider requires you to gather evidence for qualified teacher status (QTS) and make sure you’re being supported on your placements.
-
-### Subject mentors and leads
-Your mentor may not always be linked with your specific subject or phase. In which case, you’ll usually have a subject mentor at your placement school who you’ll observe and work with to develop your teaching practice in your subject.
-
-They'll work closely with your mentor to provide feedback on your progress.
