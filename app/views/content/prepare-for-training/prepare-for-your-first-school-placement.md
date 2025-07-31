@@ -86,7 +86,6 @@ This includes support for neurodiversity, long-term physical or mental health co
 
 Adjustments could include:
 
-- adjusting your timetable to suit your needs
 - providing copies of presentation materials before training sessions
 - printing or photocopying materials on coloured paper
 - providing contact details for support staff
