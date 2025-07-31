@@ -7,10 +7,10 @@ page_header:
 side_navigation:
     title: Resources while training
     steps:
-        - title: Behaviour management 
-          href: "#"
         - title: Lesson planning as a trainee teacher 
           href: "/resources-while-training/lesson-planning-as-a-trainee-teacher"
+        - title: Behaviour management 
+          href: "/resources-while-training/behaviour-management"
         - title: Meeting the teachers' standards 
           href: "/resources-while-training/meeting-the-teachers-standards"
 breadcrumbs: 
@@ -36,7 +36,7 @@ When you start your placement, you might want to consider if you know:
 - what your school’s behaviour management policy is
 - how to record and share good behaviour and achievements
 - how to report a behaviour incident and implement any sanctions for challenging behaviour – will you need access to any systems to do this?
-- if there are any children in your class with SEND or a behaviour support plan and how you will be expected to support them
+- if there are any children in your class with special educational needs or disabilities (SEND) or a behaviour support plan and how you will be expected to support them
 
 ## Behaviour management resources
 You can <%= govuk_link_to "read the Department for Education’s trainee teacher behavioural toolkit", "https://www.gov.uk/government/publications/initial-teacher-training-itt-core-content-framework/the-trainee-teacher-behavioural-toolkit-a-summary" %>.

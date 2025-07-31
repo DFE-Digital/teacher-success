@@ -44,6 +44,9 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     activejob (8.0.2)
       activesupport (= 8.0.2)
       globalid (>= 0.3.6)
@@ -226,7 +229,7 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.4.0)
-    propshaft (1.2.0)
+    propshaft (1.2.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
       rack
@@ -343,6 +346,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.26.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.26.0)
+    sentry-ruby (5.26.0)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -412,6 +421,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  active_link_to
   bootsnap
   brakeman
   bundler-audit
@@ -437,6 +447,8 @@ DEPENDENCIES
   rspec-rails
   rubocop-rails-omakase
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
   simplecov
   solid_queue
   stimulus-rails

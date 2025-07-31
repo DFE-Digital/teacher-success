@@ -9,10 +9,8 @@
 @use "utilities";
 @use "header";
 @use "page-header";
-@use "feedback";
 @use "side-nav";
 @use "forms";
-@use "layout";
 @use "typography";
 @use "flex";
 @use "quick-links";
@@ -21,6 +19,7 @@
 // View Components
 @use "components/cards/simple-card";
 @use "components/cards/card-with-image";
+@use "components/cards/quote";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;

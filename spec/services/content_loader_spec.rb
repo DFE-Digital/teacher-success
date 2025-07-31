@@ -25,6 +25,18 @@ RSpec.describe ContentLoader do
         loader.find_by_slug("missing")
       }.to raise_error(PageNotFoundError)
     end
+
+    context "when page is draft" do
+      let(:slug) { "draft-page" }
+      let(:front_matter) { { title: "Draft Page", draft: true } }
+      let(:content) { "Content here" }
+
+      it "returns front_matter and content for a valid slug" do
+        result = loader.find_by_slug(slug)
+
+        expect(result).not_to include([ front_matter, content ])
+      end
+    end
   end
 
   describe "#navigation_items" do

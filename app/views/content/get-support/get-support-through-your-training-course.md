@@ -8,7 +8,7 @@ side_navigation:
     title: Get support
     steps:
         - title: Get support through your training course 
-          href: "#"
+          href: "/get-support/get-support-through-your-training-course"
         - title: Get support outside your training
           href: "/get-support/get-support-outside-your-training"
 breadcrumbs: 
@@ -16,7 +16,7 @@ breadcrumbs:
     crumbs: 
         - name: "Get support"
           path: "/get-support"
-        - name: "Support through your training course"
+        - name: "Get support through your training course"
           path: "/get-support/get-support-through-your-training-course"
 ---
 

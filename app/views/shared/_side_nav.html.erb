@@ -1,9 +1,11 @@
 <aside class="side-navigation">
-  <h2 class="govuk-heading-m"><%= data[:title] %></h2>
+  <nav aria-labelledby="side-navigation-label">
+    <h2 id="side-navigation-label" class="govuk-heading-m"><%= data[:title] %></h2>
 
-  <ul>
-    <% data.dig(:steps).each do |step| %>
-      <li><%= link_to step[:title], step[:href], class: "govuk-link govuk-link--no-visited-state govuk-link--no-underline" %></li>
-    <% end %>
-  </ul>
+    <ul>
+      <% data.dig(:steps).each do |step| %>
+        <li><%= active_link_to step[:title], step[:href], class: "govuk-link govuk-link--no-visited-state", class_active: "active" %></li>
+      <% end %>
+    </ul>
+  </nav>
 </aside>

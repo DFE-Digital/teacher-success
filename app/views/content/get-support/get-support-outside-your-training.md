@@ -7,16 +7,16 @@ page_header:
 side_navigation:
     title: Get support
     steps:
-        - title: Get support outside your training
-          href: "#"
         - title: Get support through your training course 
           href: "/get-support/get-support-through-your-training-course"
+        - title: Get support outside your training
+          href: "/get-support/get-support-outside-your-training"
 breadcrumbs: 
     enable: true
     crumbs: 
         - name: "Get support"
           path: "/get-support"
-        - name: "Support outside your training"
+        - name: "Get support outside your training"
           path: "/get-support/get-support-outside-your-training"
 ---
 If you need to talk to someone outside of your training provider or placement schools, there are places you can reach out to.
