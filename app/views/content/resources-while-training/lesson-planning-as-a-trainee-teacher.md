@@ -29,7 +29,7 @@ You’ll likely have the opportunity to do this alongside your mentor or another
 
 You'll likely be given templates to start with by your provider and they or your placement school may require you to use specific resources.
 
-### You should check with your school and training provider what their requirements are.
+**You should check with your school and training provider what their requirements are.**
 
 ## Use the national curriculum
 All lesson planning should consider the national curriculum. The national curriculum sets out the programmes of study and attainment targets for all subjects at all 4 key stages.
