@@ -7,10 +7,10 @@ page_header:
 side_navigation:
     title: Prepare for training
     steps:
-        - title: Prepare for your first school placement
-          href: "#"
         - title: How to prepare for teacher training
           href: "/prepare-for-training/how-to-prepare-for-teacher-training"
+        - title: Prepare for your first school placement
+          href: "/prepare-for-training/prepare-for-your-first-school-placement"
         - title: What to expect from your teacher training provider
           href: "/prepare-for-training/what-to-expect-from-your-teacher-training-provider"
         - title: What to expect from your school-based mentor
@@ -53,7 +53,7 @@ breadcrumbs:
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Stay ahead – you have 3 babies that you’ll need to constantly take care of: your teaching, your assignments and your portfolio. Pay each an appropriate amount of attention and they will never need to cry.",
-        attribution: "Religious education (RE) trainee"
+        attribution: "Maths trainee"
     ) %>
   </div>
 </div>

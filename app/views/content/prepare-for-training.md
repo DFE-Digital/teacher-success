@@ -35,11 +35,6 @@ page_header:
         path: "/prepare-for-training/what-to-expect-from-your-school-based-mentor"
     ) %>
     <%= render Cards::SimpleCardComponent.new(
-        title: "Timeline of your training", 
-        description: "Find out what happens and when on initial teacher training (ITT), whether you’re training with a university or doing school centred initial teacher training (SCITT).",
-        path: "/prepare-for-training/timeline-of-your-training"
-    ) %>
-    <%= render Cards::SimpleCardComponent.new(
         title: "Advice from former trainees", 
         description: "Hear from former trainees and their advice for teacher training.",
         path: "/prepare-for-training/advice-from-former-trainees"

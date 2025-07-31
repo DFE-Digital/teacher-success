@@ -7,16 +7,16 @@ page_header:
 side_navigation:
     title: Prepare for training
     steps:
-        - title: What to expect from your school-based mentor
-          href: "#"
-        - title: Prepare for your first school placement
-          href: "/prepare-for-training/prepare-for-your-first-school-placement"
         - title: How to prepare for teacher training
           href: "/prepare-for-training/how-to-prepare-for-teacher-training"
+        - title: Prepare for your first school placement
+          href: "/prepare-for-training/prepare-for-your-first-school-placement"
         - title: What to expect from your teacher training provider
           href: "/prepare-for-training/what-to-expect-from-your-teacher-training-provider"
+        - title: What to expect from your school-based mentor
+          href: "/prepare-for-training/what-to-expect-from-your-school-based-mentor"
         - title: Advice from former trainees
-          href: "#"
+          href: "/prepare-for-training/advice-from-former-trainees"
 breadcrumbs: 
     enable: true
     crumbs: 
@@ -66,7 +66,7 @@ You may also be asked to gather a portfolio of evidence. If you are, your traini
 
 Talk to your provider at the start of your training so you know how you’ll be expected to gather evidence and you can do this as you go.
 
-At the end of your training, you’ll then be  <%= govuk_link_to "assessed against the teachers’ standards.", "/resources-while-training/meeting-the-teachers-standards" %>
+At the end of your training, you’ll then be  <%= govuk_link_to "assessed against the teachers’ standards", "/resources-while-training/meeting-the-teachers-standards" %>.
 
 ## Other support
 ### Provider-based mentor or tutor

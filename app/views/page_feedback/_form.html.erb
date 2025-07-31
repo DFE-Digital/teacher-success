@@ -1,18 +1,16 @@
-<%= turbo_frame_tag "page_feedback" do %>
-  <%= form_with model: PageFeedback.new, url: page_feedback_path do |form| %>
-    <div class="page-feedback">
-      <div class="page-feedback__content">
-        <h4 class="page-feedback__title">Is this page useful?</h4>
-
-        <div class="govuk-button-group">
-          <%= form.govuk_submit("Yes", name: "page_feedback[useful]", value: true, inverse: true, data: { turbo: false }) %>
-          <%= form.govuk_submit("No", name: "page_feedback[useful]", value: false, inverse: true, data: { turbo: false }) %>
-        </div>
-      </div>
+<%= form_with model: PageFeedback.new, url: page_feedback_path do |form| %>
+  <div class="page-feedback">
+    <div class="page-feedback__content">
+      <h4 class="page-feedback__title">Is this page useful?</h4>
 
       <div class="govuk-button-group">
-        <%= govuk_button_link_to('Give more feedback about this page', new_feedback_path(url: request.url), inverse: true, data: { turbo: false }) %>
+        <%= form.govuk_submit("Yes", name: "page_feedback[useful]", value: true, inverse: true, data: { turbo: false }) %>
+        <%= form.govuk_submit("No", name: "page_feedback[useful]", value: false, inverse: true, data: { turbo: false }) %>
       </div>
     </div>
-  <% end %>
+
+    <div class="govuk-button-group">
+      <%= govuk_button_link_to('Give more feedback about this page', new_feedback_path(url: request.url), inverse: true, data: { turbo: false }) %>
+    </div>
+  </div>
 <% end %>

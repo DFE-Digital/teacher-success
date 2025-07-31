@@ -8,7 +8,7 @@ side_navigation:
     title: Resources while training
     steps:
         - title: Lesson planning as a trainee teacher 
-          href: "#"
+          href: "/resources-while-training/lesson-planning-as-a-trainee-teacher"
         - title: Behaviour management 
           href: "/resources-while-training/behaviour-management"
         - title: Meeting the teachers' standards 
@@ -38,9 +38,9 @@ All local-authority-maintained schools in England must teach these programmes of
 
 You might want to <%= govuk_link_to "read the national curriculum", "https://www.gov.uk/government/collections/national-curriculum" %> for your key stage or subject to help you understand what you’ll be teaching.
 
-To see how this works in practise, you could watch recorded lessons from other teachers, for example, from <%= govuk_link_to "Oak National Academy", "https://www.thenational.academy/teachers" %>.
+To see how this works in practice, you could watch recorded lessons from other teachers, for example, from <%= govuk_link_to "Oak National Academy", "https://www.thenational.academy/teachers" %>.
 
-You can also look at your placement school’s website to understand what is covered on their specific curriculum and how they implement this.
+You can also look at your placement school’s website to understand what's covered on their specific curriculum and how they implement this.
 
 ## How lesson planning works
 An important part of lesson planning will be how you incorporate:

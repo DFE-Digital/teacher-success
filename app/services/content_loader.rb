@@ -35,6 +35,8 @@ class ContentLoader
     Dir.glob("#{CONTENT_DIR}/**/*.md").each do |file_path|
       front_matter, content = parse_markdown_file(file_path)
 
+      next if front_matter.dig(:draft)
+
       slug = Pathname.new(file_path)
         .relative_path_from(CONTENT_DIR) # Ensure slugs reflect any nested file paths
         .to_s
