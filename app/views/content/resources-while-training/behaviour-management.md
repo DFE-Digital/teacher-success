@@ -47,6 +47,8 @@ If you find that what you’re implementing is not effective, talk to your mento
 
 You could also:
 
-- read <%= govuk_link_to "behaviour tips for teacher trainees from the National Education Union", "https://neu.org.uk/advice/member-groups/new-teachers/behaviour-tips-trainee-teachers" %>
-- watch <%= govuk_link_to "top behaviour management tips for new teachers from NASUWT", "https://www.nasuwt.org.uk/advice/student-hub/top-behaviour-management-tips-from-nqts.html" %>
-- explore <%= govuk_link_to "The Chartered College of Teaching’s managing behaviour resources", "https://my.chartered.college/ecf_framework/ecf-standard-7-managing-behaviour/" %>
+- read <a class="govuk-link" href="https://neu.org.uk/advice/member-groups/new-teachers/behaviour-tips-trainee-teachers">behaviour tips for teacher trainees from the National Education Union<span class="govuk-visually-hidden">. This is an external link.</span></a>
+- watch <a class="govuk-link" href="https://www.nasuwt.org.uk/advice/student-hub/top-behaviour-management-tips-from-nqts.html">top behaviour management tips for new teachers from NASUWT<span class="govuk-visually-hidden">. This is an external link.</span></a>
+- explore <a class="govuk-link" href="https://my.chartered.college/ecf_framework/ecf-standard-7-managing-behaviour/">The Chartered College of Teaching’s managing behaviour resources<span class="govuk-visually-hidden">. This is an external link.</span></a>
+
+
