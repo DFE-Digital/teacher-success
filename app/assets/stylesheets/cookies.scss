@@ -1,7 +1,17 @@
 // Fixes misalignment when using buttons and links in the govuk-cookies-banner
 
+@use "govuk-frontend/dist/govuk" as govuk;
+
 .govuk-cookie-banner {
   .govuk-button-group {
     align-items: center;
+
+    form {
+      width: 100%;
+
+      @include govuk.govuk-media-query($from: tablet) {
+        width:auto;
+      }
+    }
   }
 }
