@@ -65,7 +65,7 @@ Teacher training providers can make adjustments if you need support to become a 
 - mental health conditions
 - accessibility needs
 
-It’s best to talk to your provider about this as soon as possible to make sure you have all the support in place you need.
+It’s best to talk to your provider about this as soon as possible to make sure you have all the support you need in place.
 
 <%= govuk_button_link_to "Explore adjustments to help you train to teach", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/accessibility-adjustments" %>
 
