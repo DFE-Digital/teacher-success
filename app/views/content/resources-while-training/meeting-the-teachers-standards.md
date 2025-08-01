@@ -27,7 +27,7 @@ At the end of your training, you'll gain qualified teacher status (QTS) once you
 QTS is what you need to teach in maintained primary, secondary and special schools in England (and soon, academies, too).
 
 ## The teachers’ standards
-### Teaching
+### Part 1: teaching
 There are 8 standards you’ll work towards.
 
 1. Set high expectations which inspire, motivate and challenge pupils.
@@ -39,7 +39,10 @@ There are 8 standards you’ll work towards.
 7. Manage behaviour effectively to ensure a good and safe learning environment.
 8. Fulfil wider professional responsibilities.
 
-### Personal and professional conduct
+### Part 2: personal and professional conduct
+
+You should demonstrate professional standards from the very start of your course.
+
 A teacher is expected to demonstrate consistently high standards of personal and professional conduct.
 
 The following statements define the behaviour and attitudes which set the required standard for conduct throughout a teacher’s career.

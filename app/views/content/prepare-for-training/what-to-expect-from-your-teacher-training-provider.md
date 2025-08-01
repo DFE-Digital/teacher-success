@@ -26,11 +26,9 @@ breadcrumbs:
           path: "/prepare-for-training/what-to-expect-from-your-teacher-training-provider"
 ---
 
-Your training provider will help you develop your teaching theory ready for you to put into practice in your placements.
+Your training provider will have put together a curriculum that will enable you to show how you meet the teachers' standards at the end of your course.
 
-They’ll help you gather your evidence to show you meet their initial teacher training curriculum so you can achieve qualified teacher status (QTS).
-
-Your training provider should give you all the information you need when you start your course, but it might be worth considering what would be useful to ask and things to be aware of.
+They should give you all the information you need when you start your course, but it might be worth considering what would be useful to ask and things to be aware of.
 
 ## Key milestones and assessments
 Throughout your training, there will be key milestones where you’ll be expected to take on more responsibility and submit assessments.
@@ -40,7 +38,12 @@ If you’re doing a postgraduate certificate in education (PGCE) alongside quali
 These can sometimes come at the same time so it would be useful to know when these are so that you can plan and manage your time. For example, if you need to take into account things such as childcare.
 
 ## Available support
-Your training provider might offer services like careers advisers or mental health support. It's useful to be aware of what these are and how you can access them.
+
+You'll have a mentor or tutor from your course provider who will not be specific to your placement schools.
+
+They’ll explain how your provider requires you to gather evidence for qualified teacher status (QTS) and make sure you’re being supported on your placements.
+
+Your training provider might also offer services like careers advisers or mental health support. It's useful to be aware of what these are and how you can access them.
 
 You can also <%= govuk_link_to "find alternative ways to get support on your training", "/get-support" %> or read <%= govuk_link_to "Get Into Teaching's information about funding for trainee teachers", "https://getintoteaching.education.gov.uk/funding-and-support" %>.
 
@@ -61,7 +64,6 @@ This includes support for neurodiversity, long-term physical or mental health co
 
 Providers could make adjustments such as:
 
-- adjusting your timetable to suit your needs
 - providing copies of presentation materials before training sessions
 - printing or photocopying materials on coloured paper
 - providing you with contact details for support staff
