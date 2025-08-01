@@ -6,6 +6,7 @@ RSpec.describe Cards::CardWithImageComponent, type: :component do
   let(:title) { "Title" }
   let(:description) { "Description" }
   let(:image) { "image.png" }
+  let(:image_alt) { "image alt text" }
   let(:button_text) { "Click me" }
   let(:button_href) { "/" }
 
@@ -45,6 +46,7 @@ RSpec.describe Cards::CardWithImageComponent, type: :component do
 
   context "with an image" do
     let(:image) { "fake-image.png" }
+    let(:image_alt) { "fake image alt text" }
 
     let(:component) {
       described_class.new(
@@ -52,10 +54,12 @@ RSpec.describe Cards::CardWithImageComponent, type: :component do
         description: description,
         button_text: button_text,
         button_href: button_href,
-        image: image
+        image: image,
+        image_alt: image_alt
       )
     }
 
     it { is_expected.to have_css("img[src*='assets/fake-image']") }
+    it { is_expected.to have_css("img[alt*='#{image_alt}']") }
   end
 end
