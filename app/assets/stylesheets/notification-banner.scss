@@ -1,0 +1,6 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+
+.govuk-notification-banner {
+  @include govuk.govuk-responsive-margin(4, "top");
+  @include govuk.govuk-responsive-margin(4, "bottom");
+}

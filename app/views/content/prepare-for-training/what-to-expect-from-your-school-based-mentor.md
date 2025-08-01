@@ -50,11 +50,11 @@ They’ll help you set targets and understand how to improve, making sure you un
 ) %>
 
 ## Assess your progress
-You’ll have informal and formal assessment points throughout your training – these are called formative and summative assessments.
+You’ll have informal and formal assessment points throughout your training.
 
 Your mentor will work with your training provider to make sure you’re assessed throughout your training against your provider’s initial teacher training curriculum.
 
-### Formative assessments
+### Informal assessments
 Regular classroom observations will give you ongoing feedback so you can continue to develop your teaching skills.
 
 You may also be required to share reflective journals where you self-assess your progress.
@@ -63,10 +63,8 @@ You’ll likely be asked to share lesson plans that your mentor can feed back on
 
 If your mentor is not linked with your subject or phase, you might be observed by another teacher in your subject area.
 
-### Summative assessments
-Your summative assessments are the formal way that you’ll be assessed against your provider’s initial teacher training curriculum.
-
-This will be different depending on your training provider, but will include classroom observations.
+### Formal assessments
+Your formal assessments might be different depending on your training provider, but will include classroom observations.
 
 You may also be asked to gather a portfolio of evidence. If you are, your training provider will let you know how to document this.
 
@@ -74,21 +72,25 @@ Talk to your provider at the start of your training so you know how you’ll be 
 
 At the end of your training, you’ll then be  <%= govuk_link_to "assessed against the teachers’ standards", "/resources-while-training/meeting-the-teachers-standards" %>.
 
-## Other support
-### Provider-based mentor or tutor
-You'll have a mentor or tutor from your course provider who will not be specific to your placement schools.
-
-They’ll explain how your provider requires you to gather evidence for qualified teacher status (QTS) and make sure you’re being supported on your placements.
+## Other support from your school
 
 ### Subject mentors and leads
+
 Your mentor may not always be linked with your specific subject or phase. In which case, you’ll usually have a subject mentor at your placement school who you’ll observe and work with to develop your teaching practice in your subject.
 
 They'll work closely with your mentor to provide feedback on your progress.
 
 ### School staff
+
 Many trainees experience support from the wider school team, not just their mentors.
 
 You’ll likely observe a few different teachers throughout the school and may have a few of them observing you.
+
+## Support from your provider
+
+As well as your school-based mentor, you'll also have a mentor or tutor from your course provider who will not be specific to your placement schools.
+
+They’ll explain how your provider requires you to gather evidence for qualified teacher status (QTS) and make sure you’re being supported on your placements.
 
 <%= render Cards::QuoteComponent.new(
     text: "Ask for help a lot! Whether it is asking for resources, for advice on planning or behaviour management – they will understand.",

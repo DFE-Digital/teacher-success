@@ -54,12 +54,16 @@ You may also be entitled to extra support if you:
 - have a learning difficulty, health condition or disability
 - are a veteran
 
+You may also be eligible for some funding from your provider – you might want to speak to them about this before you start your course.
+
 <%= govuk_button_link_to "Find out how to fund your training", "https://getintoteaching.education.gov.uk/funding-and-support" %>
 
 ## Talk to your training provider
 Your training provider may have already been in touch and started your induction. Don't worry if not – many providers will wait until September.
 
 You might want to think about any questions you have about your training to ask during your induction. For example, key milestones and assessments throughout the year and what support might be available.
+
+You'll also need to update your provider if your circumstances have changed, for example, if you've moved as this could affect your placements.
 
 <%= govuk_button_link_to "What to expect from your teacher training provider", "/prepare-for-training/what-to-expect-from-your-teacher-training-provider" %>
 
@@ -71,7 +75,7 @@ Teacher training providers can make adjustments if you need support to become a 
 - mental health conditions
 - accessibility needs
 
-It’s best to talk to your provider about this as soon as possible to make sure you have all the support in place you need.
+It’s best to talk to your provider about this as soon as possible to make sure you have all the support you need in place.
 
 <%= govuk_button_link_to "Explore adjustments to help you train to teach", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/accessibility-adjustments" %>
 

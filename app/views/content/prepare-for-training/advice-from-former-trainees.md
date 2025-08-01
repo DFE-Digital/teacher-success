@@ -110,8 +110,8 @@ breadcrumbs:
   </div>
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
-        text: "Generative AI is not a bad word! It's incredibly helpful for planning activities or prompting ideas, like a super helpful assistant.",
-        attribution: "Geography trainee",
+        text: "Building positive relationships with colleagues was incredibly helpful. A friendly and respectful attitude encourages others to support you. Ultimately, preparation and connection are key.",
+        attribution: "Religious education (RE) trainee",
         classes: "govuk-!-margin-bottom-5"
     ) %>
   </div>

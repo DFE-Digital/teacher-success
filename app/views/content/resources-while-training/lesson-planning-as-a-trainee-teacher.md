@@ -23,13 +23,13 @@ breadcrumbs:
 ---
 Department for Education is not responsible for the content of resources outside of GOV.UK. Any links are an example of external resources you may want to use, not an exhaustive list and not a specific recommendation from the Department. You should always refer to the specific advice of your training provider first.
 
-An important part of your teacher training will be learning how to plan lessons.
+An important part of your teacher training will be learning how to plan lessons. Through this, you'll develop your teaching ability.
 
 You’ll likely have the opportunity to do this alongside your mentor or another class teacher.
 
-Your placement school or provider may provide you with supportive materials for this and may require you to use specific templates.
+You'll likely be given templates to start with by your provider and they or your placement school may require you to use specific resources.
 
-### You should check with your school and training provider what their requirements are.
+**You should check with your school and training provider what their requirements are.**
 
 <%= render Cards::QuoteComponent.new(
     text: "Artificial intelligence (AI) became a big help when it came to planning activities. AI is not there to teach, it is there to help you teach.",
@@ -67,7 +67,7 @@ Assessment for learning is how you’re measuring the progress of the students i
 You need to know if your students have understood what you’ve just taught them and how you can assess this as part of your lesson.
 
 ### Adaptive teaching
-Adaptive teaching is how you adjust your teaching if your students have not understood something.
+You'll adapt your lesson planning based on your class and their needs. Understanding what these are will inform the ways you tweak your lessons and how you might adjust your teaching if your students have not understood something.
 
 ### Schemes of work
 Some schools will use specific schemes of work – this is where each lesson is part of a wider, structured plan of how subjects will be delivered.
