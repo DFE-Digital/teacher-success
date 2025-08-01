@@ -1,4 +1,4 @@
-<% if non_essential_cookies_accepted? %>
+<% if non_essential_cookies_accepted? && Rails.env.production? %>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
