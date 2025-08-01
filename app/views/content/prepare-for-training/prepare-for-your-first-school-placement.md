@@ -30,7 +30,7 @@ Your first school placement will be your chance to understand what teaching in a
 
 Your provider will work closely with your placement school to get you set up and ready.
 
-Your provider or school should provide you with all the information you need during your induction or onboarding, but it might be worth considering what would be useful to ask and things to be aware of.
+Your provider or school should give you with all the information you need during your induction or onboarding, but it might be worth considering what would be useful to ask and things to be aware of.
 
 ## Prepare for your first day
 
@@ -40,7 +40,7 @@ Your school should let you know:
 * what the timings of the school day are and when you're expected to arrive (this will likely be before the official start of the school day)
 * what the dress code is
 
-You should check the distance to your placement school and if there's parking available, if you're travelling by car. You can talk to your provider about if there's any financial support available for travel.
+You should check the distance to your placement school and if there's parking available, if you're travelling by car. You can talk to your provider about whether there's any financial support available for travel.
 
 If your circumstances change, for example, if you move, you should make sure to update your provider as soon as possible.
 

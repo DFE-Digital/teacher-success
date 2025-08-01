@@ -48,7 +48,7 @@ You may also be entitled to extra support if you:
 - have a learning difficulty, health condition or disability
 - are a veteran
 
-You may also be eligible for some funding from your provider – you may want to speak to them about this before you start your course.
+You may also be eligible for some funding from your provider – you might want to speak to them about this before you start your course.
 
 <%= govuk_button_link_to "Find out how to fund your training", "https://getintoteaching.education.gov.uk/funding-and-support" %>
 
