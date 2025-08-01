@@ -16,7 +16,7 @@ This website is run by the Department for Education. We want as many people as p
 - navigate most of the website using speech recognition software
 - listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 
-We've also made the content simple to make is as easy as possible to understand.
+We've also made the content simple to make it is as easy as possible to understand.
 
 <p class="govuk-body">
     <a class="govuk-link" href="https://mcmw.abilitynet.org.uk/" target="_blank" rel="noopener noreferrer">AbilityNet (opens in a new tab)</a> has advice on making your device easier to use if you have a disability.
