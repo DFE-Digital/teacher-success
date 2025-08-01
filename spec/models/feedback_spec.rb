@@ -100,7 +100,7 @@ RSpec.describe Feedback, type: :model do
         expect(feedback).to be_valid
       end
     end
-    
+
     context "when can_contact is missing" do
       let(:feedback) { build(:feedback, can_contact: nil) }
 
