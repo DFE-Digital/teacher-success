@@ -10,12 +10,13 @@ This accessibility statement applies to Get ready to teach.
 
 This website is run by the Department for Education. We want as many people as possible to be able to use this website. For example, that means you should be able to:
 
-change colours, contrast levels and fonts
-zoom in up to 400% without the text spilling off the screen
-navigate most of the website using just a keyboard
-navigate most of the website using speech recognition software
-listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
-We've also made the website text as simple as possible to understand.
+- change colours, contrast levels and fonts
+- zoom in up to 400% without the text spilling off the screen
+- navigate most of the website using just a keyboard
+- navigate most of the website using speech recognition software
+- listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
+
+We've also made the content simple to make is as easy as possible to understand.
 
 <p class="govuk-body">
     <a class="govuk-link" href="https://mcmw.abilitynet.org.uk/" target="_blank" rel="noopener noreferrer">AbilityNet (opens in a new tab)</a> has advice on making your device easier to use if you have a disability.
