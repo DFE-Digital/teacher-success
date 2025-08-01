@@ -39,6 +39,12 @@ If you’re doing a postgraduate certificate in education (PGCE) alongside quali
 
 These can sometimes come at the same time so it would be useful to know when these are so that you can plan and manage your time. For example, if you need to take into account things such as childcare.
 
+<%= render Cards::QuoteComponent.new(
+    text: "I think the biggest challenge was trying to balance my university work with the increasing teaching load.",
+    attribution: "Geography trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Available support
 Your training provider might offer services like careers advisers or mental health support. It's useful to be aware of what these are and how you can access them.
 

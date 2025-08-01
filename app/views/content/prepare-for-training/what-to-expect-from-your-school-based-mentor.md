@@ -43,6 +43,12 @@ Your mentor is responsible for making sure your teaching is observed and you're 
 
 They’ll help you set targets and understand how to improve, making sure you understand the curriculum and how to effectively put your teaching skills into practice.
 
+<%= render Cards::QuoteComponent.new(
+    text: "Teacher training requires openness to difficult feedback and the ability to reflect honestly. Rather than becoming defensive, I learned to embrace critique.",
+    attribution: "Religious education (RE) trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Assess your progress
 You’ll have informal and formal assessment points throughout your training – these are called formative and summative assessments.
 
@@ -83,3 +89,9 @@ They'll work closely with your mentor to provide feedback on your progress.
 Many trainees experience support from the wider school team, not just their mentors.
 
 You’ll likely observe a few different teachers throughout the school and may have a few of them observing you.
+
+<%= render Cards::QuoteComponent.new(
+    text: "Ask for help a lot! Whether it is asking for resources, for advice on planning or behaviour management – they will understand.",
+    attribution: "Modern foreign langauges (MFL) trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>

@@ -30,6 +30,12 @@ Your first school placement will be your chance to understand what teaching in a
 
 The school should provide you with all the information you need during your induction or onboarding, but it might be worth considering what would be useful to ask and things to be aware of.
 
+<%= render Cards::QuoteComponent.new(
+    text: "Watch how experienced teachers manage behaviour, explain concepts, and adapt their lessons. These real-life lessons are gold. Learn from feedback, even when it stings, it’s not personal, it’s professional.",
+    attribution: "Science trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Access the school
 
 Your school should let you know:
@@ -72,6 +78,12 @@ Part of the <%= govuk_link_to "teachers’ standards", "https://www.gov.uk/gover
 
 This will be an important part of being in the classroom and joining the school environment as a member of staff. Think about the dress code and how you might conduct yourself both in the classroom and out, like in the staffroom.
 
+<%= render Cards::QuoteComponent.new(
+    text: "Remember that professionalism is the key. Ensure that you make positive relationships with all staff on your placements and turn up every day on time.",
+    attribution: "Geography trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Reasonable adjustments
 
 If you need support during your training, you should talk to your school and provider about any reasonable adjustments you may need in place ahead of time.
@@ -105,3 +117,9 @@ You'll not have to worry about planning any lessons straight away but it's usefu
 Your placement school might use specific lesson planning resources that you’ll be able to access.
 
 You can also <%= govuk_link_to "find alternative lesson planning resources and tips", "/resources-while-training/lesson-planning-as-a-trainee-teacher" %>.
+
+<%= render Cards::QuoteComponent.new(
+    text: "Be prepared for bad days or bad lessons. The best planned lessons can go unexpectedly wrong in ways you can’t control. Get used to planning the next lesson as soon as that lesson has finished.",
+    attribution: "Physical education (PE) trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>

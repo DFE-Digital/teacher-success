@@ -21,6 +21,12 @@ breadcrumbs:
 ---
 If you need to talk to someone outside of your training provider or placement schools, there are places you can reach out to.
 
+<%= render Cards::QuoteComponent.new(
+    text: "I utilised support from as many avenues as possible. Having anxiety can make things super challenging sometimes, and having support isn’t a bad thing.",
+    attribution: "English trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 Department for Education is not responsible for the content of resources outside of GOV.UK. These links are an example of external resources trainees may want to use and may include paid for services.
 
 ## Education Support charity
