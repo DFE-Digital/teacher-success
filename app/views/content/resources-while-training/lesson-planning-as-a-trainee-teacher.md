@@ -23,7 +23,7 @@ breadcrumbs:
 ---
 
 <div class="govuk-inset-text">
-  Department for Education is not responsible for the content of resources outside of GOV.UK. Any links are an example of external resources you may want to use, not an exhaustive list and not a specific recommendation from the Department. You should always refer to the specific advice of your training provider first.
+  Department for Education is not responsible for the content of resources outside of GOV.UK. Any links are an example of external resources you may want to use, not an exhaustive list and not a specific recommendation from the department. You should always refer to the specific advice of your training provider first.
 </div>
 
 An important part of your teacher training will be learning how to plan lessons. Through this, you'll develop your teaching ability.
