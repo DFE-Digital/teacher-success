@@ -1,6 +1,7 @@
 class FeedbackController < ApplicationController
   before_action :set_frontmatter
 
+
   http_basic_authenticate_with(
     name: ENV["BASIC_AUTH_USERNAME"],
     password: ENV["BASIC_AUTH_PASSWORD"],
@@ -27,7 +28,6 @@ class FeedbackController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.url = request.fullpath
 
     if @feedback.save
       flash = {
@@ -49,6 +49,6 @@ class FeedbackController < ApplicationController
   end
 
   def feedback_params
-    params.require(:feedback).permit(:rating, :topic, :description, :email, :can_contact)
+    params.require(:feedback).permit(:rating, :topic, :description, :email, :can_contact, :url)
   end
 end
