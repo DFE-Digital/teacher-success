@@ -32,7 +32,7 @@ You'll likely be given templates to start with by your provider and they or your
 **You should check with your school and training provider what their requirements are.**
 
 <%= render Cards::QuoteComponent.new(
-    text: "Artificial intelligence (AI) became a big help when it came to planning activities. AI is not there to teach, it is there to help you teach.",
+    text: "“A quote I remember is 'it never gets easier, you just get better.'”",
     attribution: "PE trainee from 2024/25",
     classes: "govuk-!-margin-bottom-5"
 ) %>
