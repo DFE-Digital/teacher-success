@@ -65,7 +65,7 @@ We have an accessibility audit planned to review the service which will help us 
 
 This statement was prepared on 1st August 2025. It was last reviewed on 1st August 2025.
 
-This website was last tested on 1st August 2025. The test was carried out internally by the Get ready teach technical team and an Accessibility specialist.
+This website was last tested on 1st August 2025. The test was carried out internally by the Get ready to teach team and an Accessibility specialist.
 
 We tested all pages on the service.
 
