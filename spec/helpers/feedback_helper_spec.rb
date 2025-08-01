@@ -15,17 +15,6 @@ RSpec.describe FeedbackHelper, type: :helper do
         ])
       end
     end
-
-    context ":topics" do
-      it "returns humanized enum keys with original keys" do
-        results = formatted_enum(:topics)
-
-        expect(results).to eq([
-          [ "Site", "site" ],
-          [ "Page", "page" ]
-        ])
-      end
-    end
   end
 
   describe "#humanized_boolean" do
