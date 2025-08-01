@@ -18,7 +18,7 @@ class CookiePreferencesController < ApplicationController
       title: "Success",
       heading: "Cookie preferences saved",
       description: "Your cookie preferences have been saved."
-    }
+    } unless non_essential_preference.nil?
 
     redirect_to request.referer || root_path
   end
