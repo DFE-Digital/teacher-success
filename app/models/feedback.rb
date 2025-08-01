@@ -13,4 +13,6 @@ class Feedback < ApplicationRecord
   validates :rating, inclusion: { in: self.ratings.keys, message: "Select a rating from the list" }
   validates :topic, presence: { message: "Select the area of the website relating to your feedback" }
   validates :url, url: { message: "Please enter a valid URL" }, if: -> { topic == "page" }
+  validates :email, presence: { message: "Please enter a valid email" }, if: -> { can_contact }
+  validates :can_contact, inclusion: { in: [ true, false ], message: "Please select a contact preference" }
 end
