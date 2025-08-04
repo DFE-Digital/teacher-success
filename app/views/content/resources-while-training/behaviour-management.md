@@ -22,7 +22,9 @@ breadcrumbs:
           path: "/resources-while-training/behaviour-management"
 ---
 
-Department for Education is not responsible for the content of resources outside of GOV.UK. Any links are an example of external resources you may want to use, not an exhaustive list and not a specific recommendation from the Department. You should always refer to the specific advice of your training provider first.
+<div class="govuk-inset-text">
+  Department for Education is not responsible for the content of resources outside of GOV.UK. Any links are an example of external resources you may want to use, not an exhaustive list and not a specific recommendation from the department. You should always refer to the specific advice of your training provider first.
+</div>
 
 Learning how to manage behaviour in a classroom will be a key part of your teacher training.
 

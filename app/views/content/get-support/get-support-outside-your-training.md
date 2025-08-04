@@ -19,6 +19,10 @@ breadcrumbs:
         - name: "Get support outside your training"
           path: "/get-support/get-support-outside-your-training"
 ---
+<div class="govuk-inset-text">
+  Department for Education is not responsible for the content of resources outside of GOV.UK. These links are an example of external resources trainees may want to use and may include paid for services.
+</div>
+
 If you need to talk to someone outside of your training provider or placement schools, there are places you can reach out to.
 
 <%= render Cards::QuoteComponent.new(
@@ -26,8 +30,6 @@ If you need to talk to someone outside of your training provider or placement sc
     attribution: "English trainee from 2024/25",
     classes: "govuk-!-margin-bottom-5"
 ) %>
-
-Department for Education is not responsible for the content of resources outside of GOV.UK. These links are an example of external resources trainees may want to use and may include paid for services.
 
 ## Education Support charity
 The Education Support charity provides a helpline for teacher trainees, offering immediate, confidential support.
