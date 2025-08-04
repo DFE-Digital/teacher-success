@@ -76,10 +76,10 @@ Some will provide access to free resources whereas some will require a membershi
 
 ## Lesson planning resources
 ### The Chartered College of Teaching tips
-Before you start your training, you could <%= govuk_link_to "read some lesson planning tips for trainees from the Chartered College of Teaching", "https://my.chartered.college/early-career-hub/lesson-planning/" %>.
+Before you start your training, you could <a class="govuk-link" href="https://my.chartered.college/early-career-hub/lesson-planning/">read some lesson planning tips for trainees from the Chartered College of Teaching<span class="govuk-visually-hidden">. This is an external link.</span></a>.
 
 ### Oak National Academy
 If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
 
-- <%= govuk_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects" %>
-- <%= govuk_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects" %>
+- <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks3/subjects">key stage 3 (KS3)<span class="govuk-visually-hidden">. This is an external link.</span></a>
+- <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks4/subjects">key stage 4 (KS4)<span class="govuk-visually-hidden">. This is an external link.</span></a>
