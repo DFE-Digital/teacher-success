@@ -1,8 +1,9 @@
 @use "govuk-frontend/dist/govuk" as govuk;
+@use "../../colours";
 
 .quote {
   color: govuk.govuk-colour("black");
-  background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+  background-color: colours.$teach-light-blue;
 
   @include govuk.govuk-responsive-padding(6, "all");
   @include govuk.govuk-font-size(19);
