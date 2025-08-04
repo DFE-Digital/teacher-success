@@ -56,6 +56,12 @@ The following statements define the behaviour and attitudes which set the requir
 2. Teachers must have proper and professional regard for the ethos, policies and practices of the school in which they teach and maintain high standards in their own attendance and punctuality.
 3. Teachers must have an understanding of, and always act within, the statutory frameworks which set out their professional duties and responsibilities.
 
+<%= render Cards::QuoteComponent.new(
+    text: "Remember that professionalism is the key. Ensure that you make positive relationships with all staff on your placements and turn up everyday on time.",
+    attribution: "Geography trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## When you’ll be assessed and how
 You will not be assessed against the teachers’ standards until the end of your course.
 

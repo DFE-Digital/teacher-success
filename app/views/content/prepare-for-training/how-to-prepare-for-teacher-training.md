@@ -35,6 +35,12 @@ You can also try the <%= govuk_link_to "realistic job preview tool", "https://pl
 
 You don't have to have classroom experience before you start training, but it could help you feel better prepared.
 
+<%= render Cards::QuoteComponent.new(
+    text: "Get as much experience in school as possible, as this tells you a lot about how schools work and function.",
+    attribution: "Maths trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 <%= govuk_button_link_to "Get school experience", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/get-school-experience" %>
 
 ## Find out about funding
