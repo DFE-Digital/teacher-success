@@ -94,6 +94,6 @@ They’ll explain how your provider requires you to gather evidence for qualifie
 
 <%= render Cards::QuoteComponent.new(
     text: "Ask for help a lot! Whether it is asking for resources, for advice on planning or behaviour management – they will understand.",
-    attribution: "Modern foreign langauges (MFL) trainee from 2024/25",
+    attribution: "Modern foreign languages (MFL) trainee from 2024/25",
     classes: "govuk-!-margin-bottom-5"
 ) %>
