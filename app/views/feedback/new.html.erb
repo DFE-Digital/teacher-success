@@ -6,11 +6,11 @@
   } %>
 
   <%= form.govuk_collection_radio_buttons :topic, 
-    formatted_enum(:topics),
+    [["The whole site", "site"], ["A specific page", "page"]],
     :last,
     :first,
     ->(option) {
-      if option.first == "Page" 
+      if option.last == "page" 
         content_tag(:div, class: "hidden-subfield") do
           form.govuk_text_field(
             :url,
@@ -29,11 +29,11 @@
   %>
 
   <%= form.govuk_collection_radio_buttons :can_contact, 
-    ["Yes", "No"], 
+    [["Yes", true], ["No", false]], 
+    :last,
     :first,
-    ->(option) { option },
     ->(option) {
-      if option == "Yes"
+      if option.last == true 
         content_tag(:div, class: "hidden-subfield") do
           form.govuk_text_field(
             :email,

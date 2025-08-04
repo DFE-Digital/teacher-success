@@ -34,6 +34,12 @@ You'll likely be given templates to start with by your provider and they or your
 
 **You should check with your school and training provider what their requirements are.**
 
+<%= render Cards::QuoteComponent.new(
+    text: "“A quote I remember is 'it never gets easier, you just get better.'”",
+    attribution: "PE trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Use the national curriculum
 All lesson planning should consider the national curriculum. The national curriculum sets out the programmes of study and attainment targets for all subjects at all 4 key stages.
 
@@ -44,6 +50,12 @@ You might want to <%= govuk_link_to "read the national curriculum", "https://www
 To see how this works in practice, you could watch recorded lessons from other teachers, for example, from <%= govuk_link_to "Oak National Academy", "https://www.thenational.academy/teachers" %>.
 
 You can also look at your placement school’s website to understand what's covered on their specific curriculum and how they implement this.
+
+<%= render Cards::QuoteComponent.new(
+    text: "Early subject knowledge preparation can help out loads! Read the texts, textbooks, revision guides.",
+    attribution: "English trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
 
 ## How lesson planning works
 An important part of lesson planning will be how you incorporate:
@@ -77,12 +89,18 @@ As part of your teacher training, you may want to <%= govuk_link_to "find and jo
 
 Some will provide access to free resources whereas some will require a membership fee.
 
+<%= render Cards::QuoteComponent.new(
+    text: "The Geographical Association was extremely helpful for me. It provided teaching tips and advice within my field.",
+    attribution: "Geography trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Lesson planning resources
 ### The Chartered College of Teaching tips
-Before you start your training, you could <%= govuk_link_to "read some lesson planning tips for trainees from the Chartered College of Teaching", "https://my.chartered.college/early-career-hub/lesson-planning/" %>.
+Before you start your training, you could <a class="govuk-link" href="https://my.chartered.college/early-career-hub/lesson-planning/">read some lesson planning tips for trainees from the Chartered College of Teaching<span class="govuk-visually-hidden">. This is an external link.</span></a>.
 
 ### Oak National Academy
 If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
 
-- <%= govuk_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects" %>
-- <%= govuk_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects" %>
+- <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks3/subjects">key stage 3 (KS3)<span class="govuk-visually-hidden">. This is an external link.</span></a>
+- <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks4/subjects">key stage 4 (KS4)<span class="govuk-visually-hidden">. This is an external link.</span></a>

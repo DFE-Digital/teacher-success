@@ -43,6 +43,12 @@ Your mentor is responsible for making sure your teaching is observed and you're 
 
 They’ll help you set targets and understand how to improve, making sure you understand the curriculum and how to effectively put your teaching skills into practice.
 
+<%= render Cards::QuoteComponent.new(
+    text: "Teacher training requires openness to difficult feedback and the ability to reflect honestly. Rather than becoming defensive, I learned to embrace critique.",
+    attribution: "Religious education (RE) trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>
+
 ## Assess your progress
 You’ll have informal and formal assessment points throughout your training.
 
@@ -85,3 +91,9 @@ You’ll likely observe a few different teachers throughout the school and may h
 As well as your school-based mentor, you'll also have a mentor or tutor from your course provider who will not be specific to your placement schools.
 
 They’ll explain how your provider requires you to gather evidence for qualified teacher status (QTS) and make sure you’re being supported on your placements.
+
+<%= render Cards::QuoteComponent.new(
+    text: "Ask for help a lot! Whether it is asking for resources, for advice on planning or behaviour management – they will understand.",
+    attribution: "Modern foreign langauges (MFL) trainee from 2024/25",
+    classes: "govuk-!-margin-bottom-5"
+) %>

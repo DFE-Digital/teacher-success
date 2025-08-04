@@ -1,8 +1,9 @@
 @use "govuk-frontend/dist/govuk" as govuk;
+@use "colours";
 
 .page-header { 
   overflow: hidden;
-  background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+  background-color: colours.$teach-light-blue;
 
   .govuk-width-container {
 
@@ -31,7 +32,7 @@
 
   .image-header {
     display: flex;
-    background-color: rgba(govuk.govuk-colour("light-blue"), 0.15);
+    background-color: colours.$teach-light-blue;
     height: 200px;
     overflow: hidden;
     position: relative;
