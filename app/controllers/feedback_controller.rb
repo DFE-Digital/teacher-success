@@ -15,6 +15,13 @@ class FeedbackController < ApplicationController
 
   def new
     @feedback = Feedback.new
+
+    if params[:url].present?
+      # Pre-fill form if we're referring with a url
+      @feedback.topic = "page"
+      @feedback.url = params[:url].to_s
+    end
+
     breadcrumb "Feedback", new_feedback_path
   end
 
@@ -41,6 +48,6 @@ class FeedbackController < ApplicationController
   end
 
   def feedback_params
-    params.require(:feedback).permit(:rating, :topic, :description, :email, :can_contact)
+    params.require(:feedback).permit(:rating, :topic, :description, :email, :can_contact, :url)
   end
 end

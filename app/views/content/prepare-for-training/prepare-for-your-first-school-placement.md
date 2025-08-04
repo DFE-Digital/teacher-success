@@ -28,19 +28,31 @@ breadcrumbs:
 
 Your first school placement will be your chance to understand what teaching in a school is really like.
 
-The school should provide you with all the information you need during your induction or onboarding, but it might be worth considering what would be useful to ask and things to be aware of.
+Your provider will work closely with your placement school to get you set up and ready.
 
-## Access the school
+Your provider or school should give you with all the information you need during your induction or onboarding, but it might be worth considering what would be useful to ask and things to be aware of.
+
+## Prepare for your first day
 
 Your school should let you know:
 
-* how to access the school building
-* if there's a signing in and out process
-* if there's parking available, if you’re travelling by car
-* what the timings of the school day are and when you're expected to arrive
+* how to access the school building and if there's a signing in and out process
+* what the timings of the school day are and when you're expected to arrive (this will likely be before the official start of the school day)
 * what the dress code is
 
-You may have to travel to your placement school – you should talk to your provider about any financial support available.
+You should check the distance to your placement school and if there's parking available, if you're travelling by car. You can talk to your provider about whether there's any financial support available for travel.
+
+If your circumstances change, for example, if you move, you should make sure to update your provider as soon as possible.
+
+## Professional conduct
+
+Part of the <%= govuk_link_to "teachers’ standards", "https://www.gov.uk/government/publications/teachers-standards" %> you’ll be assessed against include your professional conduct.
+
+This will be an important part of being in the classroom and joining the school environment as a member of staff. Think about:
+
+* the dress code
+* how you might conduct yourself both in the classroom and out, like in the staffroom
+* being on time and avoiding any absences
 
 ## Access to technology
 
@@ -54,23 +66,17 @@ You’ll likely need access to school systems on your placement, for example, to
 
 If you’re ill during your training, it’s important to know how you should communicate this with both your placement school and training provider.
 
-It’s important to let the right people know as soon as possible so any cover can be arranged.
+It’s important to let the right people know as soon as possible so any cover can be arranged. You might want to check the school's website for any key contacts.
 
 ## Safeguarding and health and safety
 
 Each school will have their own safeguarding policies and health and safety procedures. If you know which placement school you’re going to, you may want to check their website to familiarise yourself with their policies.
 
-You’ll likely receive safeguarding training from your provider or your school.
+You’ll receive safeguarding training from your provider or your school.
 
-It’s likely you’ll need to bring ID with you on your first day – this might include your DBS.
+You’ll also need to bring ID with you on your first day – this might include your DBS.
 
 You may also want to familiarise yourself with <%= govuk_link_to "Department for Education’s keeping children safe in education guidance", "https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" %>.
-
-## Professional conduct
-
-Part of the <%= govuk_link_to "teachers’ standards", "https://www.gov.uk/government/publications/teachers-standards" %> you’ll be assessed against at the end of your course include your professional conduct.
-
-This will be an important part of being in the classroom and joining the school environment as a member of staff. Think about the dress code and how you might conduct yourself both in the classroom and out, like in the staffroom.
 
 ## Reasonable adjustments
 
@@ -80,7 +86,6 @@ This includes support for neurodiversity, long-term physical or mental health co
 
 Adjustments could include:
 
-- adjusting your timetable to suit your needs
 - providing copies of presentation materials before training sessions
 - printing or photocopying materials on coloured paper
 - providing contact details for support staff

@@ -27,7 +27,7 @@ At the end of your training, you'll gain qualified teacher status (QTS) once you
 QTS is what you need to teach in maintained primary, secondary and special schools in England (and soon, academies, too).
 
 ## The teachers’ standards
-### Teaching
+### Part 1: teaching
 There are 8 standards you’ll work towards.
 
 1. Set high expectations which inspire, motivate and challenge pupils.
@@ -39,7 +39,10 @@ There are 8 standards you’ll work towards.
 7. Manage behaviour effectively to ensure a good and safe learning environment.
 8. Fulfil wider professional responsibilities.
 
-### Personal and professional conduct
+### Part 2: personal and professional conduct
+
+You should demonstrate professional standards from the very start of your course.
+
 A teacher is expected to demonstrate consistently high standards of personal and professional conduct.
 
 The following statements define the behaviour and attitudes which set the required standard for conduct throughout a teacher’s career.
@@ -49,7 +52,7 @@ The following statements define the behaviour and attitudes which set the requir
     - having regard for the need to safeguard pupils’ well-being, in accordance with statutory provisions
     - showing tolerance of and respect for the rights of others
     - not undermining fundamental British values, including democracy, the rule of law, individual liberty and mutual respect, and tolerance of those with different faiths and beliefs
-    - ensuring that personal beliefs are not expressed in ways which exploit pupils’ vulnerability or might lead them to break the law.
+    - ensuring that personal beliefs are not expressed in ways which exploit pupils’ vulnerability or might lead them to break the law
 2. Teachers must have proper and professional regard for the ethos, policies and practices of the school in which they teach and maintain high standards in their own attendance and punctuality.
 3. Teachers must have an understanding of, and always act within, the statutory frameworks which set out their professional duties and responsibilities.
 

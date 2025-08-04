@@ -3,6 +3,7 @@ FactoryBot.define do
     rating { :satisfied }
     topic { :site }
     description { "Great!" }
+    can_contact { false }
 
     trait :with_contact_details do
       can_contact { true }

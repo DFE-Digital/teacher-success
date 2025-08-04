@@ -17,7 +17,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: params, headers: headers
           expect(response).to redirect_to(edit_cookie_preferences_path)
           follow_redirect!
-          expect(response.body).to include("Cookie Preferences Updated")
+          expect(response.body).to include("Your cookie preferences have been saved")
           expect(cookies[cookie_name]).to be_present
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(true)
@@ -31,7 +31,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: params, headers: headers
           expect(response).to redirect_to(edit_cookie_preferences_path)
           follow_redirect!
-          expect(response.body).to include("Cookie Preferences Updated")
+          expect(response.body).to include("Your cookie preferences have been saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(false)
         end
@@ -42,7 +42,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: {}, headers: headers
           expect(response).to redirect_to(edit_cookie_preferences_path)
           follow_redirect!
-          expect(response.body).to include("Cookie Preferences Updated")
+          expect(response.body).not_to include("Your cookie preferences have been saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(nil)
         end
@@ -59,7 +59,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: params, headers: headers
           expect(response).to redirect_to(root_path)
           follow_redirect!
-          expect(response.body).not_to include("Cookie Preferences Updated")
+          expect(response.body).to include("Your cookie preferences have been saved")
           expect(cookies[cookie_name]).to be_present
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(true)
@@ -73,7 +73,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: params, headers: headers
           expect(response).to redirect_to(root_path)
           follow_redirect!
-          expect(response.body).not_to include("Cookie Preferences Updated")
+          expect(response.body).to include("Your cookie preferences have been saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(false)
         end
@@ -84,7 +84,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: {}, headers: headers
           expect(response).to redirect_to(root_path)
           follow_redirect!
-          expect(response.body).not_to include("Cookie Preferences Updated")
+          expect(response.body).not_to include("Your cookie preferences have been saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(nil)
         end
@@ -113,7 +113,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: params
           expect(response).to redirect_to(root_path)
           follow_redirect!
-          expect(response.body).not_to include("Cookie Preferences Updated")
+          expect(response.body).to include("Your cookie preferences have been saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(false)
         end
@@ -124,7 +124,7 @@ RSpec.describe "CookiePreferences", type: :request do
           patch cookie_preferences_path, params: {}
           expect(response).to redirect_to(root_path)
           follow_redirect!
-          expect(response.body).not_to include("Cookie Preferences Updated")
+          expect(response.body).not_to include("Your cookie preferences have been saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(nil)
         end

@@ -100,5 +100,35 @@ RSpec.describe Feedback, type: :model do
         expect(feedback).to be_valid
       end
     end
+
+    context "when can_contact is missing" do
+      let(:feedback) { build(:feedback, can_contact: nil) }
+
+      it "is not valid" do
+        expect(feedback).to be_invalid
+        expect(feedback.errors[:can_contact]).to include("Please select a contact preference")
+      end
+    end
+
+    context "when can_contact is true" do
+      let(:feedback) { build(:feedback, can_contact: true, email: email) }
+
+      context "and email is blank" do
+        let(:email) { nil }
+
+        it "is not valid" do
+          expect(feedback).to be_invalid
+          expect(feedback.errors[:email]).to include("Please enter a valid email")
+        end
+      end
+
+      context "and email is valid" do
+        let(:email) { "test@test.com" }
+
+        it "is valid" do
+          expect(feedback).to be_valid
+        end
+      end
+    end
   end
 end
