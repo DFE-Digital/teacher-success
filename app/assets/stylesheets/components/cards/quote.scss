@@ -28,6 +28,12 @@
   }
 }
 
+.flex-container {
+  .quote{
+    @include govuk.govuk-responsive-margin(4, "bottom");
+  }
+}
+
 @include govuk.govuk-media-query($from: tablet) {
 
   .flex-container {
