@@ -27,3 +27,23 @@
     @include govuk.govuk-responsive-margin(4, "top");
   }
 }
+
+@include govuk.govuk-media-query($from: tablet) {
+
+  .flex-container {
+    display: flex; /* Make the container element behave like a table */
+
+    .govuk-grid-column-one-half {
+      flex:1; /* Make elements inside the container behave like table cells */
+      margin-bottom: 0px;
+
+      .quote{
+        height: 100%;
+        align-items: baseline;
+        box-sizing: border-box;
+      }
+    }
+
+  }
+
+}
