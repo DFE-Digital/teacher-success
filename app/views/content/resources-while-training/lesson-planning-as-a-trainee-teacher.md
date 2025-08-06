@@ -77,8 +77,8 @@ Some will provide access to free resources whereas some will require a membershi
 <div class="prompt prompt-home">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-      <svg aria-describedby="info icon" aria-hidden="true" class="svg-inline--fa fa-circle-info fa-2x" data-fa-i2svg="" data-icon="circle-info" data-prefix="fas" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-      <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" fill="currentColor"></path></svg> <i aria-describedby="info icon" class="fa-2x fa-solid fa-circle-info"></i>
+      <svg aria-hidden="true" class="svg-inline--fa fa-circle-info fa-2x" data-fa-i2svg="" data-icon="circle-info" data-prefix="fas" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" fill="currentColor"></path></svg> <i class="fa-2x fa-solid fa-circle-info"></i>
     </div>
     <div class="prompt__container">
       <h2 class="govuk-heading-l" id="lesson-planning-resources">Lesson planning resources</h2>
