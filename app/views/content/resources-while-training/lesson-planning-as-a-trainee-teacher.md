@@ -74,12 +74,26 @@ As part of your teacher training, you may want to <%= govuk_link_to "find and jo
 
 Some will provide access to free resources whereas some will require a membership fee.
 
-## Lesson planning resources
-### The Chartered College of Teaching tips
-Before you start your training, you could <%= govuk_link_to "read some lesson planning tips for trainees from the Chartered College of Teaching", "https://my.chartered.college/early-career-hub/lesson-planning/" %>.
-
-### Oak National Academy
-If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
-
-- <%= govuk_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects" %>
-- <%= govuk_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects" %>
+<div class="prompt prompt-home">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <svg aria-describedby="info icon" aria-hidden="true" class="svg-inline--fa fa-circle-info fa-2x" data-fa-i2svg="" data-icon="circle-info" data-prefix="fas" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" fill="currentColor"></path></svg> <i aria-describedby="info icon" class="fa-2x fa-solid fa-circle-info"></i>
+    </div>
+    <div class="prompt__container">
+      <h2 class="govuk-heading-l" id="lesson-planning-resources">Lesson planning resources</h2>
+      <h3 class="govuk-heading-m" id="the-chartered-college-of-teaching-tips">The Chartered College of Teaching tips</h3>
+      <p class="govuk-body-m">Before you start your training, you could <a class="govuk-link" href="https://my.chartered.college/early-career-hub/lesson-planning/">read some lesson planning tips for trainees from the Chartered College of Teaching</a>.</p>
+      <h3 class="govuk-heading-m" id="oak-national-academy">Oak National Academy</h3>
+      <p class="govuk-body-m">If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks3/subjects">key stage 3 (KS3)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks4/subjects">key stage 4 (KS4)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
