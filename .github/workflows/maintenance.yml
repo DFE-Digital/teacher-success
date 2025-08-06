@@ -45,13 +45,8 @@ jobs:
           docker-repository: ghcr.io/dfe-digital/teacher-success-maintenance
           github-token: ${{ secrets.GITHUB_TOKEN }}
           
-          # Service customization - no config files needed!
-          service-name: "Teacher Success"
-          service-short: "teach"  # Short name used in Kubernetes resources
-          maintenance-message: "We are currently carrying out essential maintenance. Please try again later."
-          contact-email: "teacher-success@digital.education.gov.uk"
-          # estimated-return-time: "15:00"  # Optional - uncomment and set if needed
-          # status-page-url: "https://status.example.com"  # Optional
+          # Config file with maintenance settings
+          config-file: maint-config.txt
           
           # Use spike branch for templates (will use main once merged)
           template-ref: "2392-spike-centralise-maintenance-page"

@@ -1,0 +1,6 @@
+# Maintenance configuration
+SERVICE_PRETTY="Register for National Professional Qualifications"
+MAINTENANCE_MESSAGE="We are currently performing scheduled maintenance to improve the service"
+ESTIMATED_RETURN="<p class='govuk-body'>We expect the service to be available again by <strong>3:00pm today</strong>.</p>"
+STATUS_PAGE=""
+CONTACT_EMAIL="continuing-professional-development@digital.education.gov.uk"
