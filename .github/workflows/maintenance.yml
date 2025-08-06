@@ -47,6 +47,7 @@ jobs:
           
           # Service customization - no config files needed!
           service-name: "Teacher Success"
+          service-short: "teach"  # Short name used in Kubernetes resources
           maintenance-message: "We are currently carrying out essential maintenance. Please try again later."
           contact-email: "teacher-success@digital.education.gov.uk"
           # estimated-return-time: "15:00"  # Optional - uncomment and set if needed
