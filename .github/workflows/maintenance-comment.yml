@@ -1,4 +1,4 @@
-name: Set maintenance mode (Centralized)
+name: Set maintenance mode
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ permissions:
 
 jobs:
   set-maintenance-mode:
-    name: Set maintenance mode (centralized)
+    name: Set maintenance mode
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
 
@@ -32,25 +32,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Enable or disable maintenance mode
-        uses: DFE-Digital/github-actions/maintenance-v2@2392-spike-centralise-maintenance-page
+        uses: DFE-Digital/github-actions/maintenance@master
         with:
-          # Azure authentication
           azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
           azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          
-          # Core configuration
           environment: ${{ inputs.environment }}
           mode: ${{ inputs.mode }}
           docker-repository: ghcr.io/dfe-digital/teacher-success-maintenance
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          
-          # Service customization - no config files needed!
-          service-name: "Teacher Success"
-          maintenance-message: "We are currently carrying out essential maintenance. Please try again later."
-          contact-email: "teacher-success@digital.education.gov.uk"
-          # estimated-return-time: "15:00"  # Optional - uncomment and set if needed
-          # status-page-url: "https://status.example.com"  # Optional
-          
-          # Use spike branch for templates (will use main once merged)
-          template-ref: "2392-spike-centralise-maintenance-page"
