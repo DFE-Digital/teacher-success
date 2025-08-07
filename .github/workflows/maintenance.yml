@@ -48,5 +48,5 @@ jobs:
           # Config file with maintenance settings
           config-file: maint-config.txt
           
-          # Use spike branch for templates (will use main once merged)
-          template-ref: "2392-spike-centralise-maintenance-page"
+          # Template version to use
+          template-ref: "v1.0.0"
