@@ -32,7 +32,7 @@ We'll consider your request and get back to you in 7 days.
 
 ## Reporting accessibility problems with this website
 
-We're always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we're not meeting accessibility requirements, contact: <%= govuk_link_to "teacher.training@education.gov.uk", "mailto:teacher.training@education.gov.uk" %>.
+We're always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we're not meeting accessibility requirements, contact: <%= govuk_link_to "becomingateacher@digital.education.gov.uk", "mailto:becomingateacher@digital.education.gov.uk" %>.
 
 ## Enforcement procedure
 
