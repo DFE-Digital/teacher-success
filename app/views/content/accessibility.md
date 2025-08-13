@@ -19,7 +19,7 @@ This website is run by the Department for Education. We want as many people as p
 We've also made the content simple to make it is as easy as possible to understand.
 
 <p class="govuk-body">
-    <a class="govuk-link" href="https://mcmw.abilitynet.org.uk/" target="_blank" rel="noopener noreferrer">AbilityNet (opens in a new tab)</a> has advice on making your device easier to use if you have a disability.
+    <a class="govuk-link" href="https://mcmw.abilitynet.org.uk/" rel="noopener noreferrer">AbilityNet</a> has advice on making your device easier to use if you have a disability.
 </p>
 
 ## Feedback and contact information 
@@ -39,7 +39,7 @@ We're always looking to improve the accessibility of this website. If you find a
 <p class="govuk-body">
     The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies
     (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). If you're
-    not happy with how we respond to your complaint, <a class="govuk-link" rel="noopener noreferrer" href="https://www.equalityadvisoryservice.com/" target="_blank">contact the Equality Advisory and Support Service (opens in a new tab)</a>.
+    not happy with how we respond to your complaint, <a class="govuk-link" rel="noopener noreferrer" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service</a>.
 </p>
 
 ## Technical information about this website's accessibility
@@ -64,9 +64,9 @@ We have an accessibility audit planned to review the service which will help us 
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 1st August 2025. It was last reviewed on 1st August 2025.
+This statement was prepared on 1 August 2025. It was last reviewed on 1 August 2025.
 
-This website was last tested on 1st August 2025. The test was carried out internally by the Get ready to teach team and an Accessibility specialist.
+This website was last tested on 1 August 2025. The test was carried out internally by the Get ready to teach team and an Accessibility specialist.
 
 We tested all pages on the service.
 
