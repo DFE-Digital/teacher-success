@@ -15,7 +15,7 @@ breadcrumbs:
     button_text: "Prepare for your training",
     button_href: "/prepare-for-training/how-to-prepare-for-teacher-training",
     image: "content/teacher2.png",
-    image_alt: "Image of a teacher in a classroom"
+    image_alt: "A teacher in a classroom"
 ) %>
 
 <%= render "content/home/next_steps" %>
