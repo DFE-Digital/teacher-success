@@ -47,6 +47,10 @@
       @include govuk.govuk-media-query($from: tablet) {
         width: 70%;
       }
+
+      @include govuk.govuk-media-query($from: desktop) {
+        width: 85%;
+      }
     }
 
     h1 {
