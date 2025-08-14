@@ -32,7 +32,7 @@ But don’t worry – your provider and placement schools will work together to 
 
 <%= render Cards::QuoteComponent.new(
     text: "Balancing time management and behaviour management is essential. I prioritise establishing good behaviour first; once students are engaged, I can cover the lesson content efficiently and on schedule.",
-    attribution: "MFL trainee from 2024/25",
+    attribution: "Modern foreign languages (MFL) trainee from 2024/25",
     classes: "govuk-!-margin-bottom-5"
 ) %>
 
