@@ -4,6 +4,7 @@
 .quote {
   color: govuk.govuk-colour("black");
   background-color: colours.$teach-light-blue;
+  font-family: "GDS Transport";
 
   @include govuk.govuk-responsive-padding(6, "all");
   @include govuk.govuk-font-size(19);
