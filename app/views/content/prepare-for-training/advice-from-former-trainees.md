@@ -28,7 +28,7 @@ breadcrumbs:
 
 ## What advice would you give to those about to start teacher training?
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "You won’t be perfect on day one and that’s okay. Teacher training is about growth, not perfection.",
@@ -45,7 +45,7 @@ breadcrumbs:
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Remember that you are in the process of learning; there will be lessons which don't go to plan and that's absolutely okay. You aren't expected to be a perfect teacher – all that matters is that you learn from the experience.",
@@ -64,7 +64,7 @@ breadcrumbs:
 
 ## What was the most challenging part of teacher training and how did you deal with it?
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "The most challenging part is the imposter syndrome. You will feel like you are not good enough and that you can’t do this. This is normal – fake it until you make it!",
@@ -81,7 +81,7 @@ breadcrumbs:
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "How long it takes to plan lessons – stick with it because you'll get quicker and better every day. A quote I remember is, ‘It never gets easier, you just get better.’",
@@ -100,7 +100,7 @@ breadcrumbs:
 
 ## What resources or tools did you find the most useful during your training?
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Excel spreadsheet for medium term planning – a lifesaver! A sheet for each term, scheme of work, calendar for the year and a to do list.",
@@ -117,7 +117,7 @@ breadcrumbs:
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "There are so many online resources now that you can always find slides that you can edit rather than starting from scratch. You can save yourself so much time by looking around.",
@@ -137,7 +137,7 @@ breadcrumbs:
 ## Is there anything you would have done differently to prepare for training?
 
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Increased subject and curriculum knowledge, if I’d already had this, planning would have been significantly easier.",
@@ -154,7 +154,7 @@ breadcrumbs:
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Get as much experience in school as possible, as this tells you a lot about how schools work and function.",
