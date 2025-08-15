@@ -154,7 +154,7 @@ breadcrumbs:
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-6">
+<div class="govuk-grid-row govuk-!-margin-bottom-6 flex-container">
   <div class="govuk-grid-column-one-half">
     <%= render Cards::QuoteComponent.new(
         text: "Get as much experience in school as possible, as this tells you a lot about how schools work and function.",
