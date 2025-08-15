@@ -4,6 +4,7 @@
 .quote {
   color: govuk.govuk-colour("black");
   background-color: colours.$teach-light-blue;
+  font-family: "GDS Transport";
 
   @include govuk.govuk-responsive-padding(6, "all");
   @include govuk.govuk-font-size(19);
@@ -27,4 +28,25 @@
 
     @include govuk.govuk-responsive-margin(4, "top");
   }
+}
+
+
+@include govuk.govuk-media-query($from: tablet) {
+
+  .flex-container {
+    display: flex; /* Make the container element behave like a table */
+
+    .govuk-grid-column-one-half {
+      flex:1; /* Make elements inside the container behave like table cells */
+      margin-bottom: 0px;
+
+      .quote{
+        height: 100%;
+        align-items: baseline;
+        box-sizing: border-box;
+      }
+    }
+
+  }
+
 }
