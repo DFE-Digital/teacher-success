@@ -40,6 +40,8 @@ module "web_application" {
   replicas     = var.replicas
 
   send_traffic_to_maintenance_page = var.send_traffic_to_maintenance_page
+
+  run_as_non_root = true
 }
 
 module "worker_application" {
@@ -65,4 +67,6 @@ module "worker_application" {
   max_memory = var.worker_memory_max
 
   enable_logit = true
+
+  run_as_non_root = true
 }
