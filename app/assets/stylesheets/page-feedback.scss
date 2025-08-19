@@ -24,6 +24,7 @@
 
   &__title {
     @include govuk.govuk-responsive-margin(0, "all");
+    font-weight: bold;
   }
 
   .govuk-button-group, .page-feedback__content.govuk-button-group {
