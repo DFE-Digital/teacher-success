@@ -8,7 +8,7 @@ class EventsController < ApplicationController
       .with_request_details(request)
       .with_response_details(response)
 
-    DfE::Analytics::SendEvents.do([event])
+    DfE::Analytics::SendEvents.do([ event ])
 
     head :ok
   end
