@@ -4,11 +4,6 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   include DfE::Analytics::Requests
 
-  http_basic_authenticate_with(
-    name: ENV["BASIC_AUTH_USERNAME"],
-    password: ENV["BASIC_AUTH_PASSWORD"],
-  ) unless Rails.env.development? || Rails.env.test?
-
   before_action :add_home_breadcrumb
 
   def add_home_breadcrumb

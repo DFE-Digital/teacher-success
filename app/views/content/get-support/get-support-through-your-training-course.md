@@ -27,7 +27,7 @@ There are lots of people on hand to support you during your training. These migh
 - training provider
 
 <%= render Cards::QuoteComponent.new(
-    text: "Support is always available – university tutors, school mentors, and the SLT are there to help. It is important to speak up and not suffer in silence.",
+    text: "Support is always available – university tutors, school mentors, and the senior leadership team (SLT) are there to help. It is important to speak up and not suffer in silence.",
     attribution: "Religious education (RE) trainee from 2024/25",
     classes: "govuk-!-margin-bottom-5"
 ) %>
