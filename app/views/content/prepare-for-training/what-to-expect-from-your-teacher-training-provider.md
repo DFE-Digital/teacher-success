@@ -51,7 +51,7 @@ They’ll explain how your provider requires you to gather evidence for qualifie
 
 Your training provider might also offer services like careers advisers or mental health support. It's useful to be aware of what these are and how you can access them.
 
-You can also <%= govuk_link_to "find alternative ways to get support on your training", "/get-support" %> or read <%= govuk_link_to "Get Into Teaching's information about funding for trainee teachers", "https://getintoteaching.education.gov.uk/funding-and-support" %>.
+You can also <%= govuk_link_to "find alternative ways to get support on your training", "/get-support" %> or read <%= tracked_link_to "Get Into Teaching's information about funding for trainee teachers", "https://getintoteaching.education.gov.uk/funding-and-support" %>.
 
 ## Absence procedures
 If you’re ill during your training, it’s important to know how you should communicate this with both your training provider and placement school.
@@ -77,4 +77,4 @@ Providers could make adjustments such as:
 
 You should also discuss this with your placement schools.
 
-<%= govuk_link_to "Read Get Into Teaching's information about financial support if you're disabled", "https://getintoteaching.education.gov.uk/funding-and-support/if-youre-disabled" %>.
+<%= tracked_link_to "Read Get Into Teaching's information about financial support if you're disabled", "https://getintoteaching.education.gov.uk/funding-and-support/if-youre-disabled" %>.

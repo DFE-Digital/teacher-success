@@ -22,7 +22,7 @@ breadcrumbs:
           path: "/resources-while-training/meeting-the-teachers-standards"
 ---
 
-At the end of your training, you'll gain qualified teacher status (QTS) once you've met the <%= govuk_link_to "teachers' standards", "https://www.gov.uk/government/publications/teachers-standards" %>.
+At the end of your training, you'll gain qualified teacher status (QTS) once you've met the <%= tracked_link_to "teachers' standards", "https://www.gov.uk/government/publications/teachers-standards" %>.
 
 QTS is what you need to teach in maintained primary, secondary and special schools in England (and soon, academies, too).
 

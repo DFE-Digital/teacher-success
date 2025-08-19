@@ -29,9 +29,9 @@ breadcrumbs:
 ## Get classroom experience
 Getting classroom experience can be a good way to help you feel more familiar with the school environment before you start your placement. Many providers recommend it.
 
-You could arrange a few days in person with a school near you or <%= govuk_link_to "explore life in the classroom virtually on TeachQuest", "https://playcanv.as/b/ca743be9" %>.
+You could arrange a few days in person with a school near you or <%= tracked_link_to "explore life in the classroom virtually on TeachQuest", "https://playcanv.as/b/ca743be9" %>.
 
-You can also try the <%= govuk_link_to "realistic job preview tool", "https://platform.teachersuccess.co.uk/p/XK4rV0xN16/41xZQ10Z2l?id=c74fef2451c5af60c516075028d313d55321e06d2d53232082e329e292611d5b" %> where you can respond to realistic video scenarios to understand what life in the classroom is like.
+You can also try the <%= tracked_link_to "realistic job preview tool", "https://platform.teachersuccess.co.uk/p/XK4rV0xN16/41xZQ10Z2l?id=c74fef2451c5af60c516075028d313d55321e06d2d53232082e329e292611d5b" %> where you can respond to realistic video scenarios to understand what life in the classroom is like.
 
 You don't have to have classroom experience before you start training, but it could help you feel better prepared.
 
@@ -56,7 +56,7 @@ You may also be entitled to extra support if you:
 
 You may also be eligible for some funding from your provider – you might want to speak to them about this before you start your course.
 
-<%= govuk_button_link_to "Find out how to fund your training", "https://getintoteaching.education.gov.uk/funding-and-support" %>
+<%= tracked_button_link_to "Find out how to fund your training", "https://getintoteaching.education.gov.uk/funding-and-support" %>
 
 ## Talk to your training provider
 Your training provider may have already been in touch and started your induction. Don't worry if not – many providers will wait until September.
@@ -77,7 +77,7 @@ Teacher training providers can make adjustments if you need support to become a 
 
 It’s best to talk to your provider about this as soon as possible to make sure you have all the support you need in place.
 
-<%= govuk_button_link_to "Explore adjustments to help you train to teach", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/accessibility-adjustments" %>
+<%= tracked_button_link_to "Explore adjustments to help you train to teach", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/accessibility-adjustments" %>
 
 ## Read advice from former trainees
 

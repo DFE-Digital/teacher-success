@@ -25,14 +25,14 @@ We've also made the content simple to make it is as easy as possible to understa
 ## Feedback and contact information 
 
 <p class="govuk-body">
-    If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille email <%= govuk_link_to "becomingateacher@digital.education.gov.uk", "mailto:becomingateacher@digital.education.gov.uk" %>.
+    If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille email <%= tracked_mail_to "becomingateacher@digital.education.gov.uk" %>.
 </p>
 
 We'll consider your request and get back to you in 7 days.
 
 ## Reporting accessibility problems with this website
 
-We're always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we're not meeting accessibility requirements, contact: <%= govuk_link_to "teacher.training@education.gov.uk", "mailto:teacher.training@education.gov.uk" %>.
+We're always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we're not meeting accessibility requirements, contact: <%= tracked_mail_to "teacher.training@education.gov.uk" %>.
 
 ## Enforcement procedure
 

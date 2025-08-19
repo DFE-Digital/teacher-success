@@ -50,7 +50,7 @@ If your circumstances change, for example, if you move, you should make sure to 
 
 ## Professional conduct
 
-Part of the <%= govuk_link_to "teachers’ standards", "https://www.gov.uk/government/publications/teachers-standards" %> you’ll be assessed against include your professional conduct.
+Part of the <%= tracked_link_to "teachers’ standards", "https://www.gov.uk/government/publications/teachers-standards" %> you’ll be assessed against include your professional conduct.
 
 This will be an important part of being in the classroom and joining the school environment as a member of staff. Think about:
 
@@ -80,7 +80,7 @@ You’ll receive safeguarding training from your provider or your school.
 
 You’ll also need to bring ID with you on your first day – this might include your DBS.
 
-You may also want to familiarise yourself with <%= govuk_link_to "Department for Education’s keeping children safe in education guidance", "https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" %>.
+You may also want to familiarise yourself with <%= tracked_link_to "Department for Education’s keeping children safe in education guidance", "https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" %>.
 
 <%= render Cards::QuoteComponent.new(
     text: "Remember that professionalism is the key. Ensure that you make positive relationships with all staff on your placements and turn up every day on time.",
@@ -103,7 +103,7 @@ Adjustments could include:
 
 You may be eligible for financial support to help cover the costs of any specialist equipment or study-related costs due to a health condition or disability.
 
-<%= govuk_link_to "Find out more about financial support if you're disabled", "https://getintoteaching.education.gov.uk/funding-and-support/if-youre-disabled" %>.
+<%= tracked_link_to "Find out more about financial support if you're disabled", "https://getintoteaching.education.gov.uk/funding-and-support/if-youre-disabled" %>.
 
 ## Behaviour management policies
 

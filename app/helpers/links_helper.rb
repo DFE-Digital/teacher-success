@@ -11,16 +11,26 @@ module LinksHelper
     tracked_link_of_style(:govuk_mail_to, *, **)
   end
 
-  def tracked_link_of_style(method_name, *, **kwargs)
+  def tracked_link_of_style(method_name, *options, **kwargs)
     permitted_styles = %i[
       govuk_button_link_to
       govuk_link_to
       govuk_mail_to
     ]
 
+    # Append a visually hidden screen reader hint for link_to and button_link_to helpers
+    if method_name.in?(%i[govuk_link_to govuk_button_link_to])
+      text_with_screen_reader_hint = safe_join([
+        options.first,
+        content_tag(:span, ". This is an external link", class: "govuk-visually-hidden")
+      ])
+
+      options[0] = text_with_screen_reader_hint
+    end
+
     raise ArgumentError, "Supports #{permitted_styles.to_sentence}" unless permitted_styles.include?(method_name)
 
-    send(method_name, *, **kwargs.deep_merge(data: {
+    send(method_name, *options, **kwargs.deep_merge(data: {
       controller: "tracked-link",
       action: %w[click auxclick contextmenu].map { |a| "#{a}->tracked-link#track" }.join(" "),
       "tracked-link-target": "link",
