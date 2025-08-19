@@ -1,10 +1,12 @@
 GIT
   remote: https://github.com/DFE-Digital/dfe-analytics.git
-  revision: b1617a618bdcfb505f6ba8f7b1c0b5efa20a3f1a
-  tag: v1.6.0
+  revision: 26b21168157b9fca62ec1e4ac92c7dfe75c68103
+  tag: v1.15.7
   specs:
-    dfe-analytics (1.6.0)
+    dfe-analytics (1.15.7)
       google-cloud-bigquery (~> 1.38)
+      httparty (~> 0.21)
+      multi_xml (~> 0.6.0)
       request_store_rails (~> 2)
 
 GEM
@@ -248,8 +250,7 @@ GEM
       turbo-rails
     msgpack (1.8.0)
     multi_json (1.17.0)
-    multi_xml (0.7.2)
-      bigdecimal (~> 3.1)
+    multi_xml (0.6.0)
     net-http (0.6.0)
       uri
     net-imap (0.5.8)
