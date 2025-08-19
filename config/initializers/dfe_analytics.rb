@@ -72,7 +72,7 @@ DfE::Analytics.configure do |config|
   # instead of the BigQuery API JSON Key. Note that this also will also
   # use a new version of the BigQuery streaming APIs.
   #
-  # config.azure_federated_auth = false
+  config.azure_federated_auth = true
 
   # Client Id of the app in azure
   #
