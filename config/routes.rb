@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # DFE Custom events
+  post "events", to: "events#create"
+
   # Cookie Preferences
   resource :cookie_preferences, only: [ :edit, :update ]
   get "cookies", to: "cookie_preferences#edit", as: "cookies"

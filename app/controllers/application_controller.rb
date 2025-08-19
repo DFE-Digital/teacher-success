@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   default_form_builder(GOVUKDesignSystemFormBuilder::FormBuilder)
 
   include Pagy::Backend
+  include DfE::Analytics::Requests
 
   http_basic_authenticate_with(
     name: ENV["BASIC_AUTH_USERNAME"],

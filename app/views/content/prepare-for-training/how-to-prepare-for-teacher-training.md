@@ -41,7 +41,7 @@ You don't have to have classroom experience before you start training, but it co
     classes: "govuk-!-margin-bottom-5"
 ) %>
 
-<%= govuk_button_link_to "Get school experience", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/get-school-experience" %>
+<%= tracked_button_link_to "Get school experience", "https://getintoteaching.education.gov.uk/train-to-be-a-teacher/get-school-experience" %>
 
 ## Find out about funding
 There are lots of different ways to fund your teacher training.
