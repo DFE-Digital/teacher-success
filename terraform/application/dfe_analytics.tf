@@ -10,6 +10,6 @@ module "dfe_analytics" {
   cluster               = var.cluster
   namespace             = var.namespace
   service_short         = var.service_short
-  environment           = local.environment
+  environment           = var.environment
   gcp_dataset           = var.dataset_name
 }
