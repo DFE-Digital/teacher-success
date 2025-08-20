@@ -15,6 +15,9 @@ module "application_configuration" {
   config_variables = {
     ENVIRONMENT_NAME = var.environment
     PGSSLMODE        = local.postgres_ssl_mode
+    BIGQUERY_DATASET = var.dataset_name
+    BIGQUERY_PROJECT_ID = "teacher-success"
+    BIGQUERY_TABLE_NAME = "events"
   }
   secret_variables = {
     DATABASE_URL = module.postgres.url

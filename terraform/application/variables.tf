@@ -58,6 +58,10 @@ variable "enable_dfe_analytics_federated_auth" {
   description = "Create the resources in Google cloud for federated authentication and enable in application"
   default     = false
 }
+variable "dataset_name" {
+  description = "dfe analytics dataset name in Google Bigquery"
+  default     = "not in use"
+}
 variable "external_url" {
   type        = string
   default     = null
