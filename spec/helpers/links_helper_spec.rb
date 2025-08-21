@@ -60,4 +60,3 @@ RSpec.describe LinksHelper, type: :helper do
     end
   end
 end
-
