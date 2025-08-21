@@ -45,9 +45,9 @@ All lesson planning should consider the national curriculum. The national curric
 
 All local-authority-maintained schools in England must teach these programmes of study.
 
-You might want to <%= govuk_link_to "read the national curriculum", "https://www.gov.uk/government/collections/national-curriculum" %> for your key stage or subject to help you understand what you’ll be teaching.
+You might want to <%= tracked_link_to "read the national curriculum", "https://www.gov.uk/government/collections/national-curriculum" %> for your key stage or subject to help you understand what you’ll be teaching.
 
-To see how this works in practice, you could watch recorded lessons from other teachers, for example, from <%= govuk_link_to "Oak National Academy", "https://www.thenational.academy/teachers" %>.
+To see how this works in practice, you could watch recorded lessons from other teachers, for example, from <%= tracked_link_to "Oak National Academy", "https://www.thenational.academy/teachers" %>.
 
 You can also look at your placement school’s website to understand what's covered on their specific curriculum and how they implement this.
 
@@ -80,12 +80,12 @@ Schemes of work operate as a roadmap for teachers to help them plan and deliver 
 You should talk to your placement school about any schemes they follow.
 
 ## Curriculum Hubs
-Department for Education funds a national network of <%= govuk_link_to "Curriculum Hubs", "https://www.gov.uk/government/publications/access-support-from-school-hubs/subject-hubs" %> through the Education Endowment Foundation.
+Department for Education funds a national network of <%= tracked_link_to "Curriculum Hubs", "https://www.gov.uk/government/publications/access-support-from-school-hubs/subject-hubs" %> through the Education Endowment Foundation.
 
 They’re designed to help you develop expertise in teaching a specific subject and offer support to schools or individuals. Some hubs target specific phases of education, for example, English hub support is largely for primary schools whereas languages hub support is for secondary schools.
 
 ## Subject associations
-As part of your teacher training, you may want to <%= govuk_link_to "find and join a subject association", "https://www.subjectassociations.org.uk/our-members/" %>. They provide access to resources and professional development.
+As part of your teacher training, you may want to <%= tracked_link_to "find and join a subject association", "https://www.subjectassociations.org.uk/our-members/" %>. They provide access to resources and professional development.
 
 Some will provide access to free resources whereas some will require a membership fee.
 
@@ -97,10 +97,10 @@ Some will provide access to free resources whereas some will require a membershi
 
 ## Lesson planning resources
 ### The Chartered College of Teaching tips
-Before you start your training, you could <a class="govuk-link" href="https://my.chartered.college/early-career-hub/lesson-planning/">read some lesson planning tips for trainees from the Chartered College of Teaching<span class="govuk-visually-hidden">. This is an external link.</span></a>.
+Before you start your training, you could <%= tracked_link_to "read some lesson planning tips for trainees from the Chartered College of Teaching", "https://my.chartered.college/early-career-hub/lesson-planning" %>
 
 ### Oak National Academy
 If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
 
-- <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks3/subjects">key stage 3 (KS3)<span class="govuk-visually-hidden">. This is an external link.</span></a>
-- <a class="govuk-link" href="https://www.thenational.academy/teachers/key-stages/ks4/subjects">key stage 4 (KS4)<span class="govuk-visually-hidden">. This is an external link.</span></a>
+- <%= tracked_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects" %>
+- <%= tracked_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects" %>

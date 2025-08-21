@@ -19,7 +19,7 @@ RUN apk add --update --no-cache tzdata && \
 # build-base: dependencies for bundle
 # yarn: node package manager
 # postgresql-dev: postgres driver and libraries
-RUN apk add --no-cache build-base yarn postgresql-dev yaml-dev
+RUN apk add --no-cache build-base yarn postgresql-dev yaml-dev git
 
 # Create non-root user and group with specific UIDs/GIDs (to match production stage)
 RUN addgroup -S appgroup -g 20001 && adduser -S appuser -G appgroup -u 10001

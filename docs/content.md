@@ -16,6 +16,7 @@
  3. [Creating a new page](#creating-a-new-page)
  4. [Variables](#variables)
  5. [Rails Partials](#rails-partials)
+ 6. [Tracking clicks to external links](#tracking-clicks-to-external-links)
 
 ## How we do Content
 
@@ -224,3 +225,23 @@ variables:
 ```
 
 If you need to do something complex like render a group of cards (all in their own partial), it's better to create a partial for it and reference that. Try to keep ERB in markdown to single line references of other partials to keep things neat.
+
+## Tracking clicks to external links
+
+Usually we'll want to track clicks away from our site to external services. To do this, we provide custom helpers that provide a trackable link, button or mail_to in the govuk styling.
+
+```
+<%= tracked_link_to "Somewhere", "https://another-service.com" %>
+```
+
+```
+<%= tracked_button_link_to "Somewhere", "https://another-service.com" %>
+```
+
+```
+<%= tracked_mail_to "email@another-service.com" %>
+```
+
+When a user clicks on one of these, we intercept the link, fire a custom `tracked_link_clicked` event to DfE Analytics, and then send the user on to their link.
+
+Please note that using a `tracked_link_to` or `tracked_button_link_to` will append a hidden `. This is an external link` hint for screen readers to your link automatically.

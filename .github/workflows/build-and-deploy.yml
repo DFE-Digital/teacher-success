@@ -89,6 +89,8 @@ jobs:
         healthcheck: ${{ env.HEALTHCHECK_CMD }}
         db-seed: true
         smoke-test: false
+        gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
+        gcp-project-id: teacher-success
 
   deploy:
     name: Deploy environments
@@ -120,6 +122,8 @@ jobs:
           healthcheck: ${{ env.HEALTHCHECK_CMD }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           db-seed: false
+          gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
+          gcp-project-id: teacher-success
 
   manual_deploy:
     name: Manual deploy
@@ -147,6 +151,8 @@ jobs:
           healthcheck: ${{ env.HEALTHCHECK_CMD }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
           db-seed: ${{ contains(fromJson('["review"]'), inputs.environment) && 'true' || 'false' }}
+          gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
+          gcp-project-id: teacher-success
 
   deploy_domains_infra:
     name: Deploy Domains Infrastructure

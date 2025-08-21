@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import TrackedLinkController from "./tracked_link_controller"
+application.register("tracked-link", TrackedLinkController)

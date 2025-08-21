@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   default_form_builder(GOVUKDesignSystemFormBuilder::FormBuilder)
 
   include Pagy::Backend
+  include DfE::Analytics::Requests
 
   before_action :add_home_breadcrumb
 

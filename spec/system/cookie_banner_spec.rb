@@ -66,8 +66,10 @@ RSpec.describe "Cookie Consent Banner", type: :system do
 
     it "hides the banner on subsequent page loads" do
       click_button "Accept additional cookies"
+      expect(page).not_to have_selector(".govuk-cookie-banner", wait: 3)
+
       visit "/cookies"
-      expect(page).not_to have_selector(".govuk-cookie-banner", wait: 5)
+      expect(page).not_to have_selector(".govuk-cookie-banner", wait: 3)
     end
   end
 
@@ -94,6 +96,8 @@ RSpec.describe "Cookie Consent Banner", type: :system do
 
     it "hides the banner on subsequent page loads" do
       click_button "Reject additional cookies"
+      expect(page).not_to have_selector(".govuk-cookie-banner", wait: 3)
+
       visit "/cookies"
       expect(page).not_to have_selector(".govuk-cookie-banner", wait: 5)
     end
