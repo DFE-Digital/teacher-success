@@ -1,0 +1,91 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+@use "../../colours";
+
+.prompt {
+  margin: 45px 0 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  background-color: #f3f2f1;
+  border-top: #28a197 solid 10px;
+}
+.prompt .svg-inline--fa {
+  background-color: #28a197;
+  color: #ffffff;
+  padding: 10px !important;
+  position: absolute;
+  display: inline-block;
+  width: 32px;
+  top: -30px;
+  left: 50%;
+  margin-left: -32px;
+
+  @media (min-width: 48.0625em) {
+    position: relative;
+    left: 5px;
+    top:-20px;
+    padding: 20px !important;
+  }
+
+}
+.prompt__container{
+  padding: 40px 10px 15px 10px;
+
+  @media (min-width: 48.0625em) {
+    padding: 20px 50px 50px 80px;
+  }
+
+  h2.govuk-heading-l{
+    padding-left: 0px;
+  }
+}
+
+.prompt .govuk-grid-column-one-quarter {
+  margin-right: -120px;
+
+  @media (min-width: 48.0625em) {
+    margin-right: -120px;
+  }
+}
+.prompt .govuk-grid-column-three-quarters {
+  padding: 15px;
+}
+@media (min-width: 40em) and (max-width: 61.5em) {
+  .prompt .govuk-grid-column-three-quarters {
+    padding-left: 40px;
+  }
+}
+@media (max-width: 40.0625em) {
+  .prompt .small-screen-padding-right {
+    padding-right: 20px;
+  }
+}
+.prompt.prompt-bg {
+  background-color: #d4f4f2;
+}
+.prompt.prompt-home.info {
+  background: #ebf2f6;
+  border-top: #347ca9 solid 10px;
+}
+.prompt.prompt-home.warning {
+  background: govuk.govuk-colour("light-grey");
+  border-top: govuk.govuk-colour("yellow") solid 10px;
+}
+.prompt.prompt-home.error {
+  background: govuk.govuk-colour("light-grey");
+  border-top: govuk.govuk-colour("red") solid 10px;
+}
+@media (min-width: 48.0625em) {
+  .prompt.prompt-home .govuk-grid-column-one-quarter {
+    margin-right: -220px;
+  }
+}
+.prompt.prompt-home.info .svg-inline--fa {
+  background-color: #347ca9 !important;
+}
+.prompt.prompt-home.warning .svg-inline--fa {
+  background-color: govuk.govuk-colour("yellow") !important;
+}
+.prompt.prompt-home.error .svg-inline--fa {
+  background-color: govuk.govuk-colour("red") !important;
+}

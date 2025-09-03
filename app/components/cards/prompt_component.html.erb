@@ -1,0 +1,12 @@
+<div class="prompt prompt-home <%= @prompt_type %>">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <svg aria-describedby="<%= @prompt_type %> icon" class="svg-inline--fa <%= icon_attributes[:name] %> fa-2x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="<%= icon_attributes[:data] %>" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+        <path fill="currentColor" d="<%= icon_attributes[:draw] %>"></path>
+      </svg>
+    </div>
+    <div class="prompt__container">
+      <%= content %>
+    </div>
+  </div>
+</div>
