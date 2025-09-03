@@ -8,6 +8,12 @@
   @include govuk.govuk-responsive-padding(6, "all");
   @include govuk.govuk-font-size(19);
 
+  @include govuk.govuk-media-query($from: tablet) {
+    height: 100%;
+    align-items: baseline;
+    box-sizing: border-box;
+  }
+
   blockquote {
     margin: 0;
     padding: 0;
