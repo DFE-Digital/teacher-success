@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class Cards::PromptComponent < ViewComponent::Base
-  def initialize(prompt_type: :info, classes: nil)
+  def initialize(prompt_type: :info)
     @prompt_type = prompt_type
-    @classes = classes
   end
 
   def icon_attributes
