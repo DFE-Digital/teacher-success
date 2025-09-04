@@ -71,7 +71,7 @@ Pagy::DEFAULT[:limit] = 10                    # default
 # Pagy::DEFAULT[:elasticsearch_rails_search] = :search
 # require 'pagy/extras/elasticsearch_rails'
 
-# Headers extra: http response headers (and other helpers) useful for API pagination
+# Headers extra: http response headers (and other helpers) useful for GetTeacher pagination
 # See https://ddnexus.github.io/pagy/docs/extras/headers
 # require 'pagy/extras/headers'
 # Pagy::DEFAULT[:headers] = { page: 'Current-Page',
@@ -165,7 +165,7 @@ Pagy::DEFAULT[:limit] = 10                    # default
 # require 'pagy/extras/standalone'
 # Pagy::DEFAULT[:url] = 'http://www.example.com/subdir'  # optional default
 
-# Jsonapi extra: Implements JSON:API specifications
+# Jsonapi extra: Implements JSON:GetTeacher specifications
 # See https://ddnexus.github.io/pagy/docs/extras/jsonapi
 # require 'pagy/extras/jsonapi'   # must be required after the other extras
 # set to false only if you want to make :jsonapi an opt-in variable
