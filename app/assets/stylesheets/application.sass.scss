@@ -22,6 +22,7 @@
 @use "components/cards/simple-card";
 @use "components/cards/card-with-image";
 @use "components/cards/quote";
+@use "components/cards/prompt";
 
 .govuk-width-container {
   @include dfe.govuk-width-container;
