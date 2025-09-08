@@ -108,7 +108,15 @@ Some will provide access to free resources whereas some will require a membershi
         If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
     </p>
     <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://www.thenational.academy/teachers/key-stages/ks3/subjects"><span class="govuk-visually-hidden">Oak National Academy</span> key stage 3 (KS3) <span class="govuk-visually-hidden">lesson planning </span>  </a></li>
-        <li><a href="https://www.thenational.academy/teachers/key-stages/ks4/subjects"><span class="govuk-visually-hidden">Oak National Academy</span> key stage 4 (KS4) <span class="govuk-visually-hidden">lesson planning </span>  </a></li>
+        <li>
+            <%= tracked_link_to(
+                visually_hidden_text(prefix: "Oak National Academy", text: "key stage 3 (KS3)", suffix: "lesson planning"),
+                "https://www.thenational.academy/teachers/key-stages/ks3/subjects") %>
+        </li>
+        <li>
+            <%= tracked_link_to(
+                visually_hidden_text(prefix: "Oak National Academy", text: "key stage 4 (KS4)", suffix: "lesson planning"),
+                "https://www.thenational.academy/teachers/key-stages/ks3/subjects") %>
+        </li>
     </ul>
 <% end %>

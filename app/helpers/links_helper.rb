@@ -40,4 +40,14 @@ module LinksHelper
       "tracked-link-href": kwargs.delete(:tracked_link_href)
     }))
   end
+
+  def visually_hidden_text(text:, prefix: nil, suffix: nil)
+    prefix_content = content_tag(:span, prefix, class: "govuk-visually-hidden") if prefix.present?
+    suffix_content = content_tag(:span, suffix, class: "govuk-visually-hidden") if suffix.present?
+    safe_join([
+      prefix_content,
+      text,
+      suffix_content,
+    ].compact)
+  end
 end
