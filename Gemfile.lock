@@ -505,6 +505,7 @@ GEM
     thruster (0.1.15-aarch64-linux)
     thruster (0.1.15-arm64-darwin)
     thruster (0.1.15-x86_64-linux)
+    timecop (0.9.10)
     timeout (0.4.3)
     trailblazer-option (0.1.2)
     turbo-rails (2.0.16)
@@ -596,6 +597,7 @@ DEPENDENCIES
   solid_queue
   stimulus-rails
   thruster
+  timecop
   turbo-rails
   tzinfo-data
   validate_url
