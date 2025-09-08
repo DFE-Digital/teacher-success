@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get "/auth/developer/sign-out", to: "sessions#destroy", as: :sign_out
     post "/auth/developer/callback", to: "sessions#callback", as: :auth_callback
   else
-    get "/auth/dfe/callback" => "sessions#callback"
+    get "/auth/dfe/callback" => "sessions#callback", as: :dfe_callback
     get "/auth/dfe/sign-out" => "sessions#destroy", as: :sign_out
     get "/auth/failure", to: "sessions#failure"
   end

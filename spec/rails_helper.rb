@@ -11,6 +11,8 @@ require 'rspec/rails'
 require "view_component/test_helpers"
 require 'webmock/rspec'
 
+Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
+
 WebMock.disable_net_connect!(allow_localhost: true)
 # Add additional requires below this line. Rails is not loaded until this point!
 
