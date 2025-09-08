@@ -47,7 +47,7 @@ module LinksHelper
     safe_join([
       prefix_content,
       text,
-      suffix_content,
+      suffix_content
     ].compact)
   end
 end
