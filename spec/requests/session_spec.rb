@@ -11,7 +11,7 @@ RSpec.describe "Sessions", type: :request do
         dfe_sign_in_uid: "123",
         email_address: "user@example.com",
         first_name: "Test",
-        last_name: "User",
+        last_name: "User"
       }
 
       # simulate the OmniAuth payload
@@ -21,7 +21,7 @@ RSpec.describe "Sessions", type: :request do
         "info" => {
           "email" => user[:email_address],
           "first_name" => user[:first_name],
-          "last_name" => user[:last_name],
+          "last_name" => user[:last_name]
         },
         "credentials" => {
           "id_token" => "abc"
