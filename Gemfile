@@ -28,6 +28,11 @@ gem "sentry-rails"
 gem "active_link_to"
 gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.7"
 
+# DfE Sign-in
+gem "omniauth"
+gem "omniauth_openid_connect"
+gem "omniauth-rails_csrf_protection"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
@@ -46,5 +51,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "simplecov", require: false
+  gem "rails-controller-testing"
   gem "webmock"
+  gem "timecop"
 end
