@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Cards::CardWithImageComponent < ViewComponent::Base
+class Cards::CardWithImageComponent < ApplicationComponent
   def initialize(title:, description:, image: nil, image_alt: nil, button_text:, button_href:, heading_tag: "h2", background_color: "light-blue")
     @title = title
     @description = description

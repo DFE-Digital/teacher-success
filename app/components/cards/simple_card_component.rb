@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Cards::SimpleCardComponent < ViewComponent::Base
+class Cards::SimpleCardComponent < ApplicationComponent
   def initialize(title:, description:, path:, heading_tag: "h2", target: "_self", data: {})
     @title = title
     @description = description
