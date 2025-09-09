@@ -17,4 +17,13 @@
     - can_contact
     - created_at
     - updated_at
-
+  :users:
+    - id
+    - first_name
+    - last_name
+    - email_address
+    - dfe_sign_in_uid
+    - last_signed_in_at
+    - trn
+    - created_at
+    - updated_at

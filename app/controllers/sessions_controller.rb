@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
     DfESignInUser.begin_session!(session, request.env["omniauth.auth"])
 
     if current_user
+      current_user.update!(last_signed_in_at: Time.current)
+
       redirect_to account_path
     else
       DfESignInUser.end_session!(session)

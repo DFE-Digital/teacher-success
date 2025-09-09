@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= DfESignInUser.load_from_session(session)
+    @current_user ||= DfESignInUser.load_from_session(session)&.user
   end
 
   def user_signed_in?
