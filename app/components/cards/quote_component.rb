@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Cards::QuoteComponent < ViewComponent::Base
+class Cards::QuoteComponent < ApplicationComponent
   def initialize(text:, attribution:, classes: nil)
     @text = text
     @attribution = attribution
