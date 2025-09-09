@@ -95,12 +95,28 @@ Some will provide access to free resources whereas some will require a membershi
     classes: "govuk-!-margin-bottom-5"
 ) %>
 
-## Lesson planning resources
-### The Chartered College of Teaching tips
-Before you start your training, you could <%= tracked_link_to "read some lesson planning tips for trainees from the Chartered College of Teaching", "https://my.chartered.college/early-career-hub/lesson-planning" %>
-
-### Oak National Academy
-If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
-
-- <%= tracked_link_to "key stage 3 (KS3)", "https://www.thenational.academy/teachers/key-stages/ks3/subjects" %>
-- <%= tracked_link_to "key stage 4 (KS4)", "https://www.thenational.academy/teachers/key-stages/ks4/subjects" %>
+<%= render Cards::PromptComponent.new(
+    prompt_type: :info,
+) do %>
+    <h2 id="lesson-planning" class="govuk-heading-l govuk-!-margin-bottom-">Lesson planning resources</h2>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-!-padding-left-0">The Chartered College of Teaching tips</h3>
+    <p class="govuk-body">
+        Before you start your training, you could <a href="https://my.chartered.college/early-career-hub/lesson-planning/">read some lesson planning tips for trainees from the Chartered College of Teaching</a>.
+    </p>
+    <h3 class="govuk-heading-m" id="before-you-start">Oak National Academy </h3>
+    <p class="govuk-body">
+        If you’re looking for more inspiration for your lesson planning, you could consider resources from Oak National Academy for:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            <%= tracked_link_to(
+                visually_hidden_text(prefix: "Oak National Academy", text: "key stage 3 (KS3)", suffix: "lesson planning"),
+                "https://www.thenational.academy/teachers/key-stages/ks3/subjects") %>
+        </li>
+        <li>
+            <%= tracked_link_to(
+                visually_hidden_text(prefix: "Oak National Academy", text: "key stage 4 (KS4)", suffix: "lesson planning"),
+                "https://www.thenational.academy/teachers/key-stages/ks3/subjects") %>
+        </li>
+    </ul>
+<% end %>

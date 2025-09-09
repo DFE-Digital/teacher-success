@@ -1,0 +1,103 @@
+@use "govuk-frontend/dist/govuk" as govuk;
+@use "../../colours";
+
+.prompt {
+  margin: 45px 0 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  background-color: govuk.govuk-colour("light-grey");
+  border-top: govuk.govuk-colour("turquoise") solid 10px;
+}
+
+.prompt .svg-inline--fa {
+  background-color: govuk.govuk-colour("turquoise");
+  color: govuk.govuk-colour("white");
+  padding: 10px !important;
+  position: absolute;
+  display: inline-block;
+  width: 32px;
+  top: -30px;
+  left: 50%;
+  margin-left: -32px;
+
+  @include govuk.govuk-media-query($from: tablet) {
+    position: relative;
+    left: 5px;
+    top:-20px;
+    padding: 20px !important;
+  }
+
+}
+.prompt__container{
+  padding: 40px 10px 15px 10px;
+
+  @include govuk.govuk-media-query($from: tablet) {
+    padding: 20px 50px 50px 80px;
+  }
+
+  h2.govuk-heading-l{
+    padding-left: 0px;
+  }
+}
+
+.prompt .govuk-grid-column-one-quarter {
+  margin-right: -120px;
+
+  @include govuk.govuk-media-query($from: tablet) {
+    margin-right: -120px;
+  }
+}
+
+.prompt .govuk-grid-column-three-quarters {
+  padding: 15px;
+}
+
+@include govuk.govuk-media-query($from: tablet, $until: desktop) {
+  .prompt .govuk-grid-column-three-quarters {
+    padding-left: 40px;
+  }
+}
+
+@include govuk.govuk-media-query($until: desktop) {
+  .prompt .small-screen-padding-right {
+    padding-right: 20px;
+  }
+}
+
+.prompt.prompt-bg {
+  background-color: colours.$prompt-background;
+}
+
+.prompt.prompt-home.info {
+  background: colours.$prompt-background-info;
+  border-top: colours.$prompt-border-info solid 10px;
+}
+
+.prompt.prompt-home.warning {
+  background: govuk.govuk-colour("light-grey");
+  border-top: govuk.govuk-colour("yellow") solid 10px;
+}
+
+.prompt.prompt-home.error {
+  background: govuk.govuk-colour("light-grey");
+  border-top: govuk.govuk-colour("red") solid 10px;
+}
+
+@include govuk.govuk-media-query($from: tablet) {
+  .prompt.prompt-home .govuk-grid-column-one-quarter {
+    margin-right: -220px;
+  }
+}
+
+.prompt.prompt-home.info .svg-inline--fa {
+  background-color: colours.$prompt-border-info !important;
+}
+
+.prompt.prompt-home.warning .svg-inline--fa {
+  background-color: govuk.govuk-colour("yellow") !important;
+}
+
+.prompt.prompt-home.error .svg-inline--fa {
+  background-color: govuk.govuk-colour("red") !important;
+}
