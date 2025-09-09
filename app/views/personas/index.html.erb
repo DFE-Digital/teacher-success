@@ -6,7 +6,7 @@
       <h1 class="govuk-heading-l">Sign in with persona</h1>
 
       <%= form_tag("/auth/developer/callback", method: "post", data: { turbo: false }) do %>
-        <%= hidden_field_tag "uid", 1234 %>
+        <%= hidden_field_tag "uid", 1 %>
         <%= hidden_field_tag "email", "joe.bloggs@example.com" %>
         <%= hidden_field_tag "first_name", "Joe" %>
         <%= hidden_field_tag "last_name", "Bloggs" %>

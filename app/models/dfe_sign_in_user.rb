@@ -2,10 +2,9 @@ class DfESignInUser
   # Sessions timeout after this period of inactivity
   SESSION_TIMEOUT = 2.hours
 
-  attr_reader :id, :email_address, :dfe_sign_in_uid, :id_token, :provider, :first_name, :last_name
+  attr_reader :email_address, :dfe_sign_in_uid, :id_token, :provider, :first_name, :last_name
 
-  def initialize(id:, email_address:, dfe_sign_in_uid:, first_name:, last_name:, id_token: nil, provider: nil)
-    @id = id
+  def initialize(email_address:, dfe_sign_in_uid:, first_name:, last_name:, id_token: nil, provider: nil)
     @email_address = email_address&.downcase
     @dfe_sign_in_uid = dfe_sign_in_uid
     @first_name = first_name
@@ -38,7 +37,6 @@ class DfESignInUser
     data["last_active_at"] = Time.current
 
     new(
-      id: 1234,
       email_address: data["email_address"],
       dfe_sign_in_uid: data["dfe_sign_in_uid"],
       first_name: data["first_name"],
@@ -51,6 +49,23 @@ class DfESignInUser
   # clear the session
   def self.end_session!(session)
     session.clear
+  end
+
+  # fetch the actual User record from the database
+  def user
+    @user ||= begin
+      def_user = User.find_by(dfe_sign_in_uid: dfe_sign_in_uid) ||
+         User.find_by(email_address: email_address)
+      return def_user if def_user.present?
+
+      User.find_or_create_by!(
+        dfe_sign_in_uid: dfe_sign_in_uid,
+        first_name: first_name,
+        last_name: last_name,
+        email_address: email_address,
+      )
+    end
+
   end
 
   # logout URL (DFE Sign-in or local dev)
