@@ -1,19 +1,20 @@
 ---
 shared:
   :page_feedbacks:
-  - id
-  - useful
-  - feedback
-  - url
-  - created_at
-  - updated_at
+    - id
+    - useful
+    - feedback
+    - url
+    - created_at
+    - updated_at
   :feedbacks:
-  - id
-  - rating
-  - url
-  - description
-  - email
-  - topic
-  - can_contact
-  - created_at
-  - updated_at
+    - id
+    - rating
+    - url
+    - description
+    - email
+    - topic
+    - can_contact
+    - created_at
+    - updated_at
+
