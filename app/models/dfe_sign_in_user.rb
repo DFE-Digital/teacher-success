@@ -63,7 +63,14 @@ class DfESignInUser
         first_name: first_name,
         last_name: last_name,
         email_address: email_address,
-      )
+      ).tap do |new_user|
+        # TRS does not have an API to get a user without knowing TRN or DOB
+        # TRN 1234567 used for Proof of Concept
+        if new_user.trn.blank?
+          new_user.trn = TeachingRecordSystem::GetTeacher
+             .new(trn: 1234567).call.dig("trn")
+        end
+      end
     end
 
   end
