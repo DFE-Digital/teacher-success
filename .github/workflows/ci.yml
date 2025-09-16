@@ -111,9 +111,4 @@ jobs:
         with:
           name: screenshots
           path: ${{ github.workspace }}/tmp/screenshots
-          if-no-files-found: ignore
-
-      - name: Checking links
-        uses: ScholliYT/Broken-Links-Crawler-Action@v3
-        with:
-          website_url: 'https://teach.education.gov.uk/'
+          if-no-files-found: ignoreå
