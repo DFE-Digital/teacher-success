@@ -112,3 +112,8 @@ jobs:
           name: screenshots
           path: ${{ github.workspace }}/tmp/screenshots
           if-no-files-found: ignore
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: './**/*.md' './**/8.html.erb'
