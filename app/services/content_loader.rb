@@ -43,10 +43,10 @@ class ContentLoader
         .sub(/\.md$/, "")
 
       content = substitute_variables(front_matter, content)
-
       pages[slug] = {
         front_matter: front_matter,
-        content: content
+        content: content,
+        last_updated_at: PageModification.find_by(path: slug)&.updated_at&.strftime("%d %B %Y") || "Unknown"
       }
     end
 
