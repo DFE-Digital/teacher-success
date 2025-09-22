@@ -57,7 +57,7 @@ When you start your placement, you might want to consider if you know:
 ) do %>
     <h2 id="lesson-planning" class="govuk-heading-l govuk-!-margin-bottom-">Behaviour management resources</h2>
     <p class="govuk-body">
-        You can <a class="govuk-link" href="https://www.gov.uk/government/publications/initial-teacher-training-itt-core-content-framework/the-trainee-teacher-behavioural-toolkit-a-summary">read the Department for Education’s trainee teacher behavioural toolkit</a>.
+        You can <%= tracked_link_to("read the Department for Education’s trainee teacher behavioural toolkit", "https://www.gov.uk/government/publications/initial-teacher-training-itt-core-content-framework/the-trainee-teacher-behavioural-toolkit-a-summary") %>.
     </p>
     <p class="govuk-body">
         The important thing to remember is that no technique is universal. Different things will work in different situations.
