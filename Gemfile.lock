@@ -422,6 +422,8 @@ GEM
     sentry-ruby (5.27.0)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
+    shoulda-matchers (6.5.0)
+      activesupport (>= 5.2.0)
     signet (0.20.0)
       addressable (~> 2.8)
       faraday (>= 0.17.5, < 3.a)
@@ -526,6 +528,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-rails
   sentry-ruby
+  shoulda-matchers
   simplecov
   solid_queue
   stimulus-rails
