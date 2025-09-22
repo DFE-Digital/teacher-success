@@ -52,15 +52,31 @@ When you start your placement, you might want to consider if you know:
     classes: "govuk-!-margin-bottom-5"
 ) %>
 
-## Behaviour management resources
-You can <%= tracked_link_to "read the Department for Education’s trainee teacher behavioural toolkit", "https://www.gov.uk/government/publications/initial-teacher-training-itt-core-content-framework/the-trainee-teacher-behavioural-toolkit-a-summary" %>.
-
-The important thing to remember is that no technique is universal. Different things will work in different situations.
-
-If you find that what you’re implementing is not effective, talk to your mentor and tutor about other alternatives.
-
-You could also:
-
-- read <%= tracked_link_to "behaviour tips for teacher trainees from the National Education Union", "https://neu.org.uk/advice/member-groups/new-teachers/behaviour-tips-trainee-teachers" %>
-- watch <%= tracked_link_to "top behaviour management tips for new teachers from NASUWT", "https://www.nasuwt.org.uk/advice/student-hub/top-behaviour-management-tips-from-nqts.html" %>
-- explore <%= tracked_link_to "The Chartered College of Teaching’s managing behaviour resources", "https://my.chartered.college/ecf_framework/ecf-standard-7-managing-behaviour/" %>
+<%= render Cards::PromptComponent.new(
+    prompt_type: :info,
+) do %>
+    <h2 id="lesson-planning" class="govuk-heading-l govuk-!-margin-bottom-">Behaviour management resources</h2>
+    <p class="govuk-body">
+        You can <a class="govuk-link" href="https://www.gov.uk/government/publications/initial-teacher-training-itt-core-content-framework/the-trainee-teacher-behavioural-toolkit-a-summary">read the Department for Education’s trainee teacher behavioural toolkit</a>.
+    </p>
+    <p class="govuk-body">
+        The important thing to remember is that no technique is universal. Different things will work in different situations.
+    </p>
+    <p class="govuk-body">
+        If you find that what you’re implementing is not effective, talk to your mentor and tutor about other alternatives.
+    </p>
+    <p class="govuk-body">
+        You could also:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            read <%= tracked_link_to "behaviour tips for teacher trainees from the National Education Union", "https://neu.org.uk/advice/member-groups/new-teachers/behaviour-tips-trainee-teachers" %>
+        </li>
+        <li>
+            watch <%= tracked_link_to "top behaviour management tips for new teachers from NASUWT", "https://www.nasuwt.org.uk/advice/student-hub/top-behaviour-management-tips-from-nqts.html" %>
+        </li>
+        <li>
+            explore <%= tracked_link_to "The Chartered College of Teaching’s managing behaviour resources", "https://my.chartered.college/ecf_framework/ecf-standard-7-managing-behaviour/" %>
+        </li>
+    </ul>
+<% end %>
