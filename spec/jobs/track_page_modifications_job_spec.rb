@@ -11,7 +11,7 @@ RSpec.describe TrackPageModificationsJob, type: :job do
     end
 
     it "enqueues the job in the default queue" do
-      expect{
+      expect {
         described_class.perform_later(host:)
       }.to have_enqueued_job(described_class).on_queue("default")
     end
