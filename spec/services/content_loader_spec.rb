@@ -7,10 +7,11 @@ RSpec.describe ContentLoader do
     let(:slug) { "test-page" }
     let(:front_matter) { { title: "Test Page" } }
     let(:content) { "Content here" }
+    let(:last_updated_at) { "22 September 2025" }
 
     before do
       loader.instance_variable_set(:@pages, {
-        slug => { front_matter: front_matter, content: content }
+        slug => { front_matter:, content:, last_updated_at: }
       })
     end
 

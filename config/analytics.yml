@@ -17,4 +17,9 @@ shared:
     - can_contact
     - created_at
     - updated_at
-
+  :page_modifications:
+    - id
+    - path
+    - content_hash
+    - created_at
+    - updated_at
