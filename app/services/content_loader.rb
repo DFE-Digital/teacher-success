@@ -46,7 +46,6 @@ class ContentLoader
       pages[slug] = {
         front_matter: front_matter,
         content: content,
-        last_updated_at: PageModification.find_by(path: slug)&.updated_at&.strftime("%d %B %Y") || "Unknown"
       }
     end
 
