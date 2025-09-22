@@ -45,7 +45,7 @@ class ContentLoader
       content = substitute_variables(front_matter, content)
       pages[slug] = {
         front_matter: front_matter,
-        content: content,
+        content: content
       }
     end
 
