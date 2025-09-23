@@ -22,6 +22,24 @@ jobs:
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
+  lychee:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write # required for peter-evans/create-issue-from-file
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2.5.0
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          args: --exclude-mail app/views
+          fail: true
+          failifEmpty: true
+          debug: true
+
   lint:
     runs-on: ubuntu-latest
     steps:
