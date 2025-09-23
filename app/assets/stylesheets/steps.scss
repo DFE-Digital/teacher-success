@@ -1,13 +1,20 @@
+@use "govuk-frontend/dist/govuk" as govuk;
 
 ul.steps{
   padding: 0;
   box-sizing: border-box;
   list-style-type:none;
   font-family: 'GDS Transport';
+  padding-top: 30px;
+
+  @include govuk.govuk-media-query($from: tablet) {
+    padding-top: 0px;
+  }
 
   .step {
     margin-bottom: 50px;
   }
+
   .step__header{
     display: flex;
     align-items: center;
