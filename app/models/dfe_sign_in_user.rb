@@ -17,9 +17,9 @@ class DfESignInUser
   def self.begin_session!(session, omniauth_payload)
     session["dfe_sign_in_user"] = {
       "email_address" => omniauth_payload.dig("info", "email"),
-      "dfe_sign_in_uid" => omniauth_payload["uid"],
-      "first_name" => omniauth_payload.dig("info", "first_name"),
-      "last_name" => omniauth_payload.dig("info", "last_name"),
+      "dfe_sign_in_uid" => omniauth_payload.dig("info", "uuid"),
+      "first_name" => omniauth_payload.dig("info", "name"),
+      "last_name" => omniauth_payload.dig("info", "name"),
       "last_active_at" => Time.current,
       "id_token" => omniauth_payload.dig("credentials", "id_token"),
       "provider" => omniauth_payload["provider"]
@@ -63,16 +63,8 @@ class DfESignInUser
         first_name: first_name,
         last_name: last_name,
         email_address: email_address,
-      ).tap do |new_user|
-        # TRS does not have an API to get a user without knowing TRN or DOB
-        # TRN 1234567 used for Proof of Concept
-        if new_user.trn.blank?
-          new_user.trn = TeachingRecordSystem::GetTeacher
-             .new(trn: 1234567).call.dig("trn")
-        end
-      end
+      )
     end
-
   end
 
   # logout URL (DFE Sign-in or local dev)

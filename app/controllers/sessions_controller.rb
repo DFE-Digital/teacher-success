@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def callback
     # start session from OmniAuth payload
-    DfESignInUser.begin_session!(session, request.env["omniauth.auth"])
+    DfESignInUser.begin_session!(session, request.env.dig("omniauth.auth"))
 
     if current_user
       current_user.update!(last_signed_in_at: Time.current)
@@ -29,6 +29,6 @@ class SessionsController < ApplicationController
     Rails.logger.warn("DSI failure with #{params[:message]} for dfe_sign_in_uid: #{dfe_sign_in_uid}")
     DfESignInUser.end_session!(session)
 
-    redirect_to main_app.internal_server_error_path, alert: "Sign-in failed"
+    redirect_to internal_server_error_path, alert: "Sign-in failed"
   end
 end
