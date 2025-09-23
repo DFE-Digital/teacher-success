@@ -39,6 +39,7 @@ jobs:
           fail: true
           failifEmpty: true
           debug: true
+          output: lychee/results.md
 
   lint:
     runs-on: ubuntu-latest
