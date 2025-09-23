@@ -26,6 +26,31 @@ breadcrumbs:
           path: "/prepare-for-training/how-to-prepare-for-teacher-training"
 ---
 
+<ul class="steps">
+  <li class="step" id="step-1">
+    <header class="step__header">
+      <div class="step__number">
+        <picture><%= image_tag "tick.svg" %></picture>
+      </div>
+      <h2 class="heading-m" style="padding-left:0px;">1. Get classroom experience</h2>
+    </header>
+    <div class="step__content">
+      <p>Getting classroom experience can be a good way to help you feel more familiar with the school environment before you start your placement. Many providers recommend it.</p>
+      <p>You could arrange a few days in person with a school near you or <a class="govuk-link govuk-link--no-visited-state" href="https://playcanv.as/b/ca743be9">explore life in the classroom virtually on TeachQuest</a>.</p>
+      <p>You can also try the <a class="govuk-link govuk-link--no-visited-state" href="https://platform.teachersuccess.co.uk/p/XK4rV0xN16/41xZQ10Z2l?id=c74fef2451c5af60c516075028d313d55321e06d2d53232082e329e292611d5b">realistic job preview tool</a> where you can respond to realistic video scenarios to understand what life in the classroom is like.</p>
+      <p>You do not have to have classroom experience before you start training, but it could help you feel better prepared.</p>
+      <div class="cta-banner govuk-!-margin-bottom-5">
+        <div class="cta-banner-text govuk-!-padding-top-5 govuk-!-padding-bottom-3">
+          <p class="govuk-body-m">"Get as much experience in school as possible, as this tells you a lot about how schools work and function."</p>
+          <p class="govuk-body"><strong>Maths trainee from 2024/25</strong></p>
+        </div>
+      </div>
+      <p><a class="govuk-button" data-govuk-button-init="" data-module="govuk-button" href="https://getintoteaching.education.gov.uk/train-to-be-a-teacher/get-school-experience" style="text-decoration: none;">Get school experience</a></p>
+    </div>
+  </li>
+  
+</ul>
+
 ## Get classroom experience
 Getting classroom experience can be a good way to help you feel more familiar with the school environment before you start your placement. Many providers recommend it.
 
