@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: --exclude-mail app/views
+          args: app/views
           fail: true
           failifEmpty: true
           debug: true
