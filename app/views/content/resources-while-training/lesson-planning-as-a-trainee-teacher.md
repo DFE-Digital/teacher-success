@@ -101,7 +101,7 @@ Some will provide access to free resources whereas some will require a membershi
     <h2 id="lesson-planning" class="govuk-heading-l govuk-!-margin-bottom-">Lesson planning resources</h2>
     <h3 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-!-padding-left-0">The Chartered College of Teaching tips</h3>
     <p class="govuk-body">
-        Before you start your training, you could <a href="https://my.chartered.college/early-career-hub/lesson-planning/">read some lesson planning tips for trainees from the Chartered College of Teaching</a>.
+        Before you start your training, you could <%= tracked_link_to("read some lesson planning tips for trainees from the Chartered College of Teaching", "https://my.chartered.college/early-career-hub/lesson-planning/") %>.
     </p>
     <h3 class="govuk-heading-m" id="before-you-start">Oak National Academy </h3>
     <p class="govuk-body">
