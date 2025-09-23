@@ -9,6 +9,11 @@ breadcrumbs:
 
 ---
 
+Test link [broken link](https://google.com/404)
+
+<%= link_to "broken link 2", "https://google.com/404" %>
+
+
 <%= render Cards::CardWithImageComponent.new( 
     title: "How to prepare for teacher training",
     description: "Find out how you can prepare for your teacher training, from what to expect from your training provider to preparing for your first placement.",
