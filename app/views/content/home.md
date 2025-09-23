@@ -11,7 +11,6 @@ breadcrumbs:
 
 Test link [broken link](https://google.com/404)
 
-<%= link_to "broken link 2", "https://google.com/404" %>
 
 
 <%= render Cards::CardWithImageComponent.new( 
