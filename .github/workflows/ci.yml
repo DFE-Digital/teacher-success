@@ -22,14 +22,18 @@ jobs:
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
-  linkcheck:
+  crawl_for_broken_links:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Linkcheck
-        uses: filiph/linkcheck@2.0.23
+      - name: Broken-Links-Crawler
+        uses: ScholliYT/Broken-Links-Crawler-Action@v3
         with:
-          arguments: https://teach.education.gov.uk/ -e
+          website_url: 'https://teach.education.gov.uk'
+          exclude_url_prefix: 'mailto:'
+          verbose: 'true'
+          max_retries: 2
+          max_depth: 1
 
   #  lychee:
 #    runs-on: ubuntu-latest
