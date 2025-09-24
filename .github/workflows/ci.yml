@@ -22,34 +22,6 @@ jobs:
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
-#  broken_link_check:
-#    runs-on: ubuntu-latest
-#    name: Check for broken links
-#    steps:
-#      - name: Check for broken links
-#        id: link-report
-#        uses: celinekurpershoek/link-checker@v1.0.2
-#        with:
-#          # Required:
-#          url: "https://teach.education.gov.uk/"
-#          # optional:
-#          honorRobotExclusions: false
-#          recursiveLinks: true # Check all URLs on all reachable pages (could take a while)
-#
-#      - name: Get the result
-#        run: echo "${{steps.link-report.outputs.result}}"
-
-  broken_link_check:
-    runs-on: ubuntu-latest
-    name: Broken Link Check
-    steps:
-      - name: Broken Link Check
-        uses: technote-space/broken-link-checker-action@v2
-        with:
-          target: "https://teach.education.gov.uk/"
-          recursive: true
-
-
   lychee:
     runs-on: ubuntu-latest
     permissions:
@@ -63,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: app/views
+          args: https://teach.education.gov.uk/
           fail: true
           failifEmpty: true
           debug: true
