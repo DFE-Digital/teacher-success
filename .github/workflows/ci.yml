@@ -22,6 +22,39 @@ jobs:
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
+  crawl_for_broken_links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Broken-Links-Crawler
+        uses: ScholliYT/Broken-Links-Crawler-Action@v3
+        with:
+          website_url: 'https://teach.education.gov.uk'
+          exclude_url_prefix: 'mailto:,tel:'
+          verbose: 'true'
+          max_retries: 10
+          max_retry_time: 120
+          max_depth: 2
+
+  #  lychee:
+#    runs-on: ubuntu-latest
+#    permissions:
+#      issues: write # required for peter-evans/create-issue-from-file
+#    steps:
+#      - uses: actions/checkout@v5
+#
+#      - name: Link Checker
+#        id: lychee
+#        uses: lycheeverse/lychee-action@v2.5.0
+#        env:
+#          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#        with:
+#          args: https://teach.education.gov.uk/
+#          fail: true
+#          failifEmpty: true
+#          debug: true
+#          output: lychee/results.md
+
   lint:
     runs-on: ubuntu-latest
     steps:
