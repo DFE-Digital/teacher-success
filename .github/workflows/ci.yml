@@ -33,6 +33,7 @@ jobs:
           exclude_url_prefix: 'mailto:'
           verbose: 'true'
           max_retries: 5
+          max_retry_time: 120
           max_depth: 2
 
   #  lychee:
