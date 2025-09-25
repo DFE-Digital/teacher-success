@@ -30,9 +30,9 @@ jobs:
         uses: ScholliYT/Broken-Links-Crawler-Action@v3
         with:
           website_url: 'https://teach.education.gov.uk'
-          exclude_url_prefix: 'mailto:'
+          exclude_url_prefix: 'mailto:,tel:'
           verbose: 'true'
-          max_retries: 5
+          max_retries: 10
           max_retry_time: 120
           max_depth: 2
 
