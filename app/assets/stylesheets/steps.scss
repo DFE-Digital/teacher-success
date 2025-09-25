@@ -1,4 +1,5 @@
 @use "govuk-frontend/dist/govuk" as govuk;
+@use "colours";
 
 ul.steps{
   padding: 0;
@@ -24,6 +25,10 @@ ul.steps{
     margin-bottom: 10px;
   }
 
+  .step_heading{
+    padding-left: 0;
+  }
+
   .step__number{
     width: auto;
     height: auto;
@@ -35,7 +40,7 @@ ul.steps{
     text-align: center;
     font-weight: bold;
     font-size: 28px;
-    background-color: #fbbb21;
+    background-color: colours.$step-tick-yellow;
     position: relative;
     flex-shrink: 0;
 
@@ -53,5 +58,4 @@ ul.steps{
   .step__content {
     padding-left: 88px;
   }
-
 }
