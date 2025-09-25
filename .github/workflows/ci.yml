@@ -32,8 +32,8 @@ jobs:
           website_url: 'https://teach.education.gov.uk'
           exclude_url_prefix: 'mailto:'
           verbose: 'true'
-          max_retries: 2
-          max_depth: 1
+          max_retries: 5
+          max_depth: 2
 
   #  lychee:
 #    runs-on: ubuntu-latest
