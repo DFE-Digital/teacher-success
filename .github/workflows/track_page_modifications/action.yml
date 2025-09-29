@@ -1,0 +1,27 @@
+name: Track Page Modifications
+inputs:
+  pod-namespace:
+    description: The namespace where your pod sits in
+    required: true
+  cluster-name:
+    description: The aks cluster you are deploying to
+    required: true
+  resource-group:
+    description: The aks resource group name
+    required: true
+  app-label:
+    description: The label used for the application, e.g. teacher-success-review-99
+    required: true
+  host:
+    description: The host that the application will end up on, e.g. teacher-success-staging.test.teacherservices.cloud 
+    required: true
+
+runs:
+    using: composite
+    shell: bash
+    run: |
+      az aks get-credentials --resource-group ${{ inputs.resource-group }} --name ${{ inputs.cluster-name }} --overwrite-existing
+      kubelogin convert-kubeconfig -l spn
+      POD_NAME=$(kubectl get pods -n ${{ inputs.pod-namespace }} -l app=${{ inputs.app-label }} -o jsonpath="{.items[0].metadata.name}")
+      kubectl exec -n ${{ inputs.pod-namespace }} pod/$POD_NAME -- bundle exec rails runner "TrackPageModificationsJob.perform_later(host: '${{ inputs.host }}')"
+

@@ -91,6 +91,15 @@ jobs:
         smoke-test: false
         gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
         gcp-project-id: teacher-success
+    - name: Track Page Modifications
+      if: steps.deploy_review.conclusion == 'success'
+      uses: ./.github/workflows/track_page_modifications
+      with:
+        app-label: "teach-pr-${{inputs.pull-request-number}}"
+        pod-namespace: bat-qa
+        host: "${APP_LABEL}.test.teacherservices.cloud"
+        cluster-name: s189p01-teach-rv-aks"
+        resource-group: "s189p01-teach-rv-rg"
 
   deploy:
     name: Deploy environments
@@ -124,6 +133,24 @@ jobs:
           db-seed: false
           gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
           gcp-project-id: teacher-success
+      - name: Track Page Modifications
+        if: steps.deploy_app.conclusion == 'success' && inputs.environment == 'production'
+        uses: ./.github/workflows/track_page_modifications
+        with:
+          app-label: "teach-${{inputs.environment}}"
+          pod-namespace: bat-production
+          host: "${APP_LABEL}.teacherservices.cloud"
+          cluster-name: s189p01-teach-pd-aks"
+          resource-group: "s189p01-teach-pd-rg"
+      - name: Track Page Modifications
+        if: steps.deploy_app.conclusion == 'success' && inputs.environment == 'staging'
+        uses: ./.github/workflows/track_page_modifications
+        with:
+          app-label: "teach-${{inputs.environment}}"
+          pod-namespace: bat-staging
+          host: "${APP_LABEL}.test.teacherservices.cloud"
+          cluster-name: s189p01-teach-ts-aks"
+          resource-group: "s189p01-teach-ts-rg"
 
   manual_deploy:
     name: Manual deploy
