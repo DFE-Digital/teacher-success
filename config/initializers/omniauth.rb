@@ -13,12 +13,16 @@ when "persona"
 
 when "dfe-sign-in"
   Rails.application.config.middleware.use OmniAuth::Builder do
-    private_key = ENV["GOVUK_ONE_LOGIN_PRIVATE_KEY"].gsub("\\n", "\n")
+    private_key = begin
+                    OpenSSL::PKey::RSA.new(ENV.fetch("GOVUK_ONE_LOGIN_PRIVATE_KEY", "").gsub("\\n", "\n"))
+                  rescue OpenSSL::PKey::RSAError
+                    nil
+                  end
     provider :govuk_one_login, {
       name: :govuk_one_login,
       client_id: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"], # your client ID from the GOV.UK One Login admin tool
       idp_base_url: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
-      private_key: OpenSSL::PKey::RSA.new(private_key), # the private key you generated above in PEM format
+      private_key: private_key, # the private key you generated above in PEM format
       redirect_uri: ENV["GOVUK_ONE_LOGIN_REDIRECT_URI"], # if this is a relative URI, the requesting domain will be used
       # these are optional - shown here with their default values if omitted
       private_key_kid: "", # the key ID of the private key being used - if using a JWKS endpoint, this must be set for authorization to work
@@ -34,7 +38,7 @@ when "dfe-sign-in"
       name: :govuk_one_login_identity,
       client_id: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"], # your client ID from the GOV.UK One Login admin tool
       idp_base_url: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
-      private_key: OpenSSL::PKey::RSA.new(private_key), # the private key you generated above in PEM format
+      private_key: private_key, # the private key you generated above in PEM format
       redirect_uri: ENV["GOVUK_ONE_LOGIN_REDIRECT_URI"], # if this is a relative URI, the requesting domain will be used
       # these are optional - shown here with their default values if omitted
       private_key_kid: "", # the key ID of the private key being used - if using a JWKS endpoint, this must be set for authorization to work
