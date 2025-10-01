@@ -158,13 +158,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_09_101706) do
     t.string "first_name"
     t.string "last_name"
     t.string "email_address", null: false
-    t.string "dfe_sign_in_uid"
+    t.string "one_login_sign_in_uid"
     t.datetime "last_signed_in_at"
     t.string "trn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dfe_sign_in_uid"], name: "index_users_on_dfe_sign_in_uid"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
+    t.index ["one_login_sign_in_uid"], name: "index_users_on_one_login_sign_in_uid"
   end
 
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade

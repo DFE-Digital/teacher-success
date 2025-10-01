@@ -11,7 +11,7 @@ when "persona"
     )
   end
 
-when "dfe-sign-in"
+when "one-login-sign-in"
   Rails.application.config.middleware.use OmniAuth::Builder do
     private_key = begin
                     OpenSSL::PKey::RSA.new(ENV.fetch("GOVUK_ONE_LOGIN_PRIVATE_KEY", "").gsub("\\n", "\n"))

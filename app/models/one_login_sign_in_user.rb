@@ -4,11 +4,11 @@ class OneLoginSignInUser
   # Sessions timeout after this period of inactivity
   SESSION_TIMEOUT = 2.hours
 
-  attr_reader :email_address, :onelogin_sign_in_uid, :id_token, :provider, :first_name, :last_name
+  attr_reader :email_address, :one_login_sign_in_uid, :id_token, :provider, :first_name, :last_name
 
-  def initialize(email_address:, onelogin_sign_in_uid:, first_name:, last_name:, id_token: nil, provider: nil)
+  def initialize(email_address:, one_login_sign_in_uid:, first_name:, last_name:, id_token: nil, provider: nil)
     @email_address = email_address&.downcase
-    @onelogin_sign_in_uid = onelogin_sign_in_uid
+    @one_login_sign_in_uid = one_login_sign_in_uid
     @first_name = first_name
     @last_name = last_name
     @id_token = id_token
@@ -17,11 +17,9 @@ class OneLoginSignInUser
 
   # start a session from the OmniAuth payload
   def self.begin_session!(session, omniauth_payload)
-    session["onelogin_sign_in_user"] = {
+    session["one_login_sign_in_user"] = {
       "email_address" => omniauth_payload.dig("info", "email"),
-      "onelogin_sign_in_uid" => omniauth_payload.dig("info", "uuid"),
-      "first_name" => omniauth_payload.dig("info", "name"),
-      "last_name" => omniauth_payload.dig("info", "name"),
+      "one_login_sign_in_uid" => omniauth_payload.dig("info", "uuid"),
       "last_active_at" => Time.current,
       "id_token" => omniauth_payload.dig("credentials", "id_token"),
       "provider" => omniauth_payload["provider"]
@@ -30,7 +28,7 @@ class OneLoginSignInUser
 
   # load a user from the session, if valid & not expired
   def self.load_from_session(session)
-    data = session["onelogin_sign_in_user"]
+    data = session["one_login_sign_in_user"]
     return unless data
     return unless data["last_active_at"]
 
@@ -40,7 +38,7 @@ class OneLoginSignInUser
 
     new(
       email_address: data["email_address"],
-      onelogin_sign_in_uid: data["onelogin_sign_in_uid"],
+      one_login_sign_in_uid: data["one_login_sign_in_uid"],
       first_name: data["first_name"],
       last_name: data["last_name"],
       id_token: data["id_token"],
@@ -53,15 +51,14 @@ class OneLoginSignInUser
     session.clear
   end
 
-  # fetch the actual User record from the database
   def user
     @user ||= begin
-      def_user = User.find_by(dfe_sign_in_uid: onelogin_sign_in_uid) ||
+      one_login_user = User.find_by(one_login_sign_in_uid: one_login_sign_in_uid) ||
          User.find_by(email_address: email_address)
-      return def_user if def_user.present?
+      return one_login_user if one_login_user.present?
 
       User.find_or_create_by!(
-        dfe_sign_in_uid: onelogin_sign_in_uid,
+        one_login_sign_in_uid: one_login_sign_in_uid,
         first_name: first_name,
         last_name: last_name,
         email_address: email_address,

@@ -19,11 +19,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path && return unless session.dig("onelogin_sign_in_user").present?
+    redirect_to root_path && return unless session.dig("one_login_sign_in_user").present?
 
-    id_token = session.dig("onelogin_sign_in_user", "id_token")
+    id_token = session.dig("one_login_sign_in_user", "id_token")
     OneLoginSignInUser.end_session!(session)
-    if ENV["SIGN_IN_METHOD"] == "dfe-sign-in"
+    if ENV["SIGN_IN_METHOD"] == "one-login-sign-in"
       redirect_to(logout_request(id_token).redirect_uri, allow_other_host: true)
     else
       redirect_to root_path
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    dfe_sign_in_uid = session.dig("onelogin_sign_in_user", "onelogin_sign_in_uid")
+    dfe_sign_in_uid = session.dig("one_login_sign_in_user", "one_login_sign_in_uid")
     Rails.logger.warn("DSI failure with #{params[:message]} for dfe_sign_in_uid: #{dfe_sign_in_uid}")
     OneLoginSignInUser.end_session!(session)
 

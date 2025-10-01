@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string :first_name
       t.string :last_name
       t.string :email_address, null: false, index: { unique: true }
-      t.string :dfe_sign_in_uid, index: true
+      t.string :one_login_sign_in_uid, index: true
       t.datetime :last_signed_in_at
       t.string :trn
 
