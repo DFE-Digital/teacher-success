@@ -1,5 +1,5 @@
 ---
-shared:
+:shared:
   :page_feedbacks:
     - id
     - useful
