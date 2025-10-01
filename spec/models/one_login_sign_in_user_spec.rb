@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe DfESignInUser do
+describe OneLoginSignInUser do
   describe ".begin_session!" do
     it "creates a new session with DfE user details" do
       Timecop.freeze do
@@ -34,7 +34,7 @@ describe DfESignInUser do
   end
 
   describe ".load_from_session" do
-    it "returns a DfeSignInUser with details from the session" do
+    it "returns a OneLoginSignInUser with details from the session" do
       session = {
         "dfe_sign_in_user" => {
           "first_name" => "Example",
