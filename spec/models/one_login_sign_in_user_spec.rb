@@ -10,7 +10,7 @@ describe OneLoginSignInUser do
           onelogin_sign_in_uid: "abcd",
           last_active_at: Time.current,
           id_token: "1234",
-          provider: "one_login",
+          provider: "one_login"
         }
 
         # simulate the OmniAuth payload
@@ -19,7 +19,7 @@ describe OneLoginSignInUser do
           "uuid" => user[:onelogin_sign_in_uid],
           "info" => {
             "email" => user[:email_address],
-            "uuid" => user[:onelogin_sign_in_uid],
+            "uuid" => user[:onelogin_sign_in_uid]
           },
           "credentials" => {
             "id_token" => "1234"

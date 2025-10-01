@@ -51,7 +51,7 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'shoulda-matchers', '~> 6.0'
+  gem "shoulda-matchers", "~> 6.0"
   gem "simplecov", require: false
   gem "rails-controller-testing"
   gem "webmock"
