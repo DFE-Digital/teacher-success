@@ -1,11 +1,30 @@
 <%= form_with model: PageFeedback.new, url: page_feedback_path do |form| %>
   <div class="page-feedback">
     <div class="page-feedback__content">
-      <h4 class="page-feedback__title">Is this page useful?</h4>
+      <p class="page-feedback__title">Is this page useful?</p>
 
       <div class="govuk-button-group">
-        <%= form.govuk_submit("Yes", name: "page_feedback[useful]", value: true, inverse: true, data: { turbo: false }) %>
-        <%= form.govuk_submit("No", name: "page_feedback[useful]", value: false, inverse: true, data: { turbo: false }) %>
+        <%= form.govuk_submit(
+          safe_join([
+            content_tag(:span, 'Is this page useful.', class: 'govuk-visually-hidden'),
+            'Yes'
+          ]),
+          name: "page_feedback[useful]",
+          value: true,
+          inverse: true,
+          data: { turbo: false }
+        ) %>
+
+        <%= form.govuk_submit(
+          safe_join([
+            content_tag(:span, 'Is this page useful.', class: 'govuk-visually-hidden'),
+            'No'
+          ]),
+          name: "page_feedback[useful]",
+          value: false,
+          inverse: true,
+          data: { turbo: false }
+        ) %>
       </div>
     </div>
 
@@ -14,3 +33,4 @@
     </div>
   </div>
 <% end %>
+
