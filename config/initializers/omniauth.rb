@@ -24,10 +24,10 @@ when "dfe-sign-in"
       private_key_kid: "", # the key ID of the private key being used - if using a JWKS endpoint, this must be set for authorization to work
       scope: "openid,email", # comma-separated; must include at least `openid` and `email`
       ui_locales: "en", # comma-separated; can also include `cy` for Welsh UI
-      vtr: ["Cl.Cm"], # array with one element; dot-separated; can also include identity vectors such as `P2` (eg. `Cl.Cm.P2`)
+      vtr: [ "Cl.Cm" ], # array with one element; dot-separated; can also include identity vectors such as `P2` (eg. `Cl.Cm.P2`)
       pkce: false, # set to `true` to enable "Proof Key for Code Exchange"
       userinfo_claims: [], # array of URLs; see https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#create-a-url-encoded-json-object-for-lt-claims-request-gt
-      signing_algorithm: 'ES256', # The algorithm used to encode/decode the JWT token, RS256 also supported
+      signing_algorithm: "ES256" # The algorithm used to encode/decode the JWT token, RS256 also supported
     }
 
     provider :govuk_one_login, {
@@ -40,11 +40,11 @@ when "dfe-sign-in"
       private_key_kid: "", # the key ID of the private key being used - if using a JWKS endpoint, this must be set for authorization to work
       scope: "openid,email", # comma-separated; must include at least `openid` and `email`
       ui_locales: "en", # comma-separated; can also include `cy` for Welsh UI
-      vtr: ["Cl.Cm.P2"], # array with one element; dot-separated; can also include identity vectors such as `P2` (eg. `Cl.Cm.P2`)
+      vtr: [ "Cl.Cm.P2" ], # array with one element; dot-separated; can also include identity vectors such as `P2` (eg. `Cl.Cm.P2`)
       pkce: false, # set to `true` to enable "Proof Key for Code Exchange"
       userinfo_claims: [], # array of URLs; see https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#create-a-url-encoded-json-object-for-lt-claims-request-gt
-      signing_algorithm: 'ES256', # The algorithm used to encode/decode the JWT token, RS256 also supported
-      claims: {userinfo: {"https://vocab.account.gov.uk/v1/coreIdentityJWT": nil, "https://vocab.account.gov.uk/v1/returnCode": nil}}.to_json,
+      signing_algorithm: "ES256", # The algorithm used to encode/decode the JWT token, RS256 also supported
+      claims: { userinfo: { "https://vocab.account.gov.uk/v1/coreIdentityJWT": nil, "https://vocab.account.gov.uk/v1/returnCode": nil } }.to_json
     }
 
     # will call `Users::OmniauthController#failure` if there are any errors during the login process

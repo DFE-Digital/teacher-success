@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def destroy
     redirect_to root_path && return unless session.dig("onelogin_sign_in_user").present?
 
-    id_token = session.dig("onelogin_sign_in_user","id_token")
+    id_token = session.dig("onelogin_sign_in_user", "id_token")
     OneLoginSignInUser.end_session!(session)
     if ENV["SIGN_IN_METHOD"] == "dfe-sign-in"
       redirect_to(logout_request(id_token).redirect_uri, allow_other_host: true)
