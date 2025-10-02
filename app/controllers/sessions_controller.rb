@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY = "https://vocab.account.gov.uk/v1/coreIdentityJWT".freeze
+  ONELOGIN_RETURN_CODE_HASH_KEY = "https://vocab.account.gov.uk/v1/returnCode".freeze
   def new; end
 
   def callback
@@ -18,12 +20,18 @@ class SessionsController < ApplicationController
     end
   end
 
+  def identify
+    debugger
+    redirect_to account_path
+  end
+
   def destroy
     redirect_to root_path && return unless session.dig("one_login_sign_in_user").present?
 
     id_token = session.dig("one_login_sign_in_user", "id_token")
     OneLoginSignInUser.end_session!(session)
     if ENV["SIGN_IN_METHOD"] == "one-login-sign-in"
+      debugger
       redirect_to(logout_request(id_token).redirect_uri, allow_other_host: true)
     else
       redirect_to root_path

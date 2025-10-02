@@ -90,4 +90,8 @@ describe OneLoginSignInUser do
       expect(session).to eq({})
     end
   end
+
+  describe "#user" do
+
+  end
 end
