@@ -73,7 +73,7 @@ class SessionsController < ApplicationController
       {
         first_name: jwt_identity.first_name,
         last_name: jwt_identity.last_name,
-        date_of_birth: jwt_identity.date_of_birth,
+        date_of_birth: jwt_identity.date_of_birth
       }
     end
   end

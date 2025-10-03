@@ -26,13 +26,13 @@ when "one-login-sign-in"
         host:  ENV["GOVUK_ONE_LOGIN_BASE_URL"],
         identifier: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"],
         redirect_uri: ENV["GOVUK_ONE_LOGIN_REDIRECT_URI"],
-        secret: private_key,
+        secret: private_key
       },
       discovery: true,
       response_type: :code,
       scope: %i[openid email phone],
       send_scope_to_token_endpoint: false,
-      issuer: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
+      issuer: ENV["GOVUK_ONE_LOGIN_BASE_URL"]
     }
 
     provider :openid_connect, {
@@ -43,7 +43,7 @@ when "one-login-sign-in"
         host:  ENV["GOVUK_ONE_LOGIN_BASE_URL"],
         identifier: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"],
         redirect_uri: ENV["GOVUK_ONE_LOGIN_IDENTIFY_REDIRECT_URI"],
-        secret: private_key,
+        secret: private_key
       },
       discovery: true,
       response_type: :code,
@@ -53,7 +53,7 @@ when "one-login-sign-in"
       extra_authorize_params: {
         vtr: '["Cl.Cm.P2"]',
         claims: { userinfo: { "https://vocab.account.gov.uk/v1/coreIdentityJWT": nil, "https://vocab.account.gov.uk/v1/returnCode": nil } }.to_json
-      },
+      }
     }
 
     provider :openid_connect, {
@@ -72,13 +72,13 @@ when "one-login-sign-in"
         redirect_uri: ENV["TEACHER_AUTH_REDIRECT_URI"],
         jwks_uri: ENV["TEACHER_AUTH_JWKS_URI"],
         secret: ENV["TEACHER_AUTH_SECRET"],
-        scheme: "https",
+        scheme: "https"
       },
-      scope: ["teaching_record"],
+      scope: [ "teaching_record" ],
       discovery: true,
       issuer:  ENV["TEACHER_AUTH_BASE_URL"],
       pkce: true,
-      response_type: :code,
+      response_type: :code
     }
 
     # will call `Users::OmniauthController#failure` if there are any errors during the login process

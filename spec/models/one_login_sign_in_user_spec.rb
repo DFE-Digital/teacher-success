@@ -92,6 +92,5 @@ describe OneLoginSignInUser do
   end
 
   describe "#user" do
-
   end
 end
