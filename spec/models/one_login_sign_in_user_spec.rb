@@ -92,5 +92,59 @@ describe OneLoginSignInUser do
   end
 
   describe "#user" do
+    subject(:user) do
+      described_class.new(
+        email_address:,
+        one_login_sign_in_uid:,
+        first_name:,
+        last_name:,
+      ).user
+    end
+
+    let(:first_name) { "Joe" }
+    let(:last_name) { "Bloggs" }
+    let(:one_login_sign_in_uid) { "1234" }
+    let(:email_address) { "user@example.com" }
+
+    context "when a user does not exist" do
+      it "creates a new user" do
+        expect { user }.to change(User, :count).by(1)
+        new_user = user
+        expect(new_user.first_name).to eq(first_name)
+        expect(new_user.last_name).to eq(last_name)
+        expect(new_user.email_address).to eq(email_address)
+        expect(new_user.one_login_sign_in_uid).to eq(one_login_sign_in_uid)
+      end
+    end
+
+    context "when a user exists" do
+      let(:existing_user) do
+        create(
+          :user,
+          first_name:,
+          last_name:,
+          email_address:,
+          one_login_sign_in_uid: sign_in_uid,
+        )
+      end
+
+      before { existing_user }
+
+      context "when the user's one_login_sign_in_uid is different" do
+        let(:sign_in_uid) { "abcd" }
+
+        it "returns the existing user" do
+          expect(user).to eq(existing_user)
+        end
+      end
+
+      context "when the user's one_login_sign_in_uid the same" do
+        let(:sign_in_uid) { one_login_sign_in_uid }
+
+        it "returns the existing user" do
+          expect(user).to eq(existing_user)
+        end
+      end
+    end
   end
 end
