@@ -13,7 +13,7 @@
 .prompt .svg-inline--fa {
   background-color: govuk.govuk-colour("turquoise");
   color: govuk.govuk-colour("white");
-  padding: 10px !important;
+  padding: 10px;
   position: absolute;
   display: inline-block;
   width: 32px;
@@ -25,7 +25,7 @@
     position: relative;
     left: 5px;
     top:-20px;
-    padding: 20px !important;
+    padding: 20px;
   }
 
 }
@@ -92,13 +92,13 @@
 }
 
 .prompt.prompt-home.info .svg-inline--fa {
-  background-color: colours.$prompt-border-info !important;
+  background-color: colours.$prompt-border-info;
 }
 
 .prompt.prompt-home.warning .svg-inline--fa {
-  background-color: govuk.govuk-colour("yellow") !important;
+  background-color: govuk.govuk-colour("yellow");
 }
 
 .prompt.prompt-home.error .svg-inline--fa {
-  background-color: govuk.govuk-colour("red") !important;
+  background-color: govuk.govuk-colour("red");
 }

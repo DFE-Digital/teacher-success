@@ -14,12 +14,16 @@
       flex-direction: column;
       gap: 1rem;
 
-      .image { width: 10rem; }
+      .image { 
+        width: 10rem; 
+      }
 
       @include govuk.govuk-media-query($from: tablet) {
         flex-direction: row;
 
-        .image { width: 30rem; }
+        .image { 
+          width: 30rem; 
+        }
       }
     }
   }
