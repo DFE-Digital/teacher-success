@@ -50,26 +50,14 @@ class SessionsController < ApplicationController
 
   private
 
-  def logout_request(id_token)
-    logout_utility.build_request(
-      id_token_hint: id_token,
-      post_logout_redirect_uri: ENV["GOVUK_ONE_LOGOUT_REDIRECT_URI"],
-    )
-  end
-
-  def logout_utility
-    OmniAuth::GovukOneLogin::LogoutUtility.new(end_session_endpoint: sign_out_path)
-  end
-
   def omniauth_hash
     request.env.dig("omniauth.auth")
   end
 
   def user_details
     @user_details ||= begin
-      token = omniauth_hash.extra.raw_info[ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY]
-      jwt_identity = OneLogin::CoreIdentityDecoded.new(jwt: token)
-      jwt_identity.call
+      token = omniauth_hash.dig("extra", "raw_info", ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY)
+      jwt_identity = OneLogin::CoreIdentityDecoder.new(jwt: token)
       {
         first_name: jwt_identity.first_name,
         last_name: jwt_identity.last_name,

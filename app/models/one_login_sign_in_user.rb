@@ -6,7 +6,7 @@ class OneLoginSignInUser
 
   attr_reader :email_address, :one_login_sign_in_uid, :id_token, :provider, :first_name, :last_name
 
-  def initialize(email_address:, one_login_sign_in_uid:, first_name:, last_name:, id_token: nil, provider: nil)
+  def initialize(email_address:, one_login_sign_in_uid:, first_name: nil, last_name: nil, id_token: nil, provider: nil)
     @email_address = email_address&.downcase
     @one_login_sign_in_uid = one_login_sign_in_uid
     @first_name = first_name

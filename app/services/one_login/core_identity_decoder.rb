@@ -1,12 +1,8 @@
 module OneLogin
-  class CoreIdentityDecoded
-    attr_reader :jwt, :decoded_jwt
+  class CoreIdentityDecoder
+    attr_reader :jwt
     def initialize(jwt:)
       @jwt = jwt
-    end
-
-    def call
-      @decoded_jwt ||= JWT.decode(jwt, nil, true, algorithms:, jwks:)
     end
 
     def first_name
@@ -22,6 +18,10 @@ module OneLogin
     end
 
     private
+
+    def decoded_jwt
+      @decoded_jwt ||= JWT.decode(jwt, nil, true, algorithms:, jwks:)
+    end
 
     def name_parts
       decoded_jwt[0]["vc"]["credentialSubject"]["name"][0]["nameParts"]
