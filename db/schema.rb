@@ -161,6 +161,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_09_101706) do
     t.string "one_login_sign_in_uid"
     t.datetime "last_signed_in_at"
     t.string "trn"
+    t.date "date_of_birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true

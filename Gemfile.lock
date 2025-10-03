@@ -9,16 +9,6 @@ GIT
       multi_xml (~> 0.6.0)
       request_store_rails (~> 2)
 
-GIT
-  remote: https://github.com/DFE-Digital/omniauth-govuk-one-login.git
-  revision: aff1a0e5eac9cb9bfdd2215f8da4ac77f390d1d7
-  tag: v1.5.1
-  specs:
-    omniauth_govuk_one_login (1.5.1)
-      faraday (~> 2.13)
-      jwt (~> 2.10)
-      omniauth (~> 2.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -588,11 +578,11 @@ DEPENDENCIES
   govuk_markdown
   httparty
   jsbundling-rails
+  jwt
   loaf
   mission_control-jobs
   omniauth
   omniauth-rails_csrf_protection
-  omniauth_govuk_one_login!
   omniauth_openid_connect
   pagy
   pg

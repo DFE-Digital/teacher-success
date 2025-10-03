@@ -1,11 +1,10 @@
 class SessionsController < ApplicationController
   ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY = "https://vocab.account.gov.uk/v1/coreIdentityJWT".freeze
-  ONELOGIN_RETURN_CODE_HASH_KEY = "https://vocab.account.gov.uk/v1/returnCode".freeze
   def new; end
 
   def callback
     # start session from OmniAuth payload
-    OneLoginSignInUser.begin_session!(session, request.env.dig("omniauth.auth"))
+    OneLoginSignInUser.begin_session!(session, omniauth_hash)
 
     if current_user
       current_user.update!(last_signed_in_at: Time.current)
@@ -21,26 +20,29 @@ class SessionsController < ApplicationController
   end
 
   def identify
-    debugger
+    current_user.update!(
+      first_name: user_details[:first_name],
+      last_name: user_details[:last_name],
+      date_of_birth: user_details[:date_of_birth],
+    )
+
     redirect_to account_path
   end
 
-  def destroy
-    redirect_to root_path && return unless session.dig("one_login_sign_in_user").present?
+  # def teacher_auth
+  #   debugger
+  # end
 
-    id_token = session.dig("one_login_sign_in_user", "id_token")
+  def destroy
+    _id_token = session.dig("one_login_sign_in_user", "id_token")
     OneLoginSignInUser.end_session!(session)
-    if ENV["SIGN_IN_METHOD"] == "one-login-sign-in"
-      debugger
-      redirect_to(logout_request(id_token).redirect_uri, allow_other_host: true)
-    else
-      redirect_to root_path
-    end
+
+    redirect_to root_path
   end
 
   def failure
-    dfe_sign_in_uid = session.dig("one_login_sign_in_user", "one_login_sign_in_uid")
-    Rails.logger.warn("DSI failure with #{params[:message]} for dfe_sign_in_uid: #{dfe_sign_in_uid}")
+    one_login_sign_in_uid = session.dig("one_login_sign_in_user", "one_login_sign_in_uid")
+    Rails.logger.warn("DSI failure with #{params[:message]} for one_login_sign_in_uid: #{one_login_sign_in_uid}")
     OneLoginSignInUser.end_session!(session)
 
     redirect_to internal_server_error_path, alert: "Sign-in failed"
@@ -57,5 +59,22 @@ class SessionsController < ApplicationController
 
   def logout_utility
     OmniAuth::GovukOneLogin::LogoutUtility.new(end_session_endpoint: sign_out_path)
+  end
+
+  def omniauth_hash
+    request.env.dig("omniauth.auth")
+  end
+
+  def user_details
+    @user_details ||= begin
+      token = omniauth_hash.extra.raw_info[ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY]
+      jwt_identity = OneLogin::CoreIdentityDecoded.new(jwt: token)
+      jwt_identity.call
+      {
+        first_name: jwt_identity.first_name,
+        last_name: jwt_identity.last_name,
+        date_of_birth: jwt_identity.date_of_birth,
+      }
+    end
   end
 end

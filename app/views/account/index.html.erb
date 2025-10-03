@@ -6,6 +6,7 @@
       <h1 class="govuk-heading-l"><%= "#{current_user.email_address}" %></h1>
 
       <%= govuk_button_to "Identify", "/auth/govuk_one_login_identity", method: :post, data: { turbo: false } %>
+      <%#= govuk_button_to "Teacher auth", "/auth/teacher_auth", method: :post, data: { turbo: false } %>
     </div>
   </div>
 </div>

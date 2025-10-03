@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   else
     get "/auth/govuk_one_login/callback" => "sessions#callback", as: :one_login_callback
     get "/auth/govuk_one_login/identify", to: "sessions#identify", as: :one_login_identify
+
+    # get "/auth/teacher_auth/callback", to: "sessions#teacher_auth", as: :teacher_auth_callback
+
+
     get "/auth/govuk_one_login/sign-out" => "sessions#destroy", as: :sign_out
     get "/auth/failure", to: "sessions#failure"
   end

@@ -18,38 +18,67 @@ when "one-login-sign-in"
                   rescue OpenSSL::PKey::RSAError
                     nil
                   end
-    provider :govuk_one_login, {
+    provider :openid_connect, {
       name: :govuk_one_login,
       callback_path: "/auth/govuk_one_login/callback",
-      client_id: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"], # your client ID from the GOV.UK One Login admin tool
-      idp_base_url: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
-      private_key: private_key, # the private key you generated above in PEM format
-      redirect_uri: ENV["GOVUK_ONE_LOGIN_REDIRECT_URI"], # if this is a relative URI, the requesting domain will be used
-      # these are optional - shown here with their default values if omitted
-      private_key_kid: "", # the key ID of the private key being used - if using a JWKS endpoint, this must be set for authorization to work
-      scope: "openid,email", # comma-separated; must include at least `openid` and `email`
-      ui_locales: "en", # comma-separated; can also include `cy` for Welsh UI
-      vtr: [ "Cl.Cm" ], # array with one element; dot-separated; can also include identity vectors such as `P2` (eg. `Cl.Cm.P2`)
-      pkce: false, # set to `true` to enable "Proof Key for Code Exchange"
-      userinfo_claims: [], # array of URLs; see https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#create-a-url-encoded-json-object-for-lt-claims-request-gt
-      signing_algorithm: "ES256" # The algorithm used to encode/decode the JWT token, RS256 also supported
+      client_auth_method: "jwt_bearer",
+      client_options: {
+        host:  ENV["GOVUK_ONE_LOGIN_BASE_URL"],
+        identifier: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"],
+        redirect_uri: ENV["GOVUK_ONE_LOGIN_REDIRECT_URI"],
+        secret: private_key,
+      },
+      discovery: true,
+      response_type: :code,
+      scope: %i[openid email phone],
+      send_scope_to_token_endpoint: false,
+      issuer: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
     }
 
-    provider :govuk_one_login, {
+    provider :openid_connect, {
       name: :govuk_one_login_identity,
       callback_path: "/auth/govuk_one_login/identify",
-      client_id: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"], # your client ID from the GOV.UK One Login admin tool
-      idp_base_url: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
-      private_key: private_key, # the private key you generated above in PEM format
-      redirect_uri: ENV["GOVUK_ONE_LOGIN_IDENTIFY_REDIRECT_URI"], # if this is a relative URI, the requesting domain will be used
-      # these are optional - shown here with their default values if omitted
-      private_key_kid: "", # the key ID of the private key being used - if using a JWKS endpoint, this must be set for authorization to work
-      scope: "openid,email", # comma-separated; must include at least `openid` and `email`
-      ui_locales: "en", # comma-separated; can also include `cy` for Welsh UI
-      vtr: [ "Cl.Cm.P2" ], # array with one element; dot-separated; can also include identity vectors such as `P2` (eg. `Cl.Cm.P2`)
-      pkce: false, # set to `true` to enable "Proof Key for Code Exchange"
-      userinfo_claims: ["https://vocab.account.gov.uk/v1/coreIdentityJWT"], # array of URLs; see https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#create-a-url-encoded-json-object-for-lt-claims-request-gt
-      signing_algorithm: "ES256", # The algorithm used to encode/decode the JWT token, RS256 also supported
+      client_auth_method: "jwt_bearer",
+      client_options: {
+        host:  ENV["GOVUK_ONE_LOGIN_BASE_URL"],
+        identifier: ENV["GOVUK_ONE_LOGIN_CLIENT_ID"],
+        redirect_uri: ENV["GOVUK_ONE_LOGIN_IDENTIFY_REDIRECT_URI"],
+        secret: private_key,
+      },
+      discovery: true,
+      response_type: :code,
+      scope: %i[openid email phone],
+      send_scope_to_token_endpoint: false,
+      issuer: ENV["GOVUK_ONE_LOGIN_BASE_URL"],
+      extra_authorize_params: {
+        vtr: '["Cl.Cm.P2"]',
+        claims: { userinfo: { "https://vocab.account.gov.uk/v1/coreIdentityJWT": nil, "https://vocab.account.gov.uk/v1/returnCode": nil } }.to_json
+      },
+    }
+
+    provider :openid_connect, {
+      name: :teacher_auth,
+      allow_authorize_params: %i[session_id trn_token],
+      callback_path: "/auth/teacher_auth/callback",
+      send_scope_to_token_endpoint: false,
+      client_options: {
+        authorization_endpoint: "/oauth2/authorize",
+        end_session_endpoint: "/oauth2/logout",
+        token_endpoint: "/oauth2/token",
+        userinfo_endpoint: "/oauth2/userinfo",
+        host: URI(ENV.fetch("TEACHER_AUTH_BASE_URL", "")).host,
+        port: 443,
+        identifier: ENV["TEACHER_AUTH_CLIENT_ID"],
+        redirect_uri: ENV["TEACHER_AUTH_REDIRECT_URI"],
+        jwks_uri: ENV["TEACHER_AUTH_JWKS_URI"],
+        secret: ENV["TEACHER_AUTH_SECRET"],
+        scheme: "https",
+      },
+      scope: ["teaching_record"],
+      discovery: true,
+      issuer:  ENV["TEACHER_AUTH_BASE_URL"],
+      pkce: true,
+      response_type: :code,
     }
 
     # will call `Users::OmniauthController#failure` if there are any errors during the login process

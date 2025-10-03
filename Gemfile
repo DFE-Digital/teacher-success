@@ -30,9 +30,9 @@ gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.8"
 
 # DfE Sign-in
 gem "omniauth"
-gem "omniauth_govuk_one_login", github: "DFE-Digital/omniauth-govuk-one-login", tag: "v1.5.1"
 gem "omniauth_openid_connect"
 gem "omniauth-rails_csrf_protection"
+gem "jwt"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
