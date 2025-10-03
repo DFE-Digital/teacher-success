@@ -1,0 +1,12 @@
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Get ready for teaching</h1>
+      <% if ENV["SIGN_IN_METHOD"] == "persona" %>
+        <%= govuk_button_to "Sign in with persona", personas_path, method: :get %>
+      <% else %>
+        <%= govuk_button_to "Sign in using DfE Sign In", "/auth/govuk_one_login", method: :post, data: { turbo: false } %>
+      <% end %>
+    </div>
+  </div>
+</div>
