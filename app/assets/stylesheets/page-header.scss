@@ -6,7 +6,6 @@
   background-color: colours.$teach-light-blue;
 
   .govuk-width-container {
-
     .content-container {
       @include govuk.govuk-responsive-padding(6, "top");
       @include govuk.govuk-responsive-padding(6, "bottom");
