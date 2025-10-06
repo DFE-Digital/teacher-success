@@ -6,7 +6,6 @@
   background-color: colours.$teach-light-blue;
 
   .govuk-width-container {
-
     .content-container {
       @include govuk.govuk-responsive-padding(6, "top");
       @include govuk.govuk-responsive-padding(6, "bottom");
@@ -15,12 +14,16 @@
       flex-direction: column;
       gap: 1rem;
 
-      .image { width: 10rem; }
+      .image { 
+        width: 10rem; 
+      }
 
       @include govuk.govuk-media-query($from: tablet) {
         flex-direction: row;
 
-        .image { width: 30rem; }
+        .image { 
+          width: 30rem; 
+        }
       }
     }
   }

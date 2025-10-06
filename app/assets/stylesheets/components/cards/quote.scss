@@ -19,11 +19,11 @@
     padding: 0;
   }
 
-  blockquote:before {
+  blockquote::before {
     content: open-quote;
   }
 
-  blockquote:after {
+  blockquote::after {
     content: close-quote;
   }
 

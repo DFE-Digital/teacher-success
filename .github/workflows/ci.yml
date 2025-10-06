@@ -37,6 +37,29 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
+  stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 23.11.0
+
+      - name: Install Node dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build CSS
+        run: yarn run build:css
+
+      - name: Build JS
+        run: yarn run build
+
+      - name: Run StyleLint
+        run: yarn run stylelint app/assets/stylesheets 
+
   bundler_audit:
     runs-on: ubuntu-latest
     steps:

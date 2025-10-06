@@ -3,10 +3,17 @@
     height: 30px; 
   }
 
-  .govuk-header__logotype--focus { display: none; }
+  .govuk-header__logotype--focus { 
+    display: none;
+  }
 
   &:focus {
-    .govuk-header__logotype--default { display: none;}
-    .govuk-header__logotype--focus { display: inline-block;}
+    .govuk-header__logotype--default { 
+      display: none;
+    }
+
+    .govuk-header__logotype--focus { 
+      display: inline-block;
+    }
   }
 }
