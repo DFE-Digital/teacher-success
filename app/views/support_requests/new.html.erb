@@ -1,0 +1,40 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <%= form_with model: @support_request, url: support_requests_path, data: { turbo: false } do |form| %>
+      <%= form.govuk_error_summary %>
+
+      <p class="govuk-body">
+        You can use this form to report a problem. If you have a particular feedback about Get ready to teach,
+        please use the give <%= tracked_link_to "feedback form", new_feedback_path  %>.
+      </p>
+
+      <p class="govuk-body">We will aim to resolve your issue as soon as possible.</p>
+
+      <%= form.govuk_text_field :name, label: { text: "Name", size: "m" } %>
+
+      <%= form.govuk_text_field :email, label: { text: "Email", size: "m" } %>
+
+      <%= form.govuk_collection_radio_buttons :area_of_website,
+        [["The whole site", "whole_site"], ["A specific page", "specific_page"]],
+        :last,
+        :first,
+        ->(option) {
+          if option.last == "specific_page"
+            content_tag(:div, class: "hidden-subfield") do
+              form.govuk_text_field(
+                :area_of_website_url,
+                label: { text: "Enter the URL for the page" }
+              )
+            end
+          end
+        },
+        bold_labels: false,
+        legend: { text: "What area of the website is your problem about?" }
+      %>
+
+      <%= form.govuk_text_area :problem, label: { text: "Tell us about your problem", size: "m" }, rows: 10, max_chars: 1200 %>
+
+      <%= form.govuk_submit "Submit support request" %>
+    <% end %>
+  </div>
+</div>
