@@ -17,4 +17,12 @@
     - can_contact
     - created_at
     - updated_at
-
+  :support_requests:
+    - name
+    - id
+    - email
+    - area_of_website
+    - area_of_website_url
+    - problem
+    - updated_at
+    - created_at
