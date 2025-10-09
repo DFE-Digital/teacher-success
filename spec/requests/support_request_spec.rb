@@ -29,7 +29,7 @@ RSpec.describe "SupportRequests", type: :request do
     context "with invalid parameters" do
       it "re-renders the form with errors" do
         expect {
-          post support_requests_path, params: { support_request: { name: nil} }
+          post support_requests_path, params: { support_request: { name: nil } }
         }.not_to change(SupportRequest, :count)
 
         expect(response).to have_http_status(:unprocessable_entity)
