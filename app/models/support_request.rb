@@ -6,6 +6,6 @@ class SupportRequest < ApplicationRecord
 
   enum :area_of_website, {
     whole_site: "whole_site",
-    specific_page: "specific_page",
+    specific_page: "specific_page"
   }, validate: { message: "Please select an area of the website" }
 end
