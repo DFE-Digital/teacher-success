@@ -1,6 +1,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <%= form_with model: @support_request, url: support_requests_path, data: { turbo: false } do |form| %>
+    <%= form_with model: @support_request, url: support_requests_path do |form| %>
       <%= form.govuk_error_summary %>
 
       <p class="govuk-body">

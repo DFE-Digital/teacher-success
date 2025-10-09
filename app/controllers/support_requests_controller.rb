@@ -17,7 +17,7 @@ class SupportRequestsController < ApplicationController
 
       redirect_to new_support_request_path, flash: { success: flash }
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
