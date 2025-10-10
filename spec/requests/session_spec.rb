@@ -2,38 +2,40 @@ require "rails_helper"
 
 RSpec.describe "Sessions", type: :request do
   after do
-    OmniAuth.config.mock_auth[:govuk_one_login] = nil
-    OmniAuth.config.mock_auth[:govuk_one_login_identify] = nil
+    OmniAuth.config.mock_auth[:teacher_auth] = nil
   end
 
-  describe "GET /auth/onelogin/callback" do
+  describe "GET /auth/teacher_auth/callback" do
     before do
       user = {
         email_address: "user@example.com",
         onelogin_sign_in_uid: "abcd",
         last_active_at: Time.current,
         id_token: "1234",
-        provider: "one_login"
+        provider: "teacher_auth"
       }
 
       # simulate the OmniAuth payload
-      omniauth_hash = {
-        "provider" => "govuk_one_login",
-        "uuid" => user[:onelogin_sign_in_uid],
+      omniauth_payload = {
+        "provider" => "teacher_auth",
+        "uid" => user[:onelogin_sign_in_uid],
         "info" => {
           "email" => user[:email_address],
           "uuid" => user[:onelogin_sign_in_uid]
         },
         "credentials" => {
-          "id_token" => "1234"
+          "id_token" => "1234",
+          "token" => "abcd"
         }
       }
 
-      OmniAuth.config.mock_auth[:govuk_one_login] = OmniAuth::AuthHash.new(omniauth_hash)
+      OmniAuth.config.mock_auth[:teacher_auth] = OmniAuth::AuthHash.new(omniauth_payload)
+
+      stub_teacher_auth_request
     end
 
     it "signs the user in and redirects to root" do
-      get "/auth/govuk_one_login/callback"
+      get "/auth/teacher_auth/callback"
 
       follow_redirect!
 
@@ -43,55 +45,14 @@ RSpec.describe "Sessions", type: :request do
       expect(session["one_login_sign_in_user"]).not_to be_nil
       expect(session.dig("one_login_sign_in_user", "one_login_sign_in_uid")).to eq("abcd")
       expect(session.dig("one_login_sign_in_user", "email_address")).to eq("user@example.com")
-      expect(session.dig("one_login_sign_in_user", "provider")).to eq("govuk_one_login")
+      expect(session.dig("one_login_sign_in_user", "first_name")).to eq("Joe")
+      expect(session.dig("one_login_sign_in_user", "last_name")).to eq("Bloggs")
+      expect(session.dig("one_login_sign_in_user", "provider")).to eq("teacher_auth")
       expect(session.dig("one_login_sign_in_user", "id_token")).to eq("1234")
       expect(session.dig("one_login_sign_in_user", "last_active_at")).not_to be_nil
+      expect(session.dig("one_login_sign_in_user", "trn")).to eq("1234567")
     ensure
-      OmniAuth.config.mock_auth[:govuk_one_login] = nil
-    end
-  end
-
-  describe "GET /auth/govuk_one_login/identify" do
-    let(:first_name) { "Joe" }
-    let(:last_name) { "Bloggs" }
-    let(:date_of_birth) { Date.parse("2001-01-01") }
-    let(:current_user) { create(:user, email_address: "user@example.com") }
-    let(:mock_core_identifier) do
-      instance_double(OneLogin::CoreIdentityDecoder).tap do |mock_core_identifier|
-        allow(mock_core_identifier).to receive(:first_name).and_return(first_name)
-        allow(mock_core_identifier).to receive(:last_name).and_return(last_name)
-        allow(mock_core_identifier).to receive(:date_of_birth).and_return(date_of_birth)
-      end
-    end
-
-    before do
-      omniauth_hash = {
-        extra: {
-          raw_info: {
-            "https://vocab.account.gov.uk/v1/coreIdentityJWT" => "1234"
-          }
-        }
-      }
-      OmniAuth.config.mock_auth[:govuk_one_login_identify] = OmniAuth::AuthHash.new(omniauth_hash)
-
-      allow(OneLogin::CoreIdentityDecoder).to receive(:new).and_return(mock_core_identifier)
-      allow(OneLoginSignInUser).to receive(:load_from_session).and_return(
-        OneLoginSignInUser.new(email_address: current_user.email_address, one_login_sign_in_uid: "1234")
-      )
-    end
-
-    it "updates the user's first_name, last_name, and date_of_birth attributes with the data from OneLogin" do
-      get "/auth/govuk_one_login/identify"
-
-      follow_redirect!
-
-      expect(response).to have_http_status(:success)
-      expect(response).to render_template("account/index")
-
-      current_user.reload
-      expect(current_user.first_name).to eq("Joe")
-      expect(current_user.last_name).to eq("Bloggs")
-      expect(current_user.date_of_birth).to eq(date_of_birth)
+      OmniAuth.config.mock_auth[:teacher_auth] = nil
     end
   end
 
@@ -105,5 +66,21 @@ RSpec.describe "Sessions", type: :request do
 
       expect(response).to render_template("errors/internal_server_error")
     end
+  end
+
+  def stub_teacher_auth_request
+    request_body = { "trn" => "1234567",
+                    "firstName" => "Joe",
+                    "middleName" => "",
+                    "lastName" => "Bloggs",
+                    "dateOfBirth" => "1990-01-01",
+                    "nationalInsuranceNumber" => "NI123",
+                    "emailAddress" => "joe_bloggs@example.com",
+                    "qts" => nil,
+                    "eyts" => nil,
+                    "routesToProfessionalStatuses" => [],
+                    "qtlsStatus" => "None" }
+    stub_request(:get, "https://teacher_auth.gov.uk/person").
+      to_return(status: 200, body: request_body.to_json, headers: {})
   end
 end

@@ -44,7 +44,7 @@ RSpec.describe TeacherAuth::Request::UserDetails do
   private
 
   def stub_successful_request
-    request_body = {"trn" => "1234567",
+    request_body = { "trn" => "1234567",
                     "firstName" => "Joe",
                     "middleName" => "",
                     "lastName" => "Bloggs",
@@ -54,7 +54,7 @@ RSpec.describe TeacherAuth::Request::UserDetails do
                     "qts" => nil,
                     "eyts" => nil,
                     "routesToProfessionalStatuses" => [],
-                    "qtlsStatus" => "None"}
+                    "qtlsStatus" => "None" }
     stub_request(:get, "https://teacher_auth.gov.uk/person").
       to_return(status: 200, body: request_body.to_json, headers: {})
   end
