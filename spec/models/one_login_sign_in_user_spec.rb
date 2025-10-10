@@ -2,7 +2,11 @@ require "rails_helper"
 
 describe OneLoginSignInUser do
   describe ".begin_session!" do
-    it "creates a new session with DfE user details" do
+    before do
+      stub_teacher_auth_request
+    end
+
+    it "creates a new session with Teacher Auth/One Login user details" do
       Timecop.freeze do
         session = {}
         user = {
@@ -10,19 +14,20 @@ describe OneLoginSignInUser do
           onelogin_sign_in_uid: "abcd",
           last_active_at: Time.current,
           id_token: "1234",
-          provider: "one_login"
+          provider: "teacher_auth"
         }
 
         # simulate the OmniAuth payload
         omniauth_payload = {
-          "provider" => "govuk_one_login",
-          "uuid" => user[:onelogin_sign_in_uid],
+          "provider" => "teacher_auth",
+          "uid" => user[:onelogin_sign_in_uid],
           "info" => {
             "email" => user[:email_address],
             "uuid" => user[:onelogin_sign_in_uid]
           },
           "credentials" => {
-            "id_token" => "1234"
+            "id_token" => "1234",
+            "token" => "abcd",
           }
         }
 
@@ -32,9 +37,12 @@ describe OneLoginSignInUser do
            "one_login_sign_in_user" => {
              "email_address" => "user@example.com",
              "one_login_sign_in_uid" => "abcd",
+             "first_name" => "Joe",
+             "last_name" => "Bloggs",
              "last_active_at" => Time.current,
              "id_token" => "1234",
-             "provider" => "govuk_one_login"
+             "provider" => "teacher_auth",
+             "trn" => "1234567",
            }
          )
       end
@@ -46,10 +54,13 @@ describe OneLoginSignInUser do
       session = {
         "one_login_sign_in_user" => {
           "email_address" => "user@example.com",
+          "first_name" => "Joe",
+          "last_name" => "Bloggs",
           "one_login_sign_in_uid" => "abcd",
           "last_active_at" => Time.current,
           "id_token" => "1234",
-          "provider" => "govuk_one_login"
+          "provider" => "teacher_auth",
+          "trn" => "1234567",
         }
       }
 
@@ -57,9 +68,12 @@ describe OneLoginSignInUser do
 
       expect(one_login_sign_in_user).not_to be_nil
       expect(one_login_sign_in_user.email_address).to eq("user@example.com")
+      expect(one_login_sign_in_user.first_name).to eq("Joe")
+      expect(one_login_sign_in_user.last_name).to eq("Bloggs")
       expect(one_login_sign_in_user.one_login_sign_in_uid).to eq("abcd")
       expect(one_login_sign_in_user.id_token).to eq("1234")
-      expect(one_login_sign_in_user.provider).to eq("govuk_one_login")
+      expect(one_login_sign_in_user.provider).to eq("teacher_auth")
+      expect(one_login_sign_in_user.trn).to eq("1234567")
     end
 
     it "returns nil if session is expired" do
@@ -146,5 +160,23 @@ describe OneLoginSignInUser do
         end
       end
     end
+  end
+
+  private
+
+  def stub_teacher_auth_request
+    request_body = {"trn" => "1234567",
+                    "firstName" => "Joe",
+                    "middleName" => "",
+                    "lastName" => "Bloggs",
+                    "dateOfBirth" => "1990-01-01",
+                    "nationalInsuranceNumber" => "NI123",
+                    "emailAddress" => "user@example.com",
+                    "qts" => nil,
+                    "eyts" => nil,
+                    "routesToProfessionalStatuses" => [],
+                    "qtlsStatus" => "None"}
+    stub_request(:get, "https://teacher_auth.gov.uk/person").
+      to_return(status: 200, body: request_body.to_json, headers: {})
   end
 end
