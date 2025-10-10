@@ -1,0 +1,14 @@
+<div class="step <%= @classes %>">
+  <header class="step__header">
+    <div class="step__icon">
+      <%= image_tag @icon, alt: @icon_alt_text %>
+    </div>
+    <%= content_tag(@heading_tag, class: "govuk-heading-l") do %>
+      <%= @title %>
+    <% end %>
+  </header>
+
+  <div class="step__content">
+    <%= content %>
+  </div>
+</div>
