@@ -28,7 +28,7 @@ class OneLoginSignInUser
       "one_login_sign_in_uid" => omniauth_payload.dig("uid"),
       "last_active_at" => Time.current,
       "id_token" => omniauth_payload.dig("credentials", "id_token"),
-      "provider" => omniauth_payload.dig(:provider),
+      "provider" => omniauth_payload.dig("provider"),
       "trn" => user_details.dig("trn")
     }
 
