@@ -4,26 +4,35 @@ class OneLoginSignInUser
   # Sessions timeout after this period of inactivity
   SESSION_TIMEOUT = 2.hours
 
-  attr_reader :email_address, :one_login_sign_in_uid, :id_token, :provider, :first_name, :last_name
+  attr_reader :email_address, :one_login_sign_in_uid, :id_token, :provider, :first_name, :last_name, :trn
 
-  def initialize(email_address:, one_login_sign_in_uid:, first_name: nil, last_name: nil, id_token: nil, provider: nil)
+  def initialize(email_address:, one_login_sign_in_uid:, first_name:, last_name:, id_token: nil, provider: nil, trn: nil)
     @email_address = email_address&.downcase
     @one_login_sign_in_uid = one_login_sign_in_uid
     @first_name = first_name
     @last_name = last_name
     @id_token = id_token
     @provider = provider&.to_s
+    @trn = trn
   end
 
   # start a session from the OmniAuth payload
   def self.begin_session!(session, omniauth_payload)
+    token = omniauth_payload.dig("credentials", "token")
+    user_details = TeacherAuth::Request::UserDetails.new(token).call
+
     session["one_login_sign_in_user"] = {
       "email_address" => omniauth_payload.dig("info", "email"),
-      "one_login_sign_in_uid" => omniauth_payload.dig("info", "uuid"),
+      "first_name" => omniauth_payload.dig("info", "first_name") || user_details.dig("firstName"),
+      "last_name" => omniauth_payload.dig("info", "last_name") || user_details.dig("lastName"),
+      "one_login_sign_in_uid" => omniauth_payload.dig("uid"),
       "last_active_at" => Time.current,
       "id_token" => omniauth_payload.dig("credentials", "id_token"),
-      "provider" => omniauth_payload["provider"]
+      "provider" => omniauth_payload.dig(:provider),
+      "trn" => user_details.dig("trn")
     }
+
+    session["one_login_sign_in_user"]
   end
 
   # load a user from the session, if valid & not expired
@@ -43,6 +52,7 @@ class OneLoginSignInUser
       last_name: data["last_name"],
       id_token: data["id_token"],
       provider: data["provider"],
+      trn: data["trn"],
     )
   end
 
@@ -62,6 +72,7 @@ class OneLoginSignInUser
         first_name: first_name,
         last_name: last_name,
         email_address: email_address,
+        trn: trn,
       )
     end
   end
