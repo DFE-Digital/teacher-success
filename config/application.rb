@@ -44,6 +44,9 @@ module TeacherSuccess
 
     config.action_view.annotate_rendered_view_with_filenames = false
 
+    # Store user sessions in the database
+    config.session_store :active_record_store
+
     config.exceptions_app = routes
   end
 end

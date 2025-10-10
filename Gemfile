@@ -29,6 +29,15 @@ gem "active_link_to"
 gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.8"
 gem "uri", "~> 1.0.4"
 
+# DfE Sign-in
+gem "omniauth"
+gem "omniauth_openid_connect"
+gem "omniauth-rails_csrf_protection"
+gem "jwt"
+
+# Store user sessions in the database
+gem "activerecord-session_store"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
@@ -46,6 +55,9 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 6.0"
   gem "simplecov", require: false
+  gem "rails-controller-testing"
   gem "webmock"
+  gem "timecop"
 end

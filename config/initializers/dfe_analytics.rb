@@ -23,7 +23,7 @@ DfE::Analytics.configure do |config|
   #
   # config.bigquery_dataset = ENV['BIGQUERY_DATASET']
 
-  # Service account JSON key for the BigQuery API. See
+  # Service account JSON key for the BigQuery GetTeacher. See
   # https://cloud.google.com/bigquery/docs/authentication/service-account-file
   #
   # config.bigquery_api_json_key = ENV['BIGQUERY_API_JSON_KEY']
@@ -69,7 +69,7 @@ DfE::Analytics.configure do |config|
   # config.bigquery_maintenance_window = ENV['BIGQUERY_MAINTENANCE_WINDOW']
 
   # Whether to use azure workload identity federation for authentication
-  # instead of the BigQuery API JSON Key. Note that this also will also
+  # instead of the BigQuery GetTeacher JSON Key. Note that this also will also
   # use a new version of the BigQuery streaming APIs.
   #
   config.azure_federated_auth = true
