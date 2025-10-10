@@ -6,5 +6,26 @@
         <%= image_tag "department-for-education_black.png", alt: "Department for Education", class: "govuk-header__logotype govuk-header__logotype--focus" %>
       <% end %>
     </div>
+    <div class="govuk-header__content">
+      <nav class="govuk-header__navigation" aria-label="Menu">
+        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" hidden="hidden" aria-controls="navigation" aria-label="Show or hide menu">
+          Menu
+        </button>
+        <ul id="navigation" class="govuk-header__navigation-list">
+          <% if user_signed_in? %>
+            <li class="govuk-header__navigation-item">
+              <%= govuk_link_to "Your account", account_path, class: "govuk-header__link" %>
+            </li>
+          <% end %>
+          <li class="govuk-header__navigation-item">
+            <% if user_signed_in? %>
+              <%= govuk_link_to "Sign out", sign_out_path, class: "govuk-header__link" %>
+            <% else %>
+              <%= govuk_link_to "Sign in", sign_in_path, class: "govuk-header__link" %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
