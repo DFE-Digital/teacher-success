@@ -83,3 +83,9 @@
     - concurrency_key
     - expires_at
     - created_at
+  :sessions:
+    - id
+    - session_id
+    - data
+    - created_at
+    - updated_at

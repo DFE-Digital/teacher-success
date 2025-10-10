@@ -35,6 +35,9 @@ gem "omniauth_openid_connect"
 gem "omniauth-rails_csrf_protection"
 gem "jwt"
 
+# Store user sessions in the database
+gem "activerecord-session_store"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false

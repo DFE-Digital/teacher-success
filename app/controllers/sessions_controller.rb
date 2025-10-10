@@ -2,8 +2,7 @@ class SessionsController < ApplicationController
   ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY = "https://vocab.account.gov.uk/v1/coreIdentityJWT".freeze
   def new; end
 
-  def callback
-    # start session from OmniAuth payload
+  def teacher_auth
     OneLoginSignInUser.begin_session!(session, omniauth_hash)
 
     if current_user
@@ -17,20 +16,6 @@ class SessionsController < ApplicationController
         success: false
       }
     end
-  end
-
-  def identify
-    current_user.update!(
-      first_name: user_details[:first_name],
-      last_name: user_details[:last_name],
-      date_of_birth: user_details[:date_of_birth],
-    )
-
-    redirect_to account_path
-  end
-
-  def teacher_auth
-    debugger
   end
 
   def destroy
