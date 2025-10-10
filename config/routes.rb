@@ -25,13 +25,9 @@ Rails.application.routes.draw do
     get "/auth/developer/sign-out", to: "sessions#destroy", as: :sign_out
     post "/auth/developer/callback", to: "sessions#callback", as: :auth_callback
   else
-    get "/auth/govuk_one_login/callback" => "sessions#callback", as: :one_login_callback
-    get "/auth/govuk_one_login/identify", to: "sessions#identify", as: :one_login_identify
-
     get "/auth/teacher_auth/callback", to: "sessions#teacher_auth", as: :teacher_auth_callback
 
-
-    get "/auth/govuk_one_login/sign-out" => "sessions#destroy", as: :sign_out
+    get "/auth/teacher_auth/sign-out" => "sessions#destroy", as: :sign_out
     get "/auth/failure", to: "sessions#failure"
   end
 
