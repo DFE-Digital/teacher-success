@@ -1,7 +1,7 @@
 <% flash.each do |key, value| %>
-  <%= govuk_notification_banner(title_text: value["title"], success: (key == "success")) do |nb| %>
-    <% nb.with_heading(text: value["heading"]) %>
+  <%= govuk_notification_banner(title_text: value[:title], success: (key == "success")) do |nb| %>
+    <% nb.with_heading(text: value[:heading]) %>
 
-    <p><%= value["description"] %></p>
+    <p><%= value[:description] %></p>
   <% end %>
 <% end %>

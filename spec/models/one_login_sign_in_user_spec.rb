@@ -27,7 +27,7 @@ describe OneLoginSignInUser do
           },
           "credentials" => {
             "id_token" => "1234",
-            "token" => "abcd",
+            "token" => "abcd"
           }
         }
 
@@ -42,7 +42,7 @@ describe OneLoginSignInUser do
              "last_active_at" => Time.current,
              "id_token" => "1234",
              "provider" => "teacher_auth",
-             "trn" => "1234567",
+             "trn" => "1234567"
            }
          )
       end
@@ -60,7 +60,7 @@ describe OneLoginSignInUser do
           "last_active_at" => Time.current,
           "id_token" => "1234",
           "provider" => "teacher_auth",
-          "trn" => "1234567",
+          "trn" => "1234567"
         }
       }
 
@@ -165,7 +165,7 @@ describe OneLoginSignInUser do
   private
 
   def stub_teacher_auth_request
-    request_body = {"trn" => "1234567",
+    request_body = { "trn" => "1234567",
                     "firstName" => "Joe",
                     "middleName" => "",
                     "lastName" => "Bloggs",
@@ -175,7 +175,7 @@ describe OneLoginSignInUser do
                     "qts" => nil,
                     "eyts" => nil,
                     "routesToProfessionalStatuses" => [],
-                    "qtlsStatus" => "None"}
+                    "qtlsStatus" => "None" }
     stub_request(:get, "https://teacher_auth.gov.uk/person").
       to_return(status: 200, body: request_body.to_json, headers: {})
   end
