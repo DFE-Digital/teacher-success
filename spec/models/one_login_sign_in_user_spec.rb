@@ -49,7 +49,7 @@ describe OneLoginSignInUser do
                     "routeToProfessionalStatusType" => {
                       "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a",
                       "name" => "Provider led Postgrad",
-                      "professionalStatusType" => "QualifiedTeacherStatus",
+                      "professionalStatusType" => "QualifiedTeacherStatus"
                     },
                     "status" => "InTraining", "trainingStartDate" => "2001-01-01",
                     "trainingEndDate" => "2001-04-04",
