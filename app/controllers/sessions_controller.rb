@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY = "https://vocab.account.gov.uk/v1/coreIdentityJWT".freeze
   def new; end
 
-  def teacher_auth
+  def callback
     OneLoginSignInUser.begin_session!(session, omniauth_hash)
 
     if current_user

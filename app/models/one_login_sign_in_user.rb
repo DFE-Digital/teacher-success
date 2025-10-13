@@ -18,8 +18,12 @@ class OneLoginSignInUser
 
   # start a session from the OmniAuth payload
   def self.begin_session!(session, omniauth_payload)
-    token = omniauth_payload.dig("credentials", "token")
-    user_details = TeacherAuth::Request::UserDetails.new(token).call
+    user_details = if ENV.fetch("SIGN_IN_METHOD", "") == "one-login-sign-in"
+      token = omniauth_payload.dig("credentials", "token")
+      TeacherAuth::Request::UserDetails.new(token).call
+    else
+      persona_trn_details
+    end
 
     session["one_login_sign_in_user"] = {
       "email_address" => omniauth_payload.dig("info", "email"),
@@ -76,5 +80,37 @@ class OneLoginSignInUser
         trn: trn,
       )
     end
+  end
+
+  private
+
+  def self.persona_trn_details
+    training_details = {
+      "routeToProfessionalStatusType" => {
+        "routeToProfessionalStatusTypeId" => "123456789",
+        "name" => "Provider led Postgrad",
+        "professionalStatusType" => "QualifiedTeacherStatus"
+      },
+      "status" => "InTraining", "trainingStartDate" => "2001-01-01",
+      "trainingEndDate" => "2001-04-04",
+      "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
+      "trainingAgeSpecialism" => { "type" => "KeyStage1" },
+      "trainingProvider" => { "ukprn" => "123456789", "name" => "DfE University" },
+      "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
+    }
+
+    {
+      "trn" => "1234567",
+      "firstName" => "Joe",
+      "middleName" => "",
+      "lastName" => "Bloggs",
+      "dateOfBirth" => "1990-01-01",
+      "nationalInsuranceNumber" => "NI123",
+      "emailAddress" => "user@example.com",
+      "qts" => nil,
+      "eyts" => nil,
+      "routesToProfessionalStatuses" => [ training_details ],
+      "qtlsStatus" => "None"
+    }
   end
 end

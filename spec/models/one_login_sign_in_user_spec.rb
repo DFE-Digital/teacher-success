@@ -2,60 +2,133 @@ require "rails_helper"
 
 describe OneLoginSignInUser do
   describe ".begin_session!" do
-    before do
-      stub_teacher_auth_request
+    context "when the SIGN_IN_METHOD is one-login-sign-in" do
+      before do
+        stub_teacher_auth_request
+      end
+
+      it "creates a new session with Teacher Auth/One Login user details" do
+        Timecop.freeze do
+          session = {}
+          user = {
+            email_address: "user@example.com",
+            onelogin_sign_in_uid: "abcd",
+            last_active_at: Time.current,
+            id_token: "1234",
+            provider: "teacher_auth"
+          }
+
+          # simulate the OmniAuth payload
+          omniauth_payload = {
+            "provider" => "teacher_auth",
+            "uid" => user[:onelogin_sign_in_uid],
+            "info" => {
+              "email" => user[:email_address],
+              "uuid" => user[:onelogin_sign_in_uid]
+            },
+            "credentials" => {
+              "id_token" => "1234",
+              "token" => "abcd"
+            }
+          }
+
+          described_class.begin_session!(session, omniauth_payload)
+
+          expect(session).to eq(
+             "one_login_sign_in_user" => {
+               "email_address" => "user@example.com",
+               "one_login_sign_in_uid" => "abcd",
+               "first_name" => "Joe",
+               "last_name" => "Bloggs",
+               "last_active_at" => Time.current,
+               "id_token" => "1234",
+               "provider" => "teacher_auth",
+               "trn" => "1234567",
+                "training_details" => [
+                  {
+                    "routeToProfessionalStatusType" => {
+                      "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a",
+                      "name" => "Provider led Postgrad",
+                      "professionalStatusType" => "QualifiedTeacherStatus",
+                    },
+                    "status" => "InTraining", "trainingStartDate" => "2001-01-01",
+                    "trainingEndDate" => "2001-04-04",
+                    "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
+                    "trainingAgeSpecialism" => { "type" => "KeyStage1" },
+                    "trainingProvider" => { "ukprn" => "123456789", "name" => "Birmingham City University" },
+                    "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
+                  }
+               ]
+             }
+           )
+        end
+      end
     end
 
-    it "creates a new session with Teacher Auth/One Login user details" do
-      Timecop.freeze do
-        session = {}
-        user = {
-          email_address: "user@example.com",
-          onelogin_sign_in_uid: "abcd",
-          last_active_at: Time.current,
-          id_token: "1234",
-          provider: "teacher_auth"
-        }
+    context "when the SIGN_IN_METHOD is persona" do
+      around do |spec|
+        ENV["SIGN_IN_METHOD"] = "persona"
+        spec.run
+        ENV["SIGN_IN_METHOD"] = "one_login-sign-in"
+      ensure
+        ENV["SIGN_IN_METHOD"] = "one_login-sign-in"
+      end
 
-        # simulate the OmniAuth payload
-        omniauth_payload = {
-          "provider" => "teacher_auth",
-          "uid" => user[:onelogin_sign_in_uid],
-          "info" => {
-            "email" => user[:email_address],
-            "uuid" => user[:onelogin_sign_in_uid]
-          },
-          "credentials" => {
-            "id_token" => "1234",
-            "token" => "abcd"
+      it "creates a new session with Persona user details" do
+        Timecop.freeze do
+          session = {}
+          user = {
+            email_address: "user@example.com",
+            onelogin_sign_in_uid: "abcd",
+            last_active_at: Time.current,
+            id_token: "1234",
+            provider: "teacher_auth"
           }
-        }
 
-        described_class.begin_session!(session, omniauth_payload)
+          # simulate the OmniAuth payload
+          omniauth_payload = {
+            "provider" => "teacher_auth",
+            "uid" => user[:onelogin_sign_in_uid],
+            "info" => {
+              "email" => user[:email_address],
+              "uuid" => user[:onelogin_sign_in_uid]
+            },
+            "credentials" => {
+              "id_token" => "1234",
+              "token" => "abcd"
+            }
+          }
 
-        expect(session).to eq(
-           "one_login_sign_in_user" => {
-             "email_address" => "user@example.com",
-             "one_login_sign_in_uid" => "abcd",
-             "first_name" => "Joe",
-             "last_name" => "Bloggs",
-             "last_active_at" => Time.current,
-             "id_token" => "1234",
-             "provider" => "teacher_auth",
-             "trn" => "1234567",
+          described_class.begin_session!(session, omniauth_payload)
+
+          expect(session).to eq(
+            "one_login_sign_in_user" => {
+              "email_address" => "user@example.com",
+              "one_login_sign_in_uid" => "abcd",
+              "first_name" => "Joe",
+              "last_name" => "Bloggs",
+              "last_active_at" => Time.current,
+              "id_token" => "1234",
+              "provider" => "teacher_auth",
+              "trn" => "1234567",
               "training_details" => [
                 {
-                  "routeToProfessionalStatusType" => { "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a", "name" => "Provider led Postgrad", "professionalStatusType" => "QualifiedTeacherStatus" },
+                  "routeToProfessionalStatusType" => {
+                    "routeToProfessionalStatusTypeId" => "123456789",
+                    "name" => "Provider led Postgrad",
+                    "professionalStatusType" => "QualifiedTeacherStatus"
+                  },
                   "status" => "InTraining", "trainingStartDate" => "2001-01-01",
                   "trainingEndDate" => "2001-04-04",
                   "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
                   "trainingAgeSpecialism" => { "type" => "KeyStage1" },
-                  "trainingProvider" => { "ukprn" => "123456789", "name" => "Birmingham City University" },
+                  "trainingProvider" => { "ukprn" => "123456789", "name" => "DfE University" },
                   "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
                 }
-             ]
-           }
-         )
+              ]
+            }
+          )
+        end
       end
     end
   end

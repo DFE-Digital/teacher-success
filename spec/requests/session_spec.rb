@@ -63,7 +63,7 @@ RSpec.describe "Sessions", type: :request do
       expect(session.dig("one_login_sign_in_user", "id_token")).to eq("1234")
       expect(session.dig("one_login_sign_in_user", "last_active_at")).not_to be_nil
       expect(session.dig("one_login_sign_in_user", "trn")).to eq("1234567")
-      expect(session.dig("one_login_sign_in_user", "training_details")).to eq([training_details])
+      expect(session.dig("one_login_sign_in_user", "training_details")).to eq([ training_details ])
     ensure
       OmniAuth.config.mock_auth[:teacher_auth] = nil
     end
@@ -91,7 +91,7 @@ RSpec.describe "Sessions", type: :request do
                     "emailAddress" => "joe_bloggs@example.com",
                     "qts" => nil,
                     "eyts" => nil,
-                    "routesToProfessionalStatuses" => [training_details],
+                    "routesToProfessionalStatuses" => [ training_details ],
                     "qtlsStatus" => "None" }
     stub_request(:get, "https://teacher_auth.gov.uk/person").
       to_return(status: 200, body: request_body.to_json, headers: {})
