@@ -38,16 +38,4 @@ class SessionsController < ApplicationController
   def omniauth_hash
     request.env.dig("omniauth.auth")
   end
-
-  def user_details
-    @user_details ||= begin
-      token = omniauth_hash.dig("extra", "raw_info", ONELOGIN_JWT_CORE_IDENTITY_HASH_KEY)
-      jwt_identity = OneLogin::CoreIdentityDecoder.new(jwt: token)
-      {
-        first_name: jwt_identity.first_name,
-        last_name: jwt_identity.last_name,
-        date_of_birth: jwt_identity.date_of_birth
-      }
-    end
-  end
 end

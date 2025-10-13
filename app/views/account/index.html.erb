@@ -26,6 +26,49 @@
           <%= row.with_value(text: current_user.trn) %>
         <% end %>
       <% end %>
+
+      <% if @training_details.present? %>
+        <h1 class="govuk-heading-l">ITT Training Details</h1>
+
+        <%= @training_details %>
+
+        <%= govuk_summary_list(actions: false) do |list| %>
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "Training route") %>
+            <%= row.with_value(text: @training_details.last.dig("routeToProfessionalStatusType", "name")) %>
+          <% end %>
+
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "Training status") %>
+            <%= row.with_value(text: @training_details.last.dig("status")) %>
+          <% end %>
+
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "Training subjects") %>
+            <%= row.with_value(text: @training_details.last.dig("trainingSubjects")&.pluck("name")&.to_sentence) %>
+          <% end %>
+
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "Training age specialism") %>
+            <%= row.with_value(text: @training_details.last.dig("trainingAgeSpecialism", "type")) %>
+          <% end %>
+
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "Training provider") %>
+            <%= row.with_value(text: @training_details.last.dig("trainingProvider", "name")) %>
+          <% end %>
+
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "Start date") %>
+            <%= row.with_value(text: @training_details.last.dig("trainingStartDate")) %>
+          <% end %>
+
+          <%= list.with_row do |row| %>
+            <%= row.with_key(text: "End date") %>
+            <%= row.with_value(text: @training_details.last.dig("trainingEndDate")) %>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

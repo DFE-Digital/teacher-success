@@ -29,7 +29,8 @@ class OneLoginSignInUser
       "last_active_at" => Time.current,
       "id_token" => omniauth_payload.dig("credentials", "id_token"),
       "provider" => omniauth_payload.dig("provider"),
-      "trn" => user_details.dig("trn")
+      "trn" => user_details.dig("trn"),
+      "training_details" => user_details.dig("routesToProfessionalStatuses")
     }
 
     session["one_login_sign_in_user"]

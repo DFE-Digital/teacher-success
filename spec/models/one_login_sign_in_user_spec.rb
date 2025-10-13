@@ -42,7 +42,18 @@ describe OneLoginSignInUser do
              "last_active_at" => Time.current,
              "id_token" => "1234",
              "provider" => "teacher_auth",
-             "trn" => "1234567"
+             "trn" => "1234567",
+              "training_details" => [
+                {
+                  "routeToProfessionalStatusType" => { "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a", "name" => "Provider led Postgrad", "professionalStatusType" => "QualifiedTeacherStatus" },
+                  "status" => "InTraining", "trainingStartDate" => "2001-01-01",
+                  "trainingEndDate" => "2001-04-04",
+                  "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
+                  "trainingAgeSpecialism" => { "type" => "KeyStage1" },
+                  "trainingProvider" => { "ukprn" => "123456789", "name" => "Birmingham City University" },
+                  "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
+                }
+             ]
            }
          )
       end
@@ -165,6 +176,15 @@ describe OneLoginSignInUser do
   private
 
   def stub_teacher_auth_request
+    training_details = {
+      "routeToProfessionalStatusType" => { "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a", "name" => "Provider led Postgrad", "professionalStatusType" => "QualifiedTeacherStatus" },
+      "status" => "InTraining", "trainingStartDate" => "2001-01-01",
+      "trainingEndDate" => "2001-04-04",
+      "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
+      "trainingAgeSpecialism" => { "type" => "KeyStage1" },
+      "trainingProvider" => { "ukprn" => "123456789", "name" => "Birmingham City University" },
+      "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
+    }
     request_body = { "trn" => "1234567",
                     "firstName" => "Joe",
                     "middleName" => "",
@@ -174,7 +194,7 @@ describe OneLoginSignInUser do
                     "emailAddress" => "user@example.com",
                     "qts" => nil,
                     "eyts" => nil,
-                    "routesToProfessionalStatuses" => [],
+                    "routesToProfessionalStatuses" => [ training_details ],
                     "qtlsStatus" => "None" }
     stub_request(:get, "https://teacher_auth.gov.uk/person").
       to_return(status: 200, body: request_body.to_json, headers: {})

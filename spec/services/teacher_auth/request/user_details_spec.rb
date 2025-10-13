@@ -23,7 +23,17 @@ RSpec.describe TeacherAuth::Request::UserDetails do
             "emailAddress" => "joe_bloggs@example.com",
             "qts" => nil,
             "eyts" => nil,
-            "routesToProfessionalStatuses" => [],
+            "routesToProfessionalStatuses" => [
+              {
+                "routeToProfessionalStatusType" => { "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a", "name" => "Provider led Postgrad", "professionalStatusType" => "QualifiedTeacherStatus" },
+                "status" => "InTraining", "trainingStartDate" => "2001-01-01",
+                "trainingEndDate" => "2001-04-04",
+                "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
+                "trainingAgeSpecialism" => { "type" => "KeyStage1" },
+                "trainingProvider" => { "ukprn" => "123456789", "name" => "Birmingham City University" },
+                "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
+              }
+            ],
             "qtlsStatus" => "None"
            }
         )
@@ -44,6 +54,15 @@ RSpec.describe TeacherAuth::Request::UserDetails do
   private
 
   def stub_successful_request
+    training_details = {
+      "routeToProfessionalStatusType" => { "routeToProfessionalStatusTypeId" => "97497716-5ac5-49aa-a444-27fa3e2c152a", "name" => "Provider led Postgrad", "professionalStatusType" => "QualifiedTeacherStatus" },
+      "status" => "InTraining", "trainingStartDate" => "2001-01-01",
+      "trainingEndDate" => "2001-04-04",
+      "trainingSubjects" => [ { "reference" => "123456", "name" => "Maths With Computer Science" } ],
+      "trainingAgeSpecialism" => { "type" => "KeyStage1" },
+      "trainingProvider" => { "ukprn" => "123456789", "name" => "Birmingham City University" },
+      "degreeType" => { "degreeTypeId" => "123abc", "name" => "BSc" }
+    }
     request_body = { "trn" => "1234567",
                     "firstName" => "Joe",
                     "middleName" => "",
@@ -53,7 +72,7 @@ RSpec.describe TeacherAuth::Request::UserDetails do
                     "emailAddress" => "joe_bloggs@example.com",
                     "qts" => nil,
                     "eyts" => nil,
-                    "routesToProfessionalStatuses" => [],
+                    "routesToProfessionalStatuses" => [ training_details ],
                     "qtlsStatus" => "None" }
     stub_request(:get, "https://teacher_auth.gov.uk/person").
       to_return(status: 200, body: request_body.to_json, headers: {})
