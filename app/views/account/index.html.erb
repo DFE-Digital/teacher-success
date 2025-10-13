@@ -30,8 +30,6 @@
       <% if @training_details.present? %>
         <h1 class="govuk-heading-l">ITT Training Details</h1>
 
-        <%= @training_details %>
-
         <%= govuk_summary_list(actions: false) do |list| %>
           <%= list.with_row do |row| %>
             <%= row.with_key(text: "Training route") %>
