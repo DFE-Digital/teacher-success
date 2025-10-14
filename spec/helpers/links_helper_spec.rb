@@ -59,4 +59,38 @@ RSpec.describe LinksHelper, type: :helper do
       }.to raise_error(ArgumentError, /Supports/)
     end
   end
+
+  describe "#visually_hidden_text" do
+    context "when given a prefix" do
+      it "returns html with a visually hidden prefix" do
+        expect(
+          helper.visually_hidden_text(text: "Hello world", prefix: "Simon says")
+        ).to eq(
+          "<span class=\"govuk-visually-hidden\">Simon says</span>Hello world"
+        )
+      end
+    end
+
+    context "when given a suffix" do
+      it "returns html with a visually hidden suffix" do
+        expect(
+          helper.visually_hidden_text(text: "Hello world", suffix: "Nice to meet you")
+        ).to eq(
+          "Hello world<span class=\"govuk-visually-hidden\">Nice to meet you</span>"
+        )
+      end
+    end
+
+    context "when given a prefix and suffix" do
+      it "returns html with a visually hidden prefix and suffix" do
+        expect(
+          helper.visually_hidden_text(
+            text: "Hello world", prefix: "Simon says", suffix: "Nice to meet you"
+          )
+        ).to eq(
+          "<span class=\"govuk-visually-hidden\">Simon says</span>Hello world<span class=\"govuk-visually-hidden\">Nice to meet you</span>"
+        )
+      end
+    end
+  end
 end
