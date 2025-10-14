@@ -33,16 +33,16 @@ RSpec.describe "Content Pages", type: :request do
                 name: "Breadcrumb 2",
                 path: "/help"
               }
-            ],
+            ]
           }
         }
       end
       let(:markdown_content) do
         <<~MARKDOWN
           ---
-            breadcrumbs: 
+            breadcrumbs:#{' '}
                 enable: true
-                crumbs: 
+                crumbs:#{' '}
                     - name: "Breadcrumb 1"
                       path: "/home"
                     - name: "Breadcrumb 2"
