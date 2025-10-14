@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "page_feedback", to: "page_feedback#create"
 
   # Support Requests
-  resources :support_requests, only: [ :new, :create ]
+  resources :support_requests, only: [ :index, :new, :create ]
 
   # Sitemap
   get "/sitemap", to: "sitemap#index"
