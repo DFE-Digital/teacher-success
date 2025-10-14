@@ -10,28 +10,28 @@
   </thead>
 
   <tbody class="govuk-table__body">
-  <% @support_requests.each do |support_request| %>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <a class="govuk-link" onclick="<%= dom_id(support_request) %>.showModal()">Problem</a>
-      </td>
-      <td class="govuk-table__cell">
-        <% if support_request.specific_page? %>
-          <%= govuk_link_to(URI(support_request.area_of_website_url).path, support_request.area_of_website_url, target: "_blank", new_tab: true) %>
-        <% else %>
-          The whole site
-        <% end %>
-      </td>
-      <td class="govuk-table__cell"><%= support_request.name %></td>
-      <td class="govuk-table__cell"><%= support_request.email %></td>
-      <td class="govuk-table__cell"><%= support_request.created_at.to_formatted_s(:short) %></td>
-    </tr>
+    <% @support_requests.each do |support_request| %>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <a class="govuk-link" onclick="<%= dom_id(support_request) %>.showModal()">Problem</a>
+        </td>
+        <td class="govuk-table__cell">
+          <% if support_request.specific_page? %>
+            <%= govuk_link_to(URI(support_request.area_of_website_url).path, support_request.area_of_website_url, target: "_blank", new_tab: true) %>
+          <% else %>
+            The whole site
+          <% end %>
+        </td>
+        <td class="govuk-table__cell"><%= support_request.name %></td>
+        <td class="govuk-table__cell"><%= support_request.email %></td>
+        <td class="govuk-table__cell"><%= support_request.created_at.to_formatted_s(:short) %></td>
+      </tr>
 
-    <%= render "shared/modal", object: support_request do %>
-      <h3><%= support_request.created_at.to_formatted_s(:short) %></h3>
-      <p><%= support_request.problem %></p>
+      <%= render "shared/modal", object: support_request do %>
+        <h3><%= support_request.created_at.to_formatted_s(:short) %></h3>
+        <p><%= support_request.problem %></p>
+      <% end %>
     <% end %>
-  <% end %>
   </tbody>
 </table>
 

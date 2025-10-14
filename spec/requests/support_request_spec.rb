@@ -1,6 +1,32 @@
 require "rails_helper"
 
 RSpec.describe "SupportRequests", type: :request do
+  describe "GET /support_requests" do
+    let(:username) { ENV["BASIC_AUTH_USERNAME"] }
+    let(:password) { ENV["BASIC_AUTH_PASSWORD"] }
+    let!(:support_request) { create(:support_request) }
+
+    context "with valid basic auth" do
+      it "renders the index" do
+        get support_requests_path, headers: {
+          "HTTP_AUTHORIZATION" => ActionController::HttpAuthentication::Basic.encode_credentials(username, password)
+        }
+
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include(support_request.email)
+      end
+    end
+
+    context "without basic auth" do
+      it "prompts for authentication" do
+        get support_requests_path
+
+        expect(response).to have_http_status(:unauthorized)
+        expect(response.headers["WWW-Authenticate"]).to include("Basic realm")
+      end
+    end
+  end
+
   describe "GET /support_request/new" do
     it "renders the new support request form" do
       get new_support_request_path
