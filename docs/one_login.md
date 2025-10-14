@@ -54,6 +54,8 @@ As a result, we decided to move away from the OneLogin implementation, and integ
 
 ## Teacher Authentication (Teacher Auth)
 
+[High level flow of signing in to a service that requires authorisation to the teaching record via GOV.UK One Login](https://github.com/DFE-Digital/teaching-record-system/blob/main/docs/trs-gov.one-login-flow.md)
+
 ### Assumptions
 
 Using Teacher Auth, we will be able to create a logged-in experience where we can authenticate a user and display their
