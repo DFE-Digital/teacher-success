@@ -89,6 +89,8 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
+    azure-blob (0.5.9.1)
+      rexml
     base64 (0.3.0)
     benchmark (0.4.1)
     bigdecimal (3.2.3)
@@ -504,6 +506,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  azure-blob
   bootsnap
   brakeman
   bundler-audit
