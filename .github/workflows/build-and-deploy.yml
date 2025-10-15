@@ -204,7 +204,7 @@ jobs:
     name: Generate Site Map
     runs-on: ubuntu-latest
     needs: deploy-review-app
-    if: ${{ always() && needs.deploy-review-app.result == 'success' && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'deploy') }}
+    if: ${{ always() && needs.deploy-review-app.result == 'success' 
 
     steps:
       - name: Checkout code
@@ -219,7 +219,7 @@ jobs:
       - name: Sitemap
         id: set-sitemap
         run: |
-          echo "sitemap=$(bundle exec rake sitemap)" >> "$GITHUB_OUTPUT"
+          echo "sitemap=$(bundle exec rails runner 'puts ContentLoader.new.pages.keys.to_json')" >> "$GITHUB_OUTPUT"
 
     outputs:
       sitemap_urls: ${{ steps.set-sitemap.outputs.sitemap }}
@@ -227,7 +227,7 @@ jobs:
   lychee_link_check:
     name: Lychee Link Checking
     needs: generate_sitemap
-    if: ${{ always() && needs.generate_sitemap.result == 'success' && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'deploy') }}
+    if: ${{ always() && needs.generate_sitemap.result == 'success'
     runs-on: ubuntu-latest
 
     strategy:
