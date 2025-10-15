@@ -45,6 +45,7 @@ variable "enable_postgres_backup_storage" {
   default     = false
   description = "Create a storage account to store database dumps"
 }
+
 variable "enable_postgres_high_availability" {
   type        = bool
   default     = false
@@ -106,7 +107,7 @@ variable "azure_maintenance_window" {
     start_hour   = number
     start_minute = number
   })
-  default = null
+  default     = null
   description = "Maintenance window for PostgreSQL. Day 0 = Sunday, 1 = Monday, etc."
 }
 
@@ -129,5 +130,29 @@ variable "worker_replicas" {
   description = "Number of Solid Queue worker replicas"
 }
 
+# Storage Account Configuration
+variable "storage_production_replication_type" {
+  type        = string
+  default     = "ZRS"
+  description = "Replication type for PRODUCTION storage account only. Must be 'ZRS' or 'GRS'. Non-production environments always use LRS."
+}
+
+variable "storage_blob_delete_retention_days" {
+  type        = number
+  default     = null
+  description = "Number of days to retain deleted blobs"
+}
+
+variable "storage_container_delete_retention_days" {
+  type        = number
+  default     = null
+  description = "Number of days to retain deleted containers"
+}
+
+variable "storage_last_access_time_enabled" {
+  type        = bool
+  default     = false
+  description = "Enable last access time tracking for the storage account"
+}
 
 

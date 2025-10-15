@@ -13,15 +13,19 @@ module "application_configuration" {
   is_rails_application = true
 
   config_variables = {
-    ENVIRONMENT_NAME = var.environment
-    PGSSLMODE        = local.postgres_ssl_mode
-    BIGQUERY_DATASET = var.dataset_name
-    BIGQUERY_PROJECT_ID = "teacher-success"
-    BIGQUERY_TABLE_NAME = "events"
+    ENVIRONMENT_NAME           = var.environment
+    PGSSLMODE                  = local.postgres_ssl_mode
+    BIGQUERY_DATASET           = var.dataset_name
+    BIGQUERY_PROJECT_ID        = "teacher-success"
+    BIGQUERY_TABLE_NAME        = "events"
+    AZURE_STORAGE_ACCOUNT_NAME = module.storage.name
+    AZURE_STORAGE_CONTAINER    = "uploads"
   }
   secret_variables = {
-    DATABASE_URL = module.postgres.url
-    GOOGLE_CLOUD_CREDENTIALS = var.enable_dfe_analytics_federated_auth ? module.dfe_analytics[0].google_cloud_credentials : null
+    DATABASE_URL                    = module.postgres.url
+    GOOGLE_CLOUD_CREDENTIALS        = var.enable_dfe_analytics_federated_auth ? module.dfe_analytics[0].google_cloud_credentials : null
+    AZURE_STORAGE_CONNECTION_STRING = module.storage.primary_connection_string
+    AZURE_STORAGE_ACCESS_KEY        = module.storage.primary_access_key
   }
 }
 
@@ -40,7 +44,7 @@ module "web_application" {
 
   docker_image = var.docker_image
   enable_logit = true
-  probe_path = "/up"
+  probe_path   = "/up"
   replicas     = var.replicas
 
   send_traffic_to_maintenance_page = var.send_traffic_to_maintenance_page
