@@ -4,8 +4,6 @@ class SupportRequest < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP, message: "Please enter a valid email address" }
   validates :problem, presence: { message: "Please enter the problem you are experiencing" }
 
-  has_one_attached :file_upload
-
   enum :area_of_website, {
     whole_site: "whole_site",
     specific_page: "specific_page"
