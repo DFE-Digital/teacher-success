@@ -40,7 +40,7 @@ class SupportRequestsController < ApplicationController
 
   def support_request_params
     params.require(:support_request).permit(
-      :name, :email, :support_request, :area_of_website, :area_of_website_url, :problem,
+      :name, :email, :support_request, :area_of_website, :area_of_website_url, :problem, :file_upload
     )
   end
 end
