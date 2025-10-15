@@ -204,7 +204,7 @@ jobs:
     name: Generate Site Map
     runs-on: ubuntu-latest
     needs: deploy-review-app
-    if: ${{ always() && needs.deploy-review-app.result == 'success' 
+    if: ${{ always() && needs.deploy-review-app.result == 'success'  }}
 
     steps:
       - name: Checkout code
@@ -227,7 +227,7 @@ jobs:
   lychee_link_check:
     name: Lychee Link Checking
     needs: generate_sitemap
-    if: ${{ always() && needs.generate_sitemap.result == 'success'
+    if: ${{ always() && needs.generate_sitemap.result == 'success' }}
     runs-on: ubuntu-latest
 
     strategy:
