@@ -5,6 +5,7 @@
     <th class="govuk-table__header" scope="col">Area of the website</th>
     <th class="govuk-table__header" scope="col">Name</th>
     <th class="govuk-table__header" scope="col">Email</th>
+    <th class="govuk-table__header" scope="col">File uploaded</th>
     <th class="govuk-table__header" scope="col">Created at</th>
   </tr>
   </thead>
@@ -24,6 +25,16 @@
         </td>
         <td class="govuk-table__cell"><%= support_request.name %></td>
         <td class="govuk-table__cell"><%= support_request.email %></td>
+        <td class="govuk-table__cell">
+          <% if support_request.file_upload.attached? %>
+            <% file_upload = support_request.file_upload %>
+            <% if file_upload.representable? %>
+              <%= govuk_link_to "View", url_for(support_request.file_upload) %>
+            <% else %>
+              <%= govuk_link_to "Download", url_for(support_request.file_upload) %>
+            <% end %>
+          <% end %>
+        </td>
         <td class="govuk-table__cell"><%= support_request.created_at.to_formatted_s(:short) %></td>
       </tr>
 
