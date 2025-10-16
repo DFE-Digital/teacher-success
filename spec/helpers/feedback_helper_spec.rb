@@ -47,20 +47,50 @@ RSpec.describe FeedbackHelper, type: :helper do
 
     context "with rating 1" do
       let(:raw_rating) { 1 }
-      let(:rating_text) { "very_bad" }
+      let(:rating_text) { "very_dissatisfied" }
 
       it "renders tag with red colour" do
-        expect(helper).to receive(:govuk_tag).with(text: "Very bad", colour: "red")
+        expect(helper).to receive(:govuk_tag).with(text: "Very dissatisfied", colour: "red")
+        subject
+      end
+    end
+
+    context "with rating 2" do
+      let(:raw_rating) { 2 }
+      let(:rating_text) { "Dissatisfied" }
+
+      it "renders tag with green colour" do
+        expect(helper).to receive(:govuk_tag).with(text: "Dissatisfied", colour: "orange")
+        subject
+      end
+    end
+
+    context "with rating 3" do
+      let(:raw_rating) { 3 }
+      let(:rating_text) { "neither_satisfied_or_dissatisfied" }
+
+      it "renders tag with green colour" do
+        expect(helper).to receive(:govuk_tag).with(text: "Neither satisfied or dissatisfied", colour: "yellow")
+        subject
+      end
+    end
+
+    context "with rating 4" do
+      let(:raw_rating) { 4 }
+      let(:rating_text) { "satisfied" }
+
+      it "renders tag with green colour" do
+        expect(helper).to receive(:govuk_tag).with(text: "Satisfied", colour: "turquoise")
         subject
       end
     end
 
     context "with rating 5" do
       let(:raw_rating) { 5 }
-      let(:rating_text) { "excellent" }
+      let(:rating_text) { "very_satisfied" }
 
       it "renders tag with green colour" do
-        expect(helper).to receive(:govuk_tag).with(text: "Excellent", colour: "green")
+        expect(helper).to receive(:govuk_tag).with(text: "Very satisfied", colour: "green")
         subject
       end
     end

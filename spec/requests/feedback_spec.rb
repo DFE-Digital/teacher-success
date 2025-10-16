@@ -36,6 +36,21 @@ RSpec.describe "Feedbacks", type: :request do
       expect(response).to have_http_status(:ok)
       expect(response.body).to include("Give feedback")
     end
+
+    context "when given a url in the params" do
+      it "renders the new feedback form with a prefilled topic and url" do
+        get new_feedback_path(url: "example.com")
+
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include("Give feedback")
+        expect(response.body).to include(
+          "<input id=\"feedback-topic-page-field\" aria-describedby=\"feedback-topic-page-hint\" class=\"govuk-radios__input\" type=\"radio\" value=\"page\" checked=\"checked\" name=\"feedback[topic]\" />"
+        )
+        expect(response.body).to include(
+          "<input id=\"feedback-url-field\" class=\"govuk-input\" type=\"text\" value=\"example.com\" name=\"feedback[url]\" />"
+        )
+      end
+    end
   end
 
   describe "POST /feedback" do

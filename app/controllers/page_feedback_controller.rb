@@ -17,16 +17,14 @@ class PageFeedbackController < ApplicationController
     @page_feedback.url = request.referer
 
     if @page_feedback.save
-      flash = {
+      flash[:success] = {
         title: "Success",
         heading: "Feedback submitted",
         description: "Your feedback will be used to improve this service."
       }
-
-      redirect_to request.referer, flash: { success: flash }
-    else
-      redirect_to root_path
     end
+
+    redirect_back fallback_location: root_path
   end
 
   private
