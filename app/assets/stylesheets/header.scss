@@ -1,3 +1,7 @@
+.govuk-template--rebranded .govuk-header__navigation {
+  padding: 18px 0 0;
+}
+
 .govuk-header__link {
   .govuk-header__logotype { 
     height: 30px; 
@@ -15,5 +19,19 @@
     .govuk-header__logotype--focus { 
       display: inline-block;
     }
+  }
+}
+
+.govuk-header__navigation-list {
+  display: flex;
+  justify-content: flex-end;
+
+  > li:not(:last-child)::after {
+    content: "|";
+    margin-left: 15px;
+  }
+
+  .govuk-header__navigation-item {
+    padding-top: 0;
   }
 }

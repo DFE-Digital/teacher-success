@@ -16,6 +16,21 @@ Rails.application.routes.draw do
   # Sitemap
   get "/sitemap", to: "sitemap#index"
 
+  # DfE Sign-in
+  get "/sign-in", to: "sessions#new", as: :sign_in
+  get "/account", to: "account#index", as: :account
+
+  if ENV.fetch("SIGN_IN_METHOD", "persona") == "persona"
+    get "/personas", to: "personas#index"
+    get "/auth/developer/sign-out", to: "sessions#destroy", as: :sign_out
+    post "/auth/developer/callback", to: "sessions#callback", as: :auth_callback
+  else
+    get "/auth/teacher_auth/callback", to: "sessions#callback", as: :teacher_auth_callback
+
+    get "/auth/teacher_auth/sign-out" => "sessions#destroy", as: :sign_out
+    get "/auth/failure", to: "sessions#failure"
+  end
+
   mount MissionControl::Jobs::Engine, at: "/jobs"
 
   # Errors
@@ -23,8 +38,8 @@ Rails.application.routes.draw do
     get "/404", to: "errors#not_found"
     get "/422", to: "errors#unprocessable_entity"
     get "/429", to: "errors#too_many_requests"
-    get "/500", to: "errors#internal_server_error"
   end
+  match "/500", to: "errors#internal_server_error", via: :all, as: :internal_server_error
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

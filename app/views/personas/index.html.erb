@@ -1,0 +1,21 @@
+<% content_for :page_title, "Sign in with persona" %>
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sign in with persona</h1>
+
+      <%= form_tag("/auth/developer/callback", method: "post", data: { turbo: false }) do %>
+        <%= hidden_field_tag "uid", 1 %>
+        <%= hidden_field_tag "email", "joe.bloggs@example.com" %>
+        <%= hidden_field_tag "first_name", "Joe" %>
+        <%= hidden_field_tag "last_name", "Bloggs" %>
+        <%= hidden_field_tag "trn", "1234567" %>
+
+        <button type="submit" class="govuk-button govuk-!-margin-bottom-2">
+          Sign in as Joe Bloggs
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
