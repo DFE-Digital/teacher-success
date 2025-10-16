@@ -6,6 +6,12 @@ RSpec.describe SupportRequest, type: :model do
     it { is_expected.to validate_presence_of(:email).with_message("Please enter an email") }
     it { is_expected.to validate_presence_of(:problem).with_message("Please enter the problem you are experiencing") }
     it { is_expected.to validate_presence_of(:area_of_website).with_message("Please select an area of the website") }
+
+    context "when area_of_website is specific_page" do
+      subject(:support_request) { build(:support_request, area_of_website: "specific_page") }
+
+      it { is_expected.to validate_presence_of(:area_of_website_url).with_message("Please enter a valid URL") }
+    end
   end
 
   describe "enums" do
