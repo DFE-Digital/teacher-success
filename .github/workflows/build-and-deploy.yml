@@ -199,3 +199,50 @@ jobs:
           environment: ${{ matrix.domain_environment }}
           healthcheck: up
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+
+  generate_sitemap:
+    name: Generate Site Map
+    runs-on: ubuntu-latest
+    needs: deploy-review-app
+    if: ${{ always() && needs.deploy-review-app.result == 'success'  }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Sitemap
+        id: set-sitemap
+        run: |
+          echo "sitemap=$(bundle exec rails runner 'puts ContentLoader.new.pages.keys.to_json')" >> "$GITHUB_OUTPUT"
+
+    outputs:
+      sitemap_urls: ${{ steps.set-sitemap.outputs.sitemap }}
+
+  lychee_link_check:
+    name: Lychee Link Checking
+    needs: generate_sitemap
+    if: ${{ always() && needs.generate_sitemap.result == 'success' }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        site_url: ${{ fromJSON(needs.generate_sitemap.outputs.sitemap_urls) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Lychee link checker
+        uses: lycheeverse/lychee-action@v2.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: "https://teach-pr-${{ github.event.pull_request.number }}.test.teacherservices.cloud/${{ matrix.site_url }}"
+          fail: true
+          failifEmpty: true
+          debug: true
+          output: lychee/results.md
