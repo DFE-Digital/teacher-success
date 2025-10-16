@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "page_feedback", to: "page_feedback#create"
 
   # Support Requests
-  resources :support_requests, only: [ :new, :create ]
+  resources :support_requests, only: [ :index, :new, :create ]
 
   # Sitemap
   get "/sitemap", to: "sitemap#index"
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Keep this last to route any other paths to the show controller and render 404s if not found
-  get "/*slug", to: "content#show"
+  get "/*slug", to: "content#show", constraints: ContentConstraint
 
   # Root to home page
   root to: "content#show", defaults: { slug: "home" }

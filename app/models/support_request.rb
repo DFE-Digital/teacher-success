@@ -5,6 +5,8 @@ class SupportRequest < ApplicationRecord
   validates :problem, presence: { message: "Please enter the problem you are experiencing" }
   validates :area_of_website_url, presence: { message: "Please enter a valid URL" }, if: -> { area_of_website == "specific_page" }
 
+  has_one_attached :file_upload
+
   enum :area_of_website, {
     whole_site: "whole_site",
     specific_page: "specific_page"

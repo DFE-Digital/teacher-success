@@ -1,5 +1,16 @@
 class SupportRequestsController < ApplicationController
-  before_action :set_frontmatter
+  before_action :set_frontmatter, except: :index
+
+  http_basic_authenticate_with(
+    name: ENV["BASIC_AUTH_USERNAME"],
+    password: ENV["BASIC_AUTH_PASSWORD"],
+    only: :index
+  )
+  def index
+    @pagy, @support_requests = pagy(SupportRequest.order(created_at: :desc))
+    @front_matter = { page_header: { title: "Support requests" } }
+    breadcrumb "Support requests", support_requests_path
+  end
   def new
     @support_request = SupportRequest.new
 
