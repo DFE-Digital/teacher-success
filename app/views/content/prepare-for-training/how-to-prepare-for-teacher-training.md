@@ -111,4 +111,4 @@ breadcrumbs:
 
 
 <%= render StepComponent.new(title: "Bookmark this page") do %>
-  <p class="govuk-body">Save this page so you can easily come back for more advice to help you prepare for your training.</p>
+  <p class="govuk-body">Save this page so you can easily come back for more advice to help you prepare for your training.</p><% end %>
