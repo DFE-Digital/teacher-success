@@ -26,7 +26,7 @@ gem "validate_url"
 gem "sentry-ruby"
 gem "sentry-rails"
 gem "active_link_to"
-gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.8"
+gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.9"
 gem "uri", "~> 1.0.4"
 
 group :development, :test do
