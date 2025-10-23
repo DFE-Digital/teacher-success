@@ -83,7 +83,7 @@ jobs:
     steps:
     - name: Deploy App to Review
       id: deploy_review
-      uses: DFE-Digital/github-actions/deploy-to-aks@master
+      uses: DFE-Digital/github-actions/deploy-to-aks@2282-deploy-app-with-maint-page-enabled-using-workflow-option
       with:
         azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
         azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
