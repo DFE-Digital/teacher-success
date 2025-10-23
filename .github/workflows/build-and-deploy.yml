@@ -131,6 +131,7 @@ jobs:
           db-seed: false
           gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
           gcp-project-id: teacher-success
+          maintenance_traffic: ${{ inputs.maintenance_traffic }}
 
   manual_deploy:
     name: Manual deploy
