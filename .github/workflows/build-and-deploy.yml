@@ -21,6 +21,12 @@ on:
         description: "Pull request number (required for review environment)"
         required: false
         type: string
+      maintenance_traffic:
+        description: Enable maintenance mode traffic during deployment
+        type: boolean
+        required: false
+        default: false
+
   push:
    branches:
     - main
@@ -84,6 +90,7 @@ jobs:
         azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         environment: review
         pr-number: ${{ github.event.pull_request.number }}
+        maintenance_traffic: ${{ inputs.maintenance_traffic }}
         sha: ${{ needs.build.outputs.docker-image-tag }}
         terraform-base: ${{ env.TERRAFORM_BASE }}
         healthcheck: ${{ env.HEALTHCHECK_CMD }}
