@@ -11,6 +11,6 @@ spec:
           - pathType: ImplementationSpecific
             backend:
               service:
-                name: teach-pr-1797
+                name: teach-staging
                 port:
                   number: 80
