@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: teach-temp.pr-207.test.teacherservices.cloud
+    - host: teach-temp.test.teacherservices.cloud
       http:
         paths:
           - pathType: ImplementationSpecific
