@@ -25,7 +25,7 @@ on:
         description: Enable maintenance mode traffic during deployment
         type: boolean
         required: false
-        default: "false"
+        default: false
 
   push:
    branches:
