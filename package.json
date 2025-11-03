@@ -12,7 +12,7 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "devDependencies": {
-    "esbuild": "^0.25.11",
+    "esbuild": "^0.25.12",
     "stylelint": "^16.25.0",
     "stylelint-config-gds": "^2.0.0",
     "stylelint-config-standard": "^39.0.1"
