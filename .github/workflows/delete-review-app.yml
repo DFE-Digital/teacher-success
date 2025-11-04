@@ -47,7 +47,7 @@ jobs:
 
       - name: Delete Review App
         id: delete-review-app
-        uses: DFE-Digital/github-actions/delete-review-app@master
+        uses: DFE-Digital/github-actions/delete-review-app@2544-pin-third-party-actions-in-github-actions
         with:
           azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
           azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
