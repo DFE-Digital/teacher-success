@@ -158,7 +158,7 @@ jobs:
           db-seed: ${{ contains(fromJson('["review"]'), inputs.environment) && 'true' || 'false' }}
           gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
           gcp-project-id: teacher-success
-          maintenance_traffic: ${{ inputs.maintenance_traffic }}
+          maintenance_traffic: "false"
 
   deploy_domains_infra:
     name: Deploy Domains Infrastructure
