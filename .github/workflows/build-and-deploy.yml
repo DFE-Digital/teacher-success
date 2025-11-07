@@ -24,7 +24,7 @@ on:
       maintenance_traffic:
         description: Enable maintenance mode traffic during deployment
         required: false
-        default: "false"
+        default: false
   push:
    branches:
     - main
@@ -88,7 +88,7 @@ jobs:
         azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         environment: review
         pr-number: ${{ github.event.pull_request.number }}
-        maintenance_traffic: "false"
+        maintenance_traffic: ${{ inputs.maintenance_traffic }}
         sha: ${{ needs.build.outputs.docker-image-tag }}
         terraform-base: ${{ env.TERRAFORM_BASE }}
         healthcheck: ${{ env.HEALTHCHECK_CMD }}
@@ -158,7 +158,7 @@ jobs:
           db-seed: ${{ contains(fromJson('["review"]'), inputs.environment) && 'true' || 'false' }}
           gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
           gcp-project-id: teacher-success
-          maintenance_traffic: "false"
+          maintenance_traffic: ${{ inputs.maintenance_traffic }}
 
   deploy_domains_infra:
     name: Deploy Domains Infrastructure
