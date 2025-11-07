@@ -84,6 +84,7 @@ variable "enable_monitoring" {
   description = "Enable monitoring and alerting"
 }
 variable "send_traffic_to_maintenance_page" {
+  type        = bool
   default     = false
   description = "During a maintenance operation, keep sending traffic to the maintenance page instead of resetting the ingress"
 }
