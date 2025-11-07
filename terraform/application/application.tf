@@ -47,7 +47,7 @@ module "web_application" {
   probe_path   = "/up"
   replicas     = var.replicas
 
-  send_traffic_to_maintenance_page = tobool(var.send_traffic_to_maintenance_page)
+  send_traffic_to_maintenance_page = var.send_traffic_to_maintenance_page
 
   run_as_non_root = true
 }
