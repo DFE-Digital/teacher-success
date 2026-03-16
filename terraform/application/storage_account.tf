@@ -1,5 +1,5 @@
 module "storage" {
-  source = "git::https://github.com/DFE-Digital/terraform-modules.git//aks/storage_account?ref=stable-azurerm-v4"
+  source = "./vendor/modules/aks//aks/storage_account"
 
   # Required variables - following teacher-success naming conventions
   name                  = "file"
