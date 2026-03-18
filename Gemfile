@@ -28,6 +28,7 @@ gem "sentry-rails"
 gem "active_link_to"
 gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.9"
 gem "uri", "~> 1.0.4"
+gem "azure-blob"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -46,6 +47,7 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "webmock"
 end
