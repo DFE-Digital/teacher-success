@@ -36,6 +36,11 @@ module TeacherSuccess
     config.time_zone = "London"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.view_component.previews.paths << "#{Rails.root}/spec/components/previews"
+    config.view_component.default_preview_layout = "component_preview"
+
+    config.action_view.default_form_builder = GOVUKDesignSystemFormBuilder::FormBuilder
+
     config.active_job.queue_adapter = :solid_queue
     config.solid_queue.connects_to = { database: { writing: :primary } }
     config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
