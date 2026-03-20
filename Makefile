@@ -1,10 +1,10 @@
-ARM_TEMPLATE_TAG=1.1.10
+ARM_TEMPLATE_TAG=2640-update-arm-template-with-monitoring-resources
 RG_TAGS={"Product" : "Teach"}
 REGION=UK South
 SERVICE_NAME=teach
 SERVICE_SHORT=teach
 DOCKER_REPOSITORY=ghcr.io/dfe-digital/teacher-success
-
+ACTION_GROUP_NAME="psenior-action-group-2640"
 help:
 	@grep -E '^[a-zA-Z\._\-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
@@ -76,7 +76,7 @@ arm-deployment: composed-variables set-azure-account
 
 	az deployment sub create --name "resourcedeploy-tsc-$(shell date +%Y%m%d%H%M%S)" \
 		-l "${REGION}" --template-uri "https://raw.githubusercontent.com/DFE-Digital/tra-shared-services/${ARM_TEMPLATE_TAG}/azure/resourcedeploy.json" \
-		--parameters "resourceGroupName=${RESOURCE_GROUP_NAME}" 'tags=${RG_TAGS}' \
+		--parameters "resourceGroupName=${RESOURCE_GROUP_NAME}" "actionGroupName=${ACTION_GROUP_NAME}" 'tags=${RG_TAGS}' \
 		"tfStorageAccountName=${STORAGE_ACCOUNT_NAME}" "tfStorageContainerName=terraform-state" \
 		${KV_ARG} \
 		${KV_DIAG_ARG} \
