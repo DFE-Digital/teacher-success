@@ -80,7 +80,7 @@ RSpec.describe FeedbackHelper, type: :helper do
       let(:rating_text) { "satisfied" }
 
       it "renders tag with green colour" do
-        expect(helper).to receive(:govuk_tag).with(text: "Satisfied", colour: "turquoise")
+        expect(helper).to receive(:govuk_tag).with(text: "Satisfied", colour: "teal")
         subject
       end
     end

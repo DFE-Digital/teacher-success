@@ -12,7 +12,7 @@ module FeedbackHelper
     when 1 then "Red"
     when 2 then "Orange"
     when 3 then "Yellow"
-    when 4 then "Turquoise"
+    when 4 then "Teal"
     when 5 then "Green"
     end
 

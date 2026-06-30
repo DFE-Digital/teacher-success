@@ -18,6 +18,6 @@
   @include box-heading(govuk.govuk-colour("light-pink"), govuk.govuk-colour("black"));
 }
 
-.heading--turquoise {
+.heading--teal {
   @include box-heading(govuk.govuk-colour("turquoise"), govuk.govuk-colour("black"));
 }
