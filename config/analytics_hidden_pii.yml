@@ -2,3 +2,5 @@
 :shared:
   :feedbacks:
     - email
+  :support_requests:
+    - email
