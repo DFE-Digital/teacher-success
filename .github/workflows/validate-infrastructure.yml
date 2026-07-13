@@ -41,3 +41,4 @@ jobs:
           teams-webhook-url: ${{ secrets.TEAMS_WEBHOOK_URL_INFRA }}
           gcp-wip: projects/854365425353/locations/global/workloadIdentityPools/teacher-success/providers/teacher-success
           gcp-project-id: teacher-success
+          target-branch: 2872-validate-infra-wrong-sha
