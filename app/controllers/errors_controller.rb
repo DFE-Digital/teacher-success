@@ -16,4 +16,8 @@ class ErrorsController < ApplicationController
   def internal_server_error
     render "internal_server_error", status: :internal_server_error
   end
+
+  def service_closed
+    render "service_closed", status: :service_unavailable
+  end
 end

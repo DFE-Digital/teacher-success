@@ -58,8 +58,7 @@ RSpec.describe "CookiePreferences", type: :request do
         it "sets the cookie with non_essential: true and redirects with success flash" do
           patch cookie_preferences_path, params: params, headers: headers
           expect(response).to redirect_to(root_path)
-          follow_redirect!
-          expect(response.body).to include("Your cookie preferences have been saved")
+          expect(flash[:success]).to include(heading: "Cookie preferences saved")
           expect(cookies[cookie_name]).to be_present
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(true)
@@ -72,8 +71,7 @@ RSpec.describe "CookiePreferences", type: :request do
         it "sets the cookie with non_essential: false" do
           patch cookie_preferences_path, params: params, headers: headers
           expect(response).to redirect_to(root_path)
-          follow_redirect!
-          expect(response.body).to include("Your cookie preferences have been saved")
+          expect(flash[:success]).to include(heading: "Cookie preferences saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(false)
         end
@@ -112,8 +110,7 @@ RSpec.describe "CookiePreferences", type: :request do
         it "sets the cookie with non_essential: false" do
           patch cookie_preferences_path, params: params
           expect(response).to redirect_to(root_path)
-          follow_redirect!
-          expect(response.body).to include("Your cookie preferences have been saved")
+          expect(flash[:success]).to include(heading: "Cookie preferences saved")
           cookie = JSON.parse(cookies[cookie_name])
           expect(cookie["non_essential"]).to eq(false)
         end
