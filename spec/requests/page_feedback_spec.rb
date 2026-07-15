@@ -39,9 +39,7 @@ RSpec.describe "PageFeedbacks", type: :request do
         }.to change(PageFeedback, :count).by(1)
 
         expect(response).to redirect_to(root_path)
-        follow_redirect!
-
-        expect(response.body).to include("Feedback submitted")
+        expect(flash[:success]).to include(heading: "Feedback submitted")
       end
     end
   end
