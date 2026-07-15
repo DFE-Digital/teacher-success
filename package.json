@@ -2,7 +2,7 @@
   "name": "teacher_success",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.18",
+    "@hotwired/turbo-rails": "^8.0.20",
     "dfe-frontend": "^2.0.1",
     "govuk-frontend": "5.13.0",
     "sass": "^1.93.2"
