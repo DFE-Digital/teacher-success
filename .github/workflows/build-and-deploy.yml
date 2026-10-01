@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v7
       name: Checkout
 
     - name: Build and push docker image
@@ -208,7 +208,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -235,7 +235,7 @@ jobs:
         site_url: ${{ fromJSON(needs.generate_sitemap.outputs.sitemap_urls) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
       - name: Lychee link checker
         uses: lycheeverse/lychee-action@885c65f3dc543b57c898c8099f4e08c8afd178a2 # Pinned at v2.6.1
         env:
