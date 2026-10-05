@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.0.3"
+gem "rails", "~> 8.1.4"
 gem "propshaft"
 gem "pg"
 gem "puma"
@@ -28,10 +28,12 @@ gem "sentry-rails"
 gem "active_link_to"
 gem "dfe-analytics", github: "DFE-Digital/dfe-analytics", tag: "v1.15.9"
 gem "uri", "~> 1.0.4"
+gem "json", ">= 2.21.2"
+gem "rubyzip", ">= 3.4.0"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-  gem "brakeman", require: false
+  gem "brakeman", ">= 8.1.0", require: false
   gem "rubocop-rails-omakase", require: false
   gem "rspec"
   gem "rspec-rails"

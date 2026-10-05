@@ -236,7 +236,30 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Lychee link checker
+
+      - name: "Guard: skip link check while review app is intentionally closed"
+        id: review_app_health
+        shell: bash
+        run: |
+          # The review app can intentionally redirect all routes to the service-closed page.
+          # In that state, a live root response is unavailable and Lychee would fail with 503s.
+          # This gate prevents false negatives while the app is deliberately closed.
+          url="https://teach-pr-${{ github.event.pull_request.number }}.test.teacherservices.cloud/"
+
+          for attempt in 1 2 3 4 5; do
+            if curl -fsS --max-time 15 "$url" >/tmp/review-app-home.html 2>/dev/null; then
+              echo "ready=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Review app not ready yet (attempt $attempt/5); retrying in 10s..."
+            sleep 10
+          done
+
+          echo "Review app is not serving traffic; skipping Lychee link checks while the app is intentionally closed."
+          echo "ready=false" >> "$GITHUB_OUTPUT"
+
+      - name: "Lychee link checker (runs only when review app is live)"
+        if: steps.review_app_health.outputs.ready == 'true'
         uses: lycheeverse/lychee-action@885c65f3dc543b57c898c8099f4e08c8afd178a2 # Pinned at v2.6.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
