@@ -28,7 +28,7 @@ env:
 jobs:
   display-review-apps-to-remove:
     name: Reconcile review apps
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     environment: review
 
